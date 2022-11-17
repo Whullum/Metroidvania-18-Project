@@ -13,18 +13,19 @@ public class PlayerMovement : MonoBehaviour
     private bool _canDash = true;
     private bool _isDashing;
     private Rigidbody2D _rBody;
+    private SpriteRenderer _spriteRenderer;
 
     [Header("Movement values")]
-    [Range(1, 1000)]
+    [Range(1, 2000)]
     [Tooltip("The character movement speed.")]
-    [SerializeField] private float _movementSpeed = 200.0f;
-    [Range(0, 10)]
+    [SerializeField] private float _movementSpeed = 700.0f;
+    [Range(0, 50)]
     [Tooltip("The character gravity scale of the rigidbody.")]
-    [SerializeField] private float _gravityScale = 5.0f;
+    [SerializeField] private float _gravityScale = 10.0f;
     [Header("Jump values")]
     [Range(1, 100)]
     [Tooltip("The force with wich the character jumps.")]
-    [SerializeField] private float _jumpForce = 15.0f;
+    [SerializeField] private float _jumpForce = 37.0f;
     [Range(0, 1)]
     [Tooltip("The influence on the chacter jump if the player holds the jump button down. 0 = the jump is shorter. 1 = helding the key down does not make any difference.")]
     [SerializeField] private float _jumpReleaseRatio = 0.5f;
@@ -37,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _dashForce = 100.0f;
     [Range(0.01f, 3.0f)]
     [Tooltip("The time dashing. The greater the time, greater the traveled distance.")]
-    [SerializeField] private float _dashTime = 0.05f;
+    [SerializeField] private float _dashTime = 0.1f;
     [Range(0.1f, 10.0f)]
     [Tooltip("Cooldown time of the dash.")]
     [SerializeField] private float _dashCooldown = 1.0f;
@@ -54,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         _rBody = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -121,15 +123,9 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void Flip()
     {
-        if (_isFacingRight && _horizontalMovement < 0f || !_isFacingRight && _horizontalMovement > 0f)
+        if (_spriteRenderer.flipY && _horizontalMovement < 0f || !_spriteRenderer.flipY && _horizontalMovement > 0f)
         {
-            _isFacingRight = !_isFacingRight;
-
-            Vector3 localScale = transform.localScale;
-
-            localScale.x *= -1;
-
-            transform.localScale = localScale;
+            _spriteRenderer.flipY = !_spriteRenderer.flipY;
         }
     }
 
@@ -181,11 +177,13 @@ public class PlayerMovement : MonoBehaviour
     /// <returns></returns>
     private IEnumerator Dash()
     {
+        var dashDirection = _spriteRenderer.flipY ? 1 : -1;
+
         _canDash = false;
         _isDashing = true;
 
         _rBody.gravityScale = 0f;
-        _rBody.velocity = new Vector2(transform.localScale.x * _dashForce, 0);
+        _rBody.velocity = new Vector2(dashDirection * _dashForce, 0);
 
         yield return new WaitForSeconds(_dashTime);
 
