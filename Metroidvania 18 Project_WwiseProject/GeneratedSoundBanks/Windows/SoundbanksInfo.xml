@@ -16,5 +16,20 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
+		<SoundBank Id="3291379323" Language="SFX" Hash="1180496460">
+			<ObjectPath>\SoundBanks\Default Work Unit\TestBank</ObjectPath>
+			<ShortName>TestBank</ShortName>
+			<Path>TestBank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="884913238" Name="Play_Grenadier_TakeDamage" ObjectPath="\Events\Default Work Unit\Play_Grenadier_TakeDamage" DurationType="OneShot" DurationMin="1.455191" DurationMax="1.455191">
+					<IncludedMemoryFiles>
+						<File Id="64498098" Language="SFX">
+							<ShortName>Grenadier_TakeDamage.wav</ShortName>
+							<Path>SFX\Grenadier_TakeDamage_8739D9E6.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

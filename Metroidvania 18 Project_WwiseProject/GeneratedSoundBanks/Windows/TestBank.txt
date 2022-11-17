@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	884913238	Play_Grenadier_TakeDamage			\Default Work Unit\Play_Grenadier_TakeDamage	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	64498098	Grenadier_TakeDamage	D:\Unity\Projects\Metroidvania-18-Project\Metroidvania 18 Project_WwiseProject\.cache\Windows\SFX\Grenadier_TakeDamage_8739D9E6.wem		\Actor-Mixer Hierarchy\Default Work Unit\Grenadier_TakeDamage		279460
+

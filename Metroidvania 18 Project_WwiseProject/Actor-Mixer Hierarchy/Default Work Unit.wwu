@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{547BBE61-732B-43B4-867F-66A2FBD84838}" SchemaVersion="103">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{547BBE61-732B-43B4-867F-66A2FBD84838}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{547BBE61-732B-43B4-867F-66A2FBD84838}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Grenadier_TakeDamage" ID="{75025ADF-ECA3-439C-AED3-66CB39251477}" ShortID="405449451">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-3</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DA457F85-0823-4B4C-9306-EF125B59CA35}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5F490328-FA49-4C17-B27D-36522041969D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Grenadier_TakeDamage" ID="{F0C7625D-F6EE-46E0-BC65-64F9AD435764}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.190560693641618"/>
+								<Property Name="TrimEnd" Type="Real64" Value="1.6457514450867"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Grenadier_TakeDamage.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="64498098"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Grenadier_TakeDamage" ID="{F0C7625D-F6EE-46E0-BC65-64F9AD435764}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>
