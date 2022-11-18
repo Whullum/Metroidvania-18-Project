@@ -18,7 +18,7 @@ public class GunSetting : ScriptableObject
     [Range(0.5f, 50)]
     public float FireRate;
 
-    [Tooltip("Range of the weapon. When the bullet reaches this range, disapears.")]
+    [Tooltip("Range of the weapon. When the bullet reaches this range, it disappears.")]
     [Range(1.0f, 100.0f)]
     public float Range;
 
@@ -29,11 +29,11 @@ public class GunSetting : ScriptableObject
     [Tooltip("Prefab to be instantiated by the gun.")]
     public GameObject BulletPrefab;
 
-    [Tooltip("Random ammount of dispersion applied for each bullet.")]
+    [Tooltip("Random amount of dispersion applied for each bullet.")]
     [Range(0.0f, 180.0f)]
     public float BulletSpread;
 
-    [Tooltip("The speed which the bullet will be launched.")]
+    [Tooltip("The speed at which the bullet will be launched.")]
     [Range(1.0f, 200.0f)]
     public float BulletSpeed;
 
@@ -41,7 +41,7 @@ public class GunSetting : ScriptableObject
     [Range(0.1f, 100.0f)]
     public float BulletCost;
 
-    [Tooltip("Ammount of force applied opposite the shooting direction.")]
+    [Tooltip("Amount of force applied opposite the shooting direction.")]
     [Range(0.0f, 100.0f)]
     public float Recoil;
 
@@ -53,6 +53,6 @@ public class GunSetting : ScriptableObject
     [Range(0.0f, 50.0f)]
     public float CameraShakeForce;
 
-    [Tooltip("If the Shotgun Mode is enabled, all the bullets inside the magazine will be launched in one click. This needs to be set with a higher Fire Rate and a lower Magazine Size so it makes the illusion of pellets comming out.")]
+    [Tooltip("If the Shotgun Mode is enabled, all the bullets inside the magazine will be launched in one click. This needs to be set with a higher Fire Rate and a lower Magazine Size so it makes the illusion of pellets coming out.")]
     public bool ShotgunMode;
 }
