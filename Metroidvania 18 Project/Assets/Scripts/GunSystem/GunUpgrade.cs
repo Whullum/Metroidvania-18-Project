@@ -13,6 +13,14 @@ public class GunUpgrade : MonoBehaviour
         if (_gun == null)
             _gun = collision.GetComponentInChildren<Gun>();
 
+        if(!_gun)
+        {
+            Debug.LogError("Gun Upgrade ERROR : Cannot find player Gun.");
+            return;
+        }
+
+        _gun.UpgradeGun(_gunSetting);
+
         Destroy(gameObject);
     }
 }

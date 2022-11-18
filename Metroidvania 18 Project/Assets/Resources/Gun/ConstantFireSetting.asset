@@ -13,14 +13,16 @@ MonoBehaviour:
   m_Name: ConstantFireSetting
   m_EditorClassIdentifier: 
   ID: 0
-  GunSettingName: Constant Fire
   Damage: 10
   MagazineSize: 50
-  FireRate: 7
+  FireRate: 8
   Range: 43.9
   ReloadTime: 2
   BulletPrefab: {fileID: 1178255456181298219, guid: 4565cb4fd3aeeea4ba7be9d1231db8be, type: 3}
   BulletSpread: 10
-  BulletSpeed: 60
+  BulletSpeed: 100
   BulletCost: 0.7
+  Recoil: 5
+  CameraShakeDuration: 0.05
+  CameraShakeForce: 2
   ShotgunMode: 0

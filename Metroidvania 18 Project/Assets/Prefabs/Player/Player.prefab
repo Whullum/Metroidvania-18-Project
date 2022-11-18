@@ -185,10 +185,7 @@ MonoBehaviour:
   _shootPoint: {fileID: 1334828315}
   _gunSettings:
   - {fileID: 11400000, guid: ea6a6fd460ae59140acd205adae369fc, type: 2}
-  - {fileID: 11400000, guid: 9043e2426e617454d87a21819df8df07, type: 2}
-  - {fileID: 11400000, guid: d67dac94198b0254a85b620c929190ec, type: 2}
-  - {fileID: 11400000, guid: cb9a9cf9baee7b64f92aa200d20f5dbe, type: 2}
-  _showDebugInfo: 1
+  _showDebugInfo: 0
 --- !u!1 &6570468089443506112
 GameObject:
   m_ObjectHideFlags: 0

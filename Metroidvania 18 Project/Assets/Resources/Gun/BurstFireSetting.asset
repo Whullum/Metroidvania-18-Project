@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: BurstFireSetting
   m_EditorClassIdentifier: 
   ID: 1
-  GunSettingName: Burst Fire
   Damage: 20
   MagazineSize: 5
   FireRate: 10
@@ -23,4 +22,7 @@ MonoBehaviour:
   BulletSpread: 1
   BulletSpeed: 40
   BulletCost: 1
+  Recoil: 40
+  CameraShakeDuration: 0.1
+  CameraShakeForce: 5
   ShotgunMode: 1

@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: StreamFireSetting
   m_EditorClassIdentifier: 
   ID: 3
-  GunSettingName: Stream Fire
   Damage: 5
   MagazineSize: 100
   FireRate: 30
@@ -23,4 +22,7 @@ MonoBehaviour:
   BulletSpread: 0
   BulletSpeed: 10
   BulletCost: 0.5
+  Recoil: 0
+  CameraShakeDuration: 0
+  CameraShakeForce: 0
   ShotgunMode: 0

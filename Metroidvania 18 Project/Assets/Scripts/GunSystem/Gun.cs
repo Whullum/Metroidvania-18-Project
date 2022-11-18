@@ -4,39 +4,63 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    private int _gunSettingIndex = 0;
+    private int _gunSettingIndex = 0; // Index of the current active setting.
     private bool _isReloading;
-    private float _nextFire;
+    private float _nextFire; // Time until the creation of a new bullet.
     private float _currentMagazineSize;
+    private Vector3 _mousePos;
     private GunSetting _activeSetting;
     private SpriteRenderer _spriteRenderer;
+    private Rigidbody2D _playerRBody;
 
+    [Tooltip("The point where the bullets will be spawned.")]
     [SerializeField] private Transform _shootPoint;
+    [Tooltip("List containing all the unlocked Gun Settings. Is mandatory that minimum one Gun Setting is set.")]
     [SerializeField] private List<GunSetting> _gunSettings = new List<GunSetting>();
     [SerializeField] private bool _showDebugInfo;
 
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _playerRBody = GetComponentInParent<Rigidbody2D>();
     }
 
     private void Start()
     {
+        if(_gunSettings.Count <= 0)
+        {
+            Debug.LogError("Gun ERROR : at leats one Gun Setting must be assigned.");
+
+            return;
+        }
+
+        // Set the current active setting to the first one in the list.
         _activeSetting = _gunSettings[0];
+        // Set the magazine to the current active setting capacity.
         _currentMagazineSize = _activeSetting.MagazineSize;
     }
 
     private void Update()
     {
+        _nextFire -= Time.deltaTime * _activeSetting.FireRate;
+
         AimAtCursor();
-        SwitchSetting();
-        Shoot();
+
+        if (Input.GetMouseButtonDown(2))
+            SwitchSetting();
+
+        if (Input.GetMouseButton(0))
+            Shoot();
     }
 
+    /// <summary>
+    /// Makes the gun rotate towards the mouse position. It also flips the sprite depending on the gun rotation.
+    /// </summary>
     private void AimAtCursor()
     {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 rotation = mousePosition - transform.position;
+        _mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector3 rotation = _mousePos - transform.position;
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
 
         if (rotZ < 89 && rotZ > -89)
@@ -47,81 +71,130 @@ public class Gun : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
     }
 
+    /// <summary>
+    /// Changues the current active Gun Setting for the next one in the list and starts reloading the gun.
+    /// </summary>
     private void SwitchSetting()
     {
-        if(Input.GetMouseButtonDown(2))
-        {
-            _gunSettingIndex++;
+        _gunSettingIndex++;
 
-            if (_gunSettingIndex >= _gunSettings.Count)
-                _gunSettingIndex = 0;
+        if (_gunSettingIndex >= _gunSettings.Count)
+            _gunSettingIndex = 0;
 
-            _activeSetting = _gunSettings[_gunSettingIndex];
+        _activeSetting = _gunSettings[_gunSettingIndex];
 
-            _currentMagazineSize = 0;
-            StartCoroutine(Reload());
-        }
+        _currentMagazineSize = 0;
+        StartCoroutine(Reload());
+
     }
 
+    /// <summary>
+    /// Shoots a bullet depending on the fire rate and if the Shotgun Mode is enabled.
+    /// </summary>
     private void Shoot()
     {
-        _nextFire -= Time.deltaTime * _activeSetting.FireRate;
-
-        if (!Input.GetMouseButton(0)) { return; }
-
         if (_isReloading) return;
-
-        if(_nextFire <= 0)
+        
+        if (_nextFire <= 0)
         {
+            // If the magazine is empty, reload the gun and prevent shooting.
             if (_currentMagazineSize <= 0)
             {
                 StartCoroutine(Reload());
                 return;
             }
+
+            // Shotgun Mode shooting
             if (_activeSetting.ShotgunMode)
                 StartCoroutine(ShotgunFireMode());
+            // Normal fire mode.
             else
+            {
                 SpawnBullet();
+                CameraEvents.CameraShake?.Invoke(_activeSetting.CameraShakeDuration, _activeSetting.CameraShakeForce);
+            }
+            AddRecoil();
         }
     }
 
+    /// <summary>
+    /// Prevents the gun from shooting before the reload finishes and reloads the gun.
+    /// </summary>
+    /// <returns>The reload time.</returns>
     private IEnumerator Reload()
     {
         _isReloading = true;
 
         yield return new WaitForSeconds(_activeSetting.ReloadTime);
-        
+
         _currentMagazineSize = _activeSetting.MagazineSize;
         _isReloading = false;
     }
 
+    /// <summary>
+    /// Creates a new bullet an set a radom rotation depending on the active setting Bullet Spread.
+    /// </summary>
     private void SpawnBullet()
     {
+        // Generate random rotation.
         float spread = Random.Range(-_activeSetting.BulletSpread, _activeSetting.BulletSpread);
 
         BulletController newBullet = Instantiate(_activeSetting.BulletPrefab, _shootPoint.position, _shootPoint.rotation).GetComponent<BulletController>();
 
-        newBullet.BulletDamage = _activeSetting.Damage;
-        newBullet.transform.Rotate(0f, 0f, spread);
-        newBullet.GetComponent<Rigidbody2D>().AddForce(newBullet.transform.right * _activeSetting.BulletSpeed, ForceMode2D.Impulse);
+        newBullet.BulletDamage = _activeSetting.Damage; // Set the bullet damage.
+        newBullet.transform.Rotate(0f, 0f, spread); // Give the bullet the random generated rotation.
+        newBullet.LaunchBullet(newBullet.transform.right * _activeSetting.BulletSpeed); // Launch the bullet with the Gun Setting speed.
 
+        // Destroy the bullet if reaches the maximum range.
         Destroy(newBullet.gameObject, _activeSetting.Range / _activeSetting.BulletSpeed);
 
         _currentMagazineSize -= _activeSetting.BulletCost;
         _nextFire = 1;
     }
 
+    /// <summary>
+    /// Shoots all the bullets inside the magazine at the same time.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator ShotgunFireMode()
     {
-        while(_currentMagazineSize > 0)
+        CameraEvents.CameraShake?.Invoke(_activeSetting.CameraShakeDuration, _activeSetting.CameraShakeForce);
+
+        while (_currentMagazineSize > 0)
         {
-            if(_nextFire <= 0)
+            if (_nextFire <= 0)
                 SpawnBullet();
 
             _nextFire -= Time.deltaTime * _activeSetting.FireRate;
 
             yield return null;
         }
+        StartCoroutine(Reload());
+    }
+
+    /// <summary>
+    /// Pushes the player rigidbody in opossite the direction the gun is shooting.
+    /// </summary>
+    private void AddRecoil()
+    {
+        Vector3 recoilDirection = (transform.position - _mousePos).normalized * 10;
+
+        _playerRBody.AddForce(recoilDirection * _activeSetting.Recoil, ForceMode2D.Force);
+    }
+
+    /// <summary>
+    /// Add a new Gun Setting to the Gun Setting list.
+    /// </summary>
+    /// <param name="upgrade">The new Gun Setting to add.</param>
+    public void UpgradeGun(GunSetting upgrade)
+    {
+        if(_gunSettings.Contains(upgrade))
+        {
+            Debug.LogWarning("Gun WARNING : Gun already has " + upgrade);
+            return;
+        }
+
+        _gunSettings.Add(upgrade);
     }
 
     private void OnGUI()

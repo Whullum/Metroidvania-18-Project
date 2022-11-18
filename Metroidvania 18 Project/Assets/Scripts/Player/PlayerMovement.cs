@@ -6,7 +6,6 @@ public class PlayerMovement : MonoBehaviour
 {
     private float _hangTimeCounter;
     private float _horizontalMovement;
-    private bool _isFacingRight = true; // Needs to be set to true if the character starts facing to the right.
     private bool _jumpButtonPressed;
     private bool _jumpButtonReleased;
     private bool _doubleJump = false;
@@ -48,7 +47,6 @@ public class PlayerMovement : MonoBehaviour
     [Range(0.01f, 0.3f)]
     [Tooltip("Radius of the ground check.")]
     [SerializeField] private float _groundCheckRadius = 0.1f;
-    
     [Header("Debug")]
     [SerializeField] private bool _showDebugInfo;
 
