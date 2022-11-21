@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eea91c2ec168b542973157c9200973d, type: 3}
+  m_Name: StreamFireSetting
+  m_EditorClassIdentifier: 
+  ID: 3
+  Damage: 5
+  MagazineSize: 100
+  FireRate: 30
+  Range: 30
+  ReloadTime: 5
+  BulletPrefab: {fileID: 1178255456181298219, guid: 2c0d35ede45ae424991266ab5e742947, type: 3}
+  BulletSpread: 0
+  BulletSpeed: 10
+  BulletCost: 0.5
+  Recoil: 0
+  CameraShakeDuration: 0
+  CameraShakeForce: 0
+  ShotgunMode: 0
