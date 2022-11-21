@@ -19,7 +19,7 @@ MonoBehaviour:
   Range: 43.9
   ReloadTime: 2
   BulletPrefab: {fileID: 1178255456181298219, guid: 4565cb4fd3aeeea4ba7be9d1231db8be, type: 3}
-  BulletSpread: 10
+  BulletSpread: 2
   BulletSpeed: 100
   BulletCost: 0.7
   Recoil: 5
