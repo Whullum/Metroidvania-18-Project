@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 824cc22d4fd4c54c8c1b2d85ee191b08
     GuidInternal: 
-    m_lastTime: -8585329028845237534
+    m_lastTime: -8585321214268476576
     List:
     - name: TestBank
       guid: 0ac945c13cf6dc4fba97e1955e00c864
@@ -94,11 +94,11 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 57952b2a51235b4ba2db658472e829c7
     GuidInternal: 
-    m_lastTime: -8585329029224267208
+    m_lastTime: -8585321214377222529
     List:
-    - name: Play_Grenadier_TakeDamage
-      guid: d71fb43559bf3b439c4a9871b6ec3b00
-      id: 884913238
+    - name: Play_Player_Dash
+      guid: 71e42bd47e8741448453dc6f2d4436c4
+      id: 2175711460
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -106,10 +106,61 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 57952b2a51235b4ba2db658472e829c7
-      - ElementName: Play_Grenadier_TakeDamage
+      - ElementName: Play_Player_Dash
+        ObjectType: 3
+        guid: 71e42bd47e8741448453dc6f2d4436c4
+      Path: Events\Default Work Unit\Play_Player_Dash
+      maxAttenuation: 0
+      maxDuration: 0.659252
+      minDuration: 0.659252
+    - name: Play_Player_DoubleJump
+      guid: c84f83eaa2299c45b07831dc0de7d9df
+      id: 594945751
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 57952b2a51235b4ba2db658472e829c7
+      - ElementName: Play_Player_DoubleJump
+        ObjectType: 3
+        guid: c84f83eaa2299c45b07831dc0de7d9df
+      Path: Events\Default Work Unit\Play_Player_DoubleJump
+      maxAttenuation: 0
+      maxDuration: 0.448844
+      minDuration: 0.448844
+    - name: Play_Player_InitialJump
+      guid: 0d5decee602aa54cac2667d3071873f9
+      id: 421515808
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 57952b2a51235b4ba2db658472e829c7
+      - ElementName: Play_Player_InitialJump
+        ObjectType: 3
+        guid: 0d5decee602aa54cac2667d3071873f9
+      Path: Events\Default Work Unit\Play_Player_InitialJump
+      maxAttenuation: 0
+      maxDuration: 0.220045
+      minDuration: 0.220045
+    - name: Play_SFX_TestSound
+      guid: d71fb43559bf3b439c4a9871b6ec3b00
+      id: 3056398787
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 57952b2a51235b4ba2db658472e829c7
+      - ElementName: Play_SFX_TestSound
         ObjectType: 3
         guid: d71fb43559bf3b439c4a9871b6ec3b00
-      Path: Events\Default Work Unit\Play_Grenadier_TakeDamage
+      Path: Events\Default Work Unit\Play_SFX_TestSound
       maxAttenuation: 0
       maxDuration: 1.455191
       minDuration: 1.455191
@@ -170,7 +221,7 @@ MonoBehaviour:
     m_lastTime: -8585329037338383646
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 06000000070000000b0000000c000000
+  ExpandedWaapiItemIds: 0500000006000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

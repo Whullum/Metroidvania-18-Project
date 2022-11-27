@@ -14,6 +14,12 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _rBody;
     private SpriteRenderer _spriteRenderer;
 
+    /// <summary>
+    /// The script for controlling player audio playback - Will
+    /// </summary>
+    [SerializeField]
+    private PlayerAudio _playerAudio;
+
     [Header("Movement values")]
     [Range(1, 2000)]
     [Tooltip("The character movement speed.")]
@@ -137,6 +143,9 @@ public class PlayerMovement : MonoBehaviour
         {
             _jumpButtonPressed = false;
 
+            // Plays the initial jump sound - Will
+            _playerAudio.PostWwiseEvent(_playerAudio._sfxPlayerInitialJump);
+
             if (_hangTimeCounter > 0f)
             {
                 _rBody.velocity = new Vector2(_rBody.velocity.x, _jumpForce);
@@ -149,6 +158,9 @@ public class PlayerMovement : MonoBehaviour
                 {
                     _rBody.velocity = new Vector2(_rBody.velocity.x, _jumpForce);
                     _doubleJump = false;
+
+                    // Plays the double jump sound - Will
+                    _playerAudio.PostWwiseEvent(_playerAudio._sfxPlayerDoubleJump);
                 }
             }
         }
@@ -182,6 +194,9 @@ public class PlayerMovement : MonoBehaviour
 
         _rBody.gravityScale = 0f;
         _rBody.velocity = new Vector2(dashDirection * _dashForce, 0);
+
+        // Plays the dashing sound - Will
+        _playerAudio.PostWwiseEvent(_playerAudio._sfxPlayerDash);
 
         yield return new WaitForSeconds(_dashTime);
 

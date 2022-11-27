@@ -11,17 +11,41 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="2754342975">
+		<SoundBank Id="1355168291" Language="SFX" Hash="219868698">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3291379323" Language="SFX" Hash="1180496460">
+		<SoundBank Id="3291379323" Language="SFX" Hash="4080176170">
 			<ObjectPath>\SoundBanks\Default Work Unit\TestBank</ObjectPath>
 			<ShortName>TestBank</ShortName>
 			<Path>TestBank.bnk</Path>
 			<IncludedEvents>
-				<Event Id="884913238" Name="Play_Grenadier_TakeDamage" ObjectPath="\Events\Default Work Unit\Play_Grenadier_TakeDamage" DurationType="OneShot" DurationMin="1.455191" DurationMax="1.455191">
+				<Event Id="2175711460" Name="Play_Player_Dash" ObjectPath="\Events\Default Work Unit\Play_Player_Dash" DurationType="OneShot" DurationMin="0.659252" DurationMax="0.659252">
+					<IncludedMemoryFiles>
+						<File Id="474469954" Language="SFX">
+							<ShortName>Cloth39.wav</ShortName>
+							<Path>SFX\Cloth39_BC898CA8.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="594945751" Name="Play_Player_DoubleJump" ObjectPath="\Events\Default Work Unit\Play_Player_DoubleJump" DurationType="OneShot" DurationMin="0.448844" DurationMax="0.448844">
+					<IncludedMemoryFiles>
+						<File Id="406764622" Language="SFX">
+							<ShortName>Cloth20.wav</ShortName>
+							<Path>SFX\Cloth20_BC3F8FDF.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="421515808" Name="Play_Player_InitialJump" ObjectPath="\Events\Default Work Unit\Play_Player_InitialJump" DurationType="OneShot" DurationMin="0.220045" DurationMax="0.220045">
+					<IncludedMemoryFiles>
+						<File Id="475550480" Language="SFX">
+							<ShortName>Cloth20.wav</ShortName>
+							<Path>SFX\Cloth20_3E17A857.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3056398787" Name="Play_SFX_TestSound" ObjectPath="\Events\Default Work Unit\Play_SFX_TestSound" DurationType="OneShot" DurationMin="1.455191" DurationMax="1.455191">
 					<IncludedMemoryFiles>
 						<File Id="64498098" Language="SFX">
 							<ShortName>Grenadier_TakeDamage.wav</ShortName>

@@ -5,7 +5,7 @@
 			<ChildrenList>
 				<SoundBank Name="TestBank" ID="{C145C90A-F63C-4FDC-BA97-E1955E00C864}">
 					<ObjectInclusionList>
-						<ObjectRef Name="Play_Grenadier_TakeDamage" ID="{35B41FD7-BF59-433B-9C4A-9871B6EC3B00}" WorkUnitID="{2A2B9557-2351-4B5B-A2DB-658472E829C7}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Default Work Unit" ID="{2A2B9557-2351-4B5B-A2DB-658472E829C7}" WorkUnitID="{2A2B9557-2351-4B5B-A2DB-658472E829C7}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

@@ -3,7 +3,7 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{547BBE61-732B-43B4-867F-66A2FBD84838}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="Grenadier_TakeDamage" ID="{75025ADF-ECA3-439C-AED3-66CB39251477}" ShortID="405449451">
+				<Sound Name="SFX_TestSound" ID="{75025ADF-ECA3-439C-AED3-66CB39251477}" ShortID="405449451">
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
@@ -36,6 +36,145 @@
 					<ObjectLists/>
 					<ActiveSourceList>
 						<ActiveSource Name="Grenadier_TakeDamage" ID="{F0C7625D-F6EE-46E0-BC65-64F9AD435764}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Player_DoubleJump" ID="{A0AA5BA0-D32B-4F2D-95A2-3F5FBB44B5C9}" ShortID="792778698">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>16</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-180</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DA457F85-0823-4B4C-9306-EF125B59CA35}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5F490328-FA49-4C17-B27D-36522041969D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Cloth20" ID="{797DF79E-791B-4D59-AF4A-0B6E3C93150E}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.0669419212771814"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.314627030002752"/>
+								<Property Name="FadeOutShape" Type="int16" Value="2"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.404520467146396"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Cloth20.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="406764622"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Cloth20" ID="{797DF79E-791B-4D59-AF4A-0B6E3C93150E}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Player_Dash" ID="{150781F2-EAB5-4E75-A222-087198F74748}" ShortID="589462845">
+					<PropertyList>
+						<Property Name="MakeUpGain" Type="Real64">
+							<ValueList>
+								<Value>3</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DA457F85-0823-4B4C-9306-EF125B59CA35}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise Harmonizer" CompanyID="0" PluginID="138" PluginType="3">
+							<ObjectRef Name="Three_Voices" ID="{71CA20BE-8C1D-4A0C-92AF-BFCE183D5651}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5F490328-FA49-4C17-B27D-36522041969D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Cloth39" ID="{126FCD06-F529-43D3-9197-237FFEA5A1EF}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.445709042769324"/>
+								<Property Name="FadeOutShape" Type="int16" Value="2"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.0757332913897736"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.734985385290918"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Cloth39.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="474469954"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Cloth39" ID="{126FCD06-F529-43D3-9197-237FFEA5A1EF}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Player_InitialJump" ID="{631284C9-F412-4466-A08C-8E9D6D0747AA}" ShortID="42330495">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>14</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-150</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>10</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DA457F85-0823-4B4C-9306-EF125B59CA35}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5F490328-FA49-4C17-B27D-36522041969D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Cloth20" ID="{8EDEFD50-9307-4981-BA86-8CF38A44D65B}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.0248641421886674"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.183612126931698"/>
+								<Property Name="FadeOutShape" Type="int16" Value="1"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.201782076992647"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Cloth20.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="475550480"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Cloth20" ID="{8EDEFD50-9307-4981-BA86-8CF38A44D65B}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

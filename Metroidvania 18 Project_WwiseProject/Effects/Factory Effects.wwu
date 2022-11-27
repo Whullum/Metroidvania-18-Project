@@ -1723,9 +1723,10 @@
 						<Effect Name="Three_Voices" ID="{71CA20BE-8C1D-4A0C-92AF-BFCE183D5651}" PluginName="Wwise Harmonizer" CompanyID="0" PluginID="138" PluginType="3">
 							<PropertyList>
 								<Property Name="DryLevel" Type="Real32" Value="-3"/>
-								<Property Name="Voice1Pitch" Type="Real32" Value="-100"/>
+								<Property Name="Voice1Pitch" Type="Real32" Value="-500"/>
 								<Property Name="Voice2Enable" Type="bool" Value="True"/>
-								<Property Name="Voice2Pitch" Type="Real32" Value="100"/>
+								<Property Name="Voice2Pitch" Type="Real32" Value="700"/>
+								<Property Name="WetLevel" Type="Real32" Value="3"/>
 							</PropertyList>
 						</Effect>
 					</ChildrenList>
