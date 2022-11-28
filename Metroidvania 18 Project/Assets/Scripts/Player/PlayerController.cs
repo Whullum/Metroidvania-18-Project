@@ -1,36 +1,38 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour, IDamageable
+[RequireComponent(typeof(DamageableEntity))]
+public class PlayerController : MonoBehaviour
 {
-    private int _currentHealth;
+    private DamageableEntity _damageable;
 
-    [SerializeField] private int _maxHealth;
-    [SerializeField] private bool _showDebugInfo;
+    [Tooltip("Ammount of time the camera will shake when the player gets hit.")]
+    [SerializeField] private float _cameraShakeHitDuration;
+    [Tooltip("Ammount of force applied to the camera shake when the player gets hit.")]
+    [SerializeField] private float _cameraShakeHitForce;
 
-    private void Start()
+    private void Awake()
     {
-        _currentHealth = _maxHealth;
+        // Get the Damageable component.
+        _damageable = GetComponent<DamageableEntity>();
     }
 
-    public void Death()
+    private void OnEnable()
     {
-        gameObject.SetActive(false);
+        //Subscribe the GetHit method to the Damageable Hit Event.
+        _damageable.DamageReceived += GetHit;
     }
 
-    public void ReceiveDamage(int damageAmmount)
+    private void OnDisable()
     {
-        _currentHealth -= damageAmmount;
-
-        if (_currentHealth <= 0)
-            Death();
+        //Unsubscribe the GetHit method to the Damageable Hit Event.
+        _damageable.DamageReceived -= GetHit;
     }
 
-    private void OnGUI()
+    /// <summary>
+    /// If the player gets hit, we tell the camera to shake.
+    /// </summary>
+    private void GetHit()
     {
-        if (!_showDebugInfo) return;
-
-        GUILayout.BeginArea(new Rect(400, 10, 200, 100));
-        GUILayout.Label("Player Health : " + _currentHealth);
-        GUILayout.EndArea();
+        CameraEvents.CameraShake(_cameraShakeHitDuration, _cameraShakeHitForce);
     }
 }

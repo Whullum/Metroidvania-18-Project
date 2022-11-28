@@ -1,27 +1,39 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(LineRenderer))]
 public class TurretEnemy : Enemy
 {
     private float _currentMagazineSize;
-    private float _nextFire;
+    private float _nextFire; // Time to fire again.
+    protected float _distanceToPlayer;
     private bool _isReloading;
     private bool _isAttacking;
-    private Transform _player;
+    private bool _playerOnSight;
+    private LineRenderer _laserSight; // The Line Renderer component.
 
     [Header("Turret enemy properties")]
-    [SerializeField] private float _checkTime;
+    [Tooltip("Every Check Time the enemy will calculate if the player is in range. Lower Check Time will make the enemy react faster.")]
+    [Range(0.01f, 10)]
+    [SerializeField] private float _playerCheckTime = 0.5f;
+    [Tooltip("The angle needed towards the player for the Gun to shoot.")]
+    [SerializeField] private float _angleToShoot = 5.0f;
+    [Tooltip("The Enemy Gun Setting that this Turret Enemy will use to shoot the player.")]
     [SerializeField] private EnemyGunSetting _enemyGunSetting;
+    [Tooltip("The gun GameObject. Used for rotation.")]
     [SerializeField] private Transform _gun;
+    [Tooltip("Point where the bullets will spawn.")]
     [SerializeField] private Transform _shootPoint;
 
     protected override void Start()
     {
         base.Start();
 
+        _laserSight = GetComponent<LineRenderer>();
+
         _currentMagazineSize = _enemyGunSetting.MagazineSize;
 
-        InvokeRepeating("SearchPlayer", 0f, _checkTime);
+        InvokeRepeating("SearchPlayer", 0f, _playerCheckTime);
     }
 
     protected override void Update()
@@ -30,30 +42,68 @@ public class TurretEnemy : Enemy
 
         _nextFire -= Time.deltaTime * _enemyGunSetting.FireRate;
 
+        if (!_playerOnSight) return;
+
+        EnableLaserSight();
+        RotateTowardsPlayer();
+
         if (!_isAttacking) return;
 
-        RotateTowardsPlayer();
         ShootPlayer();
     }
 
+    /// <summary>
+    /// Check if the distance between this enemy and the player is less than the range of the enemy, if so, starts attacking the player.
+    /// </summary>
     private void SearchPlayer()
     {
-        Collider2D player = Physics2D.OverlapCircle(transform.position, _enemyGunSetting.Range, LayerMask.GetMask("Player"));
+        _distanceToPlayer = Vector2.Distance(transform.position, _player.position);
 
-        if (player != null)
+        if (_distanceToPlayer <= _enemyGunSetting.Range)
         {
-            _isAttacking = true;
-
-            _player = player.transform;
+            _playerOnSight = true;
+            _laserSight.enabled = true;
         }
         else
         {
-            _isAttacking = false;
-
-            _player = null;
+            _playerOnSight = false;
+            _laserSight.enabled = false;
         }
     }
 
+    /// <summary>
+    /// Set the line renderer to create a straight line from the gun to the collision point.
+    /// </summary>
+    private void EnableLaserSight()
+    {
+        // Raycast to get the collision point.
+        RaycastHit2D laserHit = Physics2D.Raycast(_gun.position, _gun.transform.right, _enemyGunSetting.Range * 10, ~LayerMask.GetMask("Enemy", "EnemyBullet"));
+
+        // Set the second point to be the collision point.
+        if (laserHit)
+        {
+            _laserSight.SetPosition(1, laserHit.point);
+
+            if (laserHit.collider.CompareTag("Player"))
+            {
+                _isAttacking = true;
+            }
+            else
+            {
+                _isAttacking = false;
+            }
+        }
+        // If theres no collision, we create our own point far away from the gun shoot direction.
+        else
+            _laserSight.SetPosition(1, _gun.position + _gun.transform.right * _enemyGunSetting.Range * 10);
+
+        // Set the initial position to be the gun position.
+        _laserSight.SetPosition(0, _gun.transform.position);
+    }
+
+    /// <summary>
+    /// Rotates the Gun towards the player position with a specific speed.
+    /// </summary>
     private void RotateTowardsPlayer()
     {
         Vector3 rotation = _player.position - transform.position;
@@ -63,21 +113,34 @@ public class TurretEnemy : Enemy
         _gun.rotation = Quaternion.Lerp(_gun.rotation, lookRotation, Time.deltaTime * _enemyGunSetting.RotationSpeed);
     }
 
+    /// <summary>
+    /// Checks the fire rate and reloading status and shoots bullets.
+    /// </summary>
     private void ShootPlayer()
     {
         if (_isReloading) return;
 
         if (_nextFire <= 0)
         {
-            if (_currentMagazineSize <= 0)
-                StartCoroutine(Reload());
-            else
-                CreateBullet();
+            Vector3 lookAtPlayer = _player.position - transform.position;
+            float angleToPlayer = Vector3.Angle(_gun.right, lookAtPlayer);
+
+            if (angleToPlayer < _angleToShoot)
+            {
+                if (_currentMagazineSize <= 0)
+                    StartCoroutine(Reload());
+                else
+                    CreateBullet();
+            }
         }
     }
 
+    /// <summary>
+    /// Creates a bullet with the specified Enemy Gun Settings.
+    /// </summary>
     private void CreateBullet()
     {
+        // Generate a random rotation for the bullet spread.
         float rndSpread = Random.Range(-_enemyGunSetting.BulletSpread, _enemyGunSetting.BulletSpread);
 
         BulletController newBullet = Instantiate(_enemyGunSetting.BulletPrefab, _shootPoint.position, _shootPoint.rotation);
@@ -92,6 +155,10 @@ public class TurretEnemy : Enemy
         _nextFire = 1;
     }
 
+    /// <summary>
+    /// Prevents the Gun from shooting and starts reloading it.
+    /// </summary>
+    /// <returns>The reload time.</returns>
     private IEnumerator Reload()
     {
         _isReloading = true;
@@ -102,13 +169,14 @@ public class TurretEnemy : Enemy
         _currentMagazineSize = _enemyGunSetting.MagazineSize;
     }
 
-    protected override void OnDrawGizmos()
+    protected virtual void OnDrawGizmos()
     {
-        base.OnDrawGizmos();
+        if (!_showDebugInfo || _enemyGunSetting == null) return;
 
-        if (_enemyGunSetting == null) return;
+        Vector3 frontRay = _gun.position + (_gun.transform.right * _enemyGunSetting.Range);
 
         Gizmos.DrawWireSphere(transform.position, _enemyGunSetting.Range);
+        Debug.DrawLine(_gun.position, frontRay, Color.red);
     }
 
     private void OnGUI()
@@ -116,7 +184,6 @@ public class TurretEnemy : Enemy
         if (!_showDebugInfo) return;
 
         GUILayout.BeginArea(new Rect(10, 10, 400, 600));
-        GUILayout.Label("Health : " + _currentHealth);
         GUILayout.Label("Can Move : " + _canMove);
         GUILayout.Label("Current Magazine Size : " + _currentMagazineSize);
         GUILayout.Label("Next Fire : " + _nextFire);
