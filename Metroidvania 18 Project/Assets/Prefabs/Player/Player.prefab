@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 6570468089443506140}
   - component: {fileID: 6570468089443506115}
   - component: {fileID: 7290802840600063657}
+  - component: {fileID: 1284051095}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -350,6 +351,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 500
   _hitColor: {r: 1, g: 1, b: 1, a: 1}
+  _deathParticles: {fileID: 0}
+--- !u!114 &1284051095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6570468089443506112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ba64a2635c6b5241b31a61343810bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cameraShakeHitDuration: 0.15
+  _cameraShakeHitForce: 30
 --- !u!1 &6570468089948227158
 GameObject:
   m_ObjectHideFlags: 0

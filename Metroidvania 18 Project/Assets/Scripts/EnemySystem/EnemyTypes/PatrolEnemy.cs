@@ -14,13 +14,14 @@ public class PatrolEnemy : Enemy
     [Tooltip("Time the enemy will stop after reaching a patrol point.")]
     [SerializeField] private float _stopTime= 3.0f;
     [Tooltip("Acceleration of the enemy.")]
+    [Range(0.1f, 20)]
     [SerializeField] private float _acceleration = 2.0f;
     [Range(0, 10)]
     [Tooltip("Distance moved verticaly.")]
-    [SerializeField] private float _sineWaveMagnitude;
+    [SerializeField] private float _sineWaveMagnitude = 1f;
     [Range(0, 10)]
-    [Tooltip("Frecuency of the waves.")]
-    [SerializeField] private float _sineWaveFrecuency;
+    [Tooltip("Frequency of the waves.")]
+    [SerializeField] private float _sineWaveFrequency = 1f;
 
     protected override void Start()
     {
@@ -67,7 +68,7 @@ public class PatrolEnemy : Enemy
         
         Vector3 motion = Vector3.zero;
         motion.x = transform.position.x;
-        motion.y = _startPosition.y + Mathf.Sin(Time.time * _sineWaveFrecuency) * _sineWaveMagnitude;
+        motion.y = _startPosition.y + Mathf.Sin(Time.time * _sineWaveFrequency) * _sineWaveMagnitude;
         motion.z = transform.position.z;
 
         transform.position = motion;

@@ -34,7 +34,7 @@ public class SpawnerEnemy : Enemy
     [SerializeField] private DroneEnemy _enemyPrefab;
     [Tooltip("Prefab of the circle to be instantiated as the visible trigger radius.")]
     [SerializeField] private GameObject _visibleTriggerRadius;
-    [Tooltip("Ammount of times the visible trigger radius will blink when tha player is in.")]
+    [Tooltip("Number of times the visible trigger radius will blink when tha player is in.")]
     [SerializeField] private int _blinkCount = 2;
 
     protected override void Start()

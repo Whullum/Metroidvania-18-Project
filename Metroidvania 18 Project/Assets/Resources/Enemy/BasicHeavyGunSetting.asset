@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e06357cbe377854290e42c9e3bc90cf, type: 3}
   m_Name: BasicHeavyGunSetting
   m_EditorClassIdentifier: 
+  Damage: 20
   Range: 20
   RotationSpeed: 10
   FireRate: 30

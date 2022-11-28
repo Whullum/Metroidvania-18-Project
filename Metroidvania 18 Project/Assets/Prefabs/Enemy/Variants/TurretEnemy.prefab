@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28a4542303ebc594d90514e0a5df2a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 5
+  _damage: 0
   _speed: 0
   _reachedDistance: 0
   _showDebugInfo: 0

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e06357cbe377854290e42c9e3bc90cf, type: 3}
   m_Name: EnemyGunSetting
   m_EditorClassIdentifier: 
+  Damage: 5
   Range: 27
   RotationSpeed: 2
   FireRate: 10

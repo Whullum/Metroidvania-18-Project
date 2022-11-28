@@ -136,7 +136,7 @@ MonoBehaviour:
   _stopTime: 3
   _acceleration: 2.5
   _sineWaveMagnitude: 1
-  _sineWaveFrecuency: 3
+  _sineWaveFrequency: 1
 --- !u!114 &2313145805628124060
 MonoBehaviour:
   m_ObjectHideFlags: 0

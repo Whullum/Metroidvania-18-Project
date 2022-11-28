@@ -18,7 +18,7 @@ public class TurretEnemy : Enemy
     [SerializeField] private float _playerCheckTime = 0.5f;
     [Tooltip("The angle needed towards the player for the Gun to shoot.")]
     [SerializeField] private float _angleToShoot = 5.0f;
-    [Tooltip("The Enemy Gun Setting that this Turret Enemy will use to shoot the player.")]
+    [Tooltip("The Enemy Gun Setting that this Turret Enemy will use to shoot at the player.")]
     [SerializeField] private EnemyGunSetting _enemyGunSetting;
     [Tooltip("The gun GameObject. Used for rotation.")]
     [SerializeField] private Transform _gun;
@@ -145,7 +145,7 @@ public class TurretEnemy : Enemy
 
         BulletController newBullet = Instantiate(_enemyGunSetting.BulletPrefab, _shootPoint.position, _shootPoint.rotation);
 
-        newBullet.BulletDamage = _damage;
+        newBullet.BulletDamage = _enemyGunSetting.Damage;
         newBullet.transform.Rotate(0f, 0f, rndSpread);
         newBullet.LaunchBullet(newBullet.transform.right * _enemyGunSetting.BulletSpeed);
 
