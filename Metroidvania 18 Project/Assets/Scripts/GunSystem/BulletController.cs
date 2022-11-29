@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
+    /// <summary>
+    /// Ammount of damage this bullet does.
+    /// </summary>
     public int BulletDamage { get; set; }
 
     private Rigidbody2D _rBody;
@@ -13,7 +16,7 @@ public class BulletController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.TryGetComponent(out IDamageable damageable))
+        if(collision.TryGetComponent(out DamageableEntity damageable))
         {
             damageable.ReceiveDamage(BulletDamage);
         }

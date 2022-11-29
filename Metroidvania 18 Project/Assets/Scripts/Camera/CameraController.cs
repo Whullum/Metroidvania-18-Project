@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
@@ -13,6 +10,8 @@ public class CameraController : MonoBehaviour
     {
         _vCam = GetComponent<CinemachineVirtualCamera>();
         _noisePerlin = _vCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
+        StopShake();
     }
 
     private void OnEnable()
