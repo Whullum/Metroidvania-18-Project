@@ -201,6 +201,7 @@ GameObject:
   - component: {fileID: 6570468089443506115}
   - component: {fileID: 7290802840600063657}
   - component: {fileID: 1284051095}
+  - component: {fileID: 8947110643280155950}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -326,6 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39dc7459ec2098d498d2582c6ad9b821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerAudio: {fileID: 8947110643280155950}
   _movementSpeed: 700
   _gravityScale: 10
   _jumpForce: 37
@@ -366,6 +368,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cameraShakeHitDuration: 0.15
   _cameraShakeHitForce: 30
+--- !u!114 &8947110643280155950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6570468089443506112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c77d6a7aa3cd54ea407e29ec6d5ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxPlayerDoubleJump:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 33fc090d980ea9a479fbee67c5467ffe, type: 2}
+  _sfxPlayerInitialJump:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4f41fa5362b60174b9b1e2b597eee990, type: 2}
+  _sfxPlayerDash:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 44fd2bc45dc86d64fb19a7259cb0e337, type: 2}
 --- !u!1 &6570468089948227158
 GameObject:
   m_ObjectHideFlags: 0
