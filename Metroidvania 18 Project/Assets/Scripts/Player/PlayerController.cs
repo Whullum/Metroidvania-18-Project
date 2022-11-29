@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     {
         // Get the Damageable component.
         _damageable = GetComponent<DamageableEntity>();
+
+        DontDestroyOnLoad(gameObject);
     }
 
     private void OnEnable()
