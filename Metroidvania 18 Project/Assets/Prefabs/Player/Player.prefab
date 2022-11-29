@@ -336,7 +336,7 @@ MonoBehaviour:
   _dashCooldown: 1
   _groundCheck: {fileID: 6570468089948227159}
   _groundCheckRadius: 0.1
-  _showDebugInfo: 0
+  _showDebugInfo: 1
 --- !u!114 &7290802840600063657
 MonoBehaviour:
   m_ObjectHideFlags: 0
