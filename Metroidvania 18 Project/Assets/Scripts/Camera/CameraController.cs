@@ -14,6 +14,11 @@ public class CameraController : MonoBehaviour
         StopShake();
     }
 
+    private void Start()
+    {
+        SetCameraFollow();
+    }
+
     private void OnEnable()
     {
         CameraEvents.CameraShake += StartShake;
@@ -51,5 +56,14 @@ public class CameraController : MonoBehaviour
     {
         _noisePerlin.m_AmplitudeGain = 0f;
         _noisePerlin.m_FrequencyGain = 0f;
+    }
+
+    /// <summary>
+    /// Set the follow and look at properties of the cinemachine component.
+    /// </summary>
+    private void SetCameraFollow()
+    {
+        _vCam.Follow = GameManager.Instance.Player.transform;
+        _vCam.LookAt = GameManager.Instance.Player.transform;
     }
 }

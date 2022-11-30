@@ -4,19 +4,29 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 public class DoorManager
 {
+    // Doors loaded in this session.
     public static Dictionary<string, bool> _activeDoors = new Dictionary<string, bool>();
 
-    private static string _dataFolderName = "/data/";
+    // The folder name that will store game data.
+    private static string _dataFolderName = "data/";
+    // Name of the save file.
     private static string _saveName = "doorData.dat";
 
+    /// <summary>
+    /// Adds a door to the manager list.
+    /// </summary>
+    /// <param name="id">Unique ID of this door.</param>
+    /// <param name="isTraversable">Sets if the door is Traversable or not.</param>
     public static void AddDoor(string id, bool isTraversable)
     {
-        if (!_activeDoors.ContainsKey(id))
-            _activeDoors.Add(id, isTraversable);
-        else
-            _activeDoors[id] = isTraversable;
+        _activeDoors.Add(id, isTraversable);
     }
 
+    /// <summary>
+    /// Searchs for a door and if there's one it returns it.
+    /// </summary>
+    /// <param name="id">The ID of the door.</param>
+    /// <returns>DoorData containing usefull information.</returns>
     public static DoorData GetDoor(string id)
     {
         if (_activeDoors.ContainsKey(id))
@@ -29,6 +39,17 @@ public class DoorManager
         return null;
     }
 
+    public static void UpdateDoor(string id, bool isTraversable)
+    {
+        if (_activeDoors.ContainsKey(id))
+        {
+            _activeDoors[id] = isTraversable;
+        }
+    }
+
+    /// <summary>
+    /// Saves the current dictionary status to disk.
+    /// </summary>
     public static void SaveDoorData()
     {
         CheckDataFolder();
@@ -43,11 +64,6 @@ public class DoorManager
             i++;
         }
 
-        for(int j = 0; j < traveledDoors.Length; j++)
-        {
-            Debug.Log("ID: " + traveledDoors[j].ID + ". Traversable: " + traveledDoors[j].IsTraversable);
-        }
-
         string fullPath = Application.persistentDataPath + Path.AltDirectorySeparatorChar + _dataFolderName + _saveName;
 
         BinaryFormatter formatter = new BinaryFormatter();
@@ -57,14 +73,9 @@ public class DoorManager
         file.Close();
     }
 
-    public static void UpdateDoor(string id, bool isTraversable)
-    {
-        if(_activeDoors.ContainsKey(id))
-        {
-            _activeDoors[id] = isTraversable;
-        }
-    }
-
+    /// <summary>
+    /// Saves from the save file all the DoorData that was used in previous sessions.
+    /// </summary>
     public static void LoadDoorData()
     {
         CheckDataFolder();
@@ -81,6 +92,8 @@ public class DoorManager
             DoorData[] loadedDoorData = formatter.Deserialize(file) as DoorData[];
             file.Close();
 
+            _activeDoors.Clear();
+
             for (int i = 0; i < loadedDoorData.Length; i++)
                 AddDoor(loadedDoorData[i].ID, loadedDoorData[i].IsTraversable);
         }
@@ -92,6 +105,9 @@ public class DoorManager
         }
     }
 
+    /// <summary>
+    /// Checks if the data folder exits, if not, it creates a new one.
+    /// </summary>
     private static void CheckDataFolder()
     {
         if (!Directory.Exists(Application.persistentDataPath + Path.AltDirectorySeparatorChar + _dataFolderName))
@@ -100,6 +116,9 @@ public class DoorManager
         }
     }
 
+    /// <summary>
+    /// Clears all DoorData related information, deleting the save file.
+    /// </summary>
     public static void ClearDoorData()
     {
         _activeDoors.Clear();

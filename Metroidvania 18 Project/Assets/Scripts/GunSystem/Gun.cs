@@ -142,6 +142,7 @@ public class Gun : MonoBehaviour
         BulletController newBullet = Instantiate(_activeSetting.BulletPrefab, _shootPoint.position, _shootPoint.rotation).GetComponent<BulletController>();
 
         newBullet.BulletDamage = _activeSetting.Damage; // Set the bullet damage.
+        newBullet.GunSetting = _activeSetting.ID;
         newBullet.transform.Rotate(0f, 0f, spread); // Give the bullet the random generated rotation.
         newBullet.LaunchBullet(newBullet.transform.right * _activeSetting.BulletSpeed); // Launch the bullet with the Gun Setting speed.
 
