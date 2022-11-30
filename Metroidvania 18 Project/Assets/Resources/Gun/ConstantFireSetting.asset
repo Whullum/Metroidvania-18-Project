@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eea91c2ec168b542973157c9200973d, type: 3}
   m_Name: ConstantFireSetting
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 1
   Damage: 10
   MagazineSize: 50
   FireRate: 8

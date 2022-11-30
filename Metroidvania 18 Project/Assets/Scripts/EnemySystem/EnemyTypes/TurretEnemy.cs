@@ -146,6 +146,7 @@ public class TurretEnemy : Enemy
         BulletController newBullet = Instantiate(_enemyGunSetting.BulletPrefab, _shootPoint.position, _shootPoint.rotation);
 
         newBullet.BulletDamage = _enemyGunSetting.Damage;
+        newBullet.GunSetting = GunSettingID.NONE;
         newBullet.transform.Rotate(0f, 0f, rndSpread);
         newBullet.LaunchBullet(newBullet.transform.right * _enemyGunSetting.BulletSpeed);
 
