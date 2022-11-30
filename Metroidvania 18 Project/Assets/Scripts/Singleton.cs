@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Singleton<T> : MonoBehaviour where T : Component
@@ -30,12 +28,17 @@ public class Singleton<T> : MonoBehaviour where T : Component
         if(_instance == null)
         {
             _instance = this as T;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
+    }
 
-        DontDestroyOnLoad(gameObject);
+    protected virtual void OnApplicationQuit()
+    {
+        Destroy(gameObject);
+        _instance = null;
     }
 }

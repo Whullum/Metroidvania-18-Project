@@ -7,6 +7,11 @@ public class BulletController : MonoBehaviour
     /// </summary>
     public int BulletDamage { get; set; }
 
+    /// <summary>
+    /// The Gun Setting that shoot this bullet.
+    /// </summary>
+    public GunSettingID GunSetting { get; set; }
+
     private Rigidbody2D _rBody;
 
     private void Awake()

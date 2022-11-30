@@ -2,15 +2,27 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    public PlayerController Player { get; private set; }
+    /// <summary>
+    /// Unique player instance.
+    /// </summary>
+    public PlayerController Player
+    {
+        get
+        {
+            if (_player == null)
+                _player = FindObjectOfType<PlayerController>();
+
+            return _player;
+        }
+    }
+
+    private PlayerController _player;
 
     [SerializeField] private bool _isNewGame;
 
     protected override void Awake()
     {
         base.Awake();
-
-        Player = FindObjectOfType<PlayerController>();
 
         if (_isNewGame)
             NewGame();
@@ -28,8 +40,10 @@ public class GameManager : Singleton<GameManager>
         DoorManager.LoadDoorData();
     }
 
-    private void OnApplicationQuit()
+    protected override void OnApplicationQuit()
     {
         DoorManager.SaveDoorData();
+
+        base.OnApplicationQuit();
     }
 }
