@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemyGunSetting
   m_EditorClassIdentifier: 
   Damage: 5
-  Range: 27
+  Range: 30
   RotationSpeed: 2
   FireRate: 10
   BulletSpeed: 30
