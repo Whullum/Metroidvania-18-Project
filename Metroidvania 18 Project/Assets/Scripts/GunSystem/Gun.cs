@@ -19,6 +19,10 @@ public class Gun : MonoBehaviour
     [SerializeField] private List<GunSetting> _gunSettings = new List<GunSetting>();
     [SerializeField] private bool _showDebugInfo;
 
+    [Tooltip ("Player Audio script for sound effects playback")]
+    [SerializeField]
+    private PlayerAudio _playerAudio;
+
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -86,6 +90,7 @@ public class Gun : MonoBehaviour
         _currentMagazineSize = 0;
         StartCoroutine(Reload());
 
+        _playerAudio.SetWwiseSwitch(_activeSetting.WwiseSwitch);
     }
 
     /// <summary>
@@ -114,6 +119,9 @@ public class Gun : MonoBehaviour
                 CameraEvents.CameraShake?.Invoke(_activeSetting.CameraShakeDuration, _activeSetting.CameraShakeForce);
             }
             AddRecoil();
+
+            // Play gunshot sound effect
+            _playerAudio.PostWwiseEvent(_playerAudio._sfxPlayerGunShot);
         }
     }
 
@@ -129,6 +137,9 @@ public class Gun : MonoBehaviour
 
         _currentMagazineSize = _activeSetting.MagazineSize;
         _isReloading = false;
+
+        // Play reload sound effect
+        //_playerAudio.PostWwiseEvent(_playerAudio._sfxPlayerReload);
     }
 
     /// <summary>

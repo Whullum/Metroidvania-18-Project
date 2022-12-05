@@ -47,6 +47,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Gun_Reload_Switch" ID="{B558FC74-0D8B-4724-8C25-9E332F0A44B4}">
+					<ChildrenList>
+						<Action Name="" ID="{E36F6FE2-467F-4764-9C55-744E89F1C4EE}" ShortID="251424406">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Gun Reload Switch" ID="{42497974-6E27-43D9-9E68-99978B054F75}" WorkUnitID="{547BBE61-732B-43B4-867F-66A2FBD84838}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Gun_Sound_Switch" ID="{2AC4B376-43E4-4FCA-8972-17A3F47A9BAB}">
+					<ChildrenList>
+						<Action Name="" ID="{D3E84AC9-5D9B-407D-B6D3-45C9CDE69DB2}" ShortID="171484015">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Gun Sound Switch" ID="{D719DDCA-BF3D-45BA-8A1F-A2CDE72CD6DE}" WorkUnitID="{547BBE61-732B-43B4-867F-66A2FBD84838}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

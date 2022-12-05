@@ -11,16 +11,148 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="219868698">
+		<SoundBank Id="1355168291" Language="SFX" Hash="3875193530">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3291379323" Language="SFX" Hash="3806145580">
+		<SoundBank Id="3291379323" Language="SFX" Hash="2606357907">
 			<ObjectPath>\SoundBanks\Default Work Unit\TestBank</ObjectPath>
 			<ShortName>TestBank</ShortName>
 			<Path>TestBank.bnk</Path>
 			<IncludedEvents>
+				<Event Id="1921754267" Name="Play_Gun_Reload_Switch" ObjectPath="\Events\Default Work Unit\Play_Gun_Reload_Switch" DurationType="OneShot" DurationMin="0." DurationMax="1.037691">
+					<IncludedMemoryFiles>
+						<File Id="4096251" Language="SFX">
+							<ShortName>Guns, Mechanism, Shotgun, Cock, Reload, Lock 'n Load SND6290.wav</ShortName>
+							<Path>SFX\Guns, Mechanism, Shotgun, Cock, Reload, Lock 'n Load SND6290_8F42D420.wem</Path>
+						</File>
+						<File Id="12945410" Language="SFX">
+							<ShortName>Guns, Mechanism, Shotgun, Cock, Reload, Lock 'n Load SND6290.wav</ShortName>
+							<Path>SFX\Guns, Mechanism, Shotgun, Cock, Reload, Lock 'n Load SND6290_FC67476B.wem</Path>
+						</File>
+						<File Id="199070233" Language="SFX">
+							<ShortName>Guns, Mechanism, Shotgun, Cock, Reload, Lock 'n Load SND6290.wav</ShortName>
+							<Path>SFX\Guns, Mechanism, Shotgun, Cock, Reload, Lock 'n Load SND6290_CB0FDE7F.wem</Path>
+						</File>
+						<File Id="238223357" Language="SFX">
+							<ShortName>Guns, Mechanism, Shotgun, Cock, Reload, Lock 'n Load SND6290.wav</ShortName>
+							<Path>SFX\Guns, Mechanism, Shotgun, Cock, Reload, Lock 'n Load SND6290_96E10AAC.wem</Path>
+						</File>
+						<File Id="570821058" Language="SFX">
+							<ShortName>Guns, Mechanism, Air Rifle, Reload, Interior, Distant 01 SND36107.wav</ShortName>
+							<Path>SFX\Guns, Mechanism, Air Rifle, Reload, Interior, Distant 01 SND36107_7048E47A.wem</Path>
+						</File>
+						<File Id="845996659" Language="SFX">
+							<ShortName>Guns, Mechanism, Shotgun, Cock, Reload, Lock 'n Load SND6290.wav</ShortName>
+							<Path>SFX\Guns, Mechanism, Shotgun, Cock, Reload, Lock 'n Load SND6290_5498E4BF.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{4CBCB4B6-F80F-49C6-A1AB-CACE6DC9A79F}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{B3C5D712-D686-415A-9E54-3903FACF3541}">
+							<Media>
+								<File Id="4096251"/>
+								<File Id="12945410"/>
+								<File Id="199070233"/>
+								<File Id="238223357"/>
+								<File Id="845996659"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{4CBCB4B6-F80F-49C6-A1AB-CACE6DC9A79F}">
+							<Media>
+								<File Id="570821058"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="14281227" Name="Play_Gun_Sound_Switch" ObjectPath="\Events\Default Work Unit\Play_Gun_Sound_Switch" DurationType="OneShot" DurationMin="0." DurationMax="1.69284">
+					<IncludedMemoryFiles>
+						<File Id="61804052" Language="SFX">
+							<ShortName>Guns, Automatic, Assault Rifle, M4A1, Various Shots, Single, Bursts 02 SND35492.wav</ShortName>
+							<Path>SFX\Guns, Automatic, Assault Rifle, M4A1, Various Shots, Single, Bursts 02 SND35492_DAD84AA0.wem</Path>
+						</File>
+						<File Id="413466336" Language="SFX">
+							<ShortName>Guns, Shotgun, Benelli M4, Various Shots 03 SND35510.wav</ShortName>
+							<Path>SFX\Guns, Shotgun, Benelli M4, Various Shots 03 SND35510_2D11D6B9.wem</Path>
+						</File>
+						<File Id="418764854" Language="SFX">
+							<ShortName>Guns, Automatic, Assault Rifle, M4A1, Various Shots, Single, Bursts 02 SND35492.wav</ShortName>
+							<Path>SFX\Guns, Automatic, Assault Rifle, M4A1, Various Shots, Single, Bursts 02 SND35492_84880038.wem</Path>
+						</File>
+						<File Id="424228445" Language="SFX">
+							<ShortName>Guns, Shotgun, Benelli M4, Various Shots 03 SND35510.wav</ShortName>
+							<Path>SFX\Guns, Shotgun, Benelli M4, Various Shots 03 SND35510_E843BB2E.wem</Path>
+						</File>
+						<File Id="540904914" Language="SFX">
+							<ShortName>Guns, Automatic, Assault Rifle, M4A1, Various Shots, Single, Bursts 02 SND35492.wav</ShortName>
+							<Path>SFX\Guns, Automatic, Assault Rifle, M4A1, Various Shots, Single, Bursts 02 SND35492_5294655E.wem</Path>
+						</File>
+						<File Id="583004362" Language="SFX">
+							<ShortName>Guns, Automatic, Assault Rifle, M4A1, Various Shots, Single, Bursts 02 SND35492.wav</ShortName>
+							<Path>SFX\Guns, Automatic, Assault Rifle, M4A1, Various Shots, Single, Bursts 02 SND35492_A87C595A.wem</Path>
+						</File>
+						<File Id="631962134" Language="SFX">
+							<ShortName>Guns, Automatic, Assault Rifle, M4A1, Various Shots, Single, Bursts 02 SND35492.wav</ShortName>
+							<Path>SFX\Guns, Automatic, Assault Rifle, M4A1, Various Shots, Single, Bursts 02 SND35492_31A42A5F.wem</Path>
+						</File>
+						<File Id="681728305" Language="SFX">
+							<ShortName>Guns, Automatic, Assault Rifle, M4A1, Various Shots, Single, Bursts 02 SND35492.wav</ShortName>
+							<Path>SFX\Guns, Automatic, Assault Rifle, M4A1, Various Shots, Single, Bursts 02 SND35492_D9814C4B.wem</Path>
+						</File>
+						<File Id="791345700" Language="SFX">
+							<ShortName>Guns, Automatic, Assault Rifle, M4A1, Various Shots, Single, Bursts 02 SND35492.wav</ShortName>
+							<Path>SFX\Guns, Automatic, Assault Rifle, M4A1, Various Shots, Single, Bursts 02 SND35492_9845D70B.wem</Path>
+						</File>
+						<File Id="1018213999" Language="SFX">
+							<ShortName>Guns, Shotgun, Benelli M4, Various Shots 03 SND35510.wav</ShortName>
+							<Path>SFX\Guns, Shotgun, Benelli M4, Various Shots 03 SND35510_E6F53EF1.wem</Path>
+						</File>
+						<File Id="1051618347" Language="SFX">
+							<ShortName>Guns, Automatic, Assault Rifle, M4A1, Various Shots, Single, Bursts 02 SND35492.wav</ShortName>
+							<Path>SFX\Guns, Automatic, Assault Rifle, M4A1, Various Shots, Single, Bursts 02 SND35492_23FF6466.wem</Path>
+						</File>
+						<File Id="1065745365" Language="SFX">
+							<ShortName>Guns, Shotgun, Benelli M4, Various Shots 03 SND35510.wav</ShortName>
+							<Path>SFX\Guns, Shotgun, Benelli M4, Various Shots 03 SND35510_D9FB936F.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{4CBCB4B6-F80F-49C6-A1AB-CACE6DC9A79F}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{B3C5D712-D686-415A-9E54-3903FACF3541}">
+							<Media>
+								<File Id="413466336"/>
+								<File Id="424228445"/>
+								<File Id="1018213999"/>
+								<File Id="1065745365"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{5BD5545D-2424-4F8A-9D65-76A64B713E80}">
+							<Media>
+								<File Id="61804052"/>
+								<File Id="418764854"/>
+								<File Id="540904914"/>
+								<File Id="583004362"/>
+								<File Id="631962134"/>
+								<File Id="681728305"/>
+								<File Id="791345700"/>
+								<File Id="1051618347"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{4CBCB4B6-F80F-49C6-A1AB-CACE6DC9A79F}">
+							<Media>
+								<File Id="61804052"/>
+								<File Id="418764854"/>
+								<File Id="540904914"/>
+								<File Id="583004362"/>
+								<File Id="631962134"/>
+								<File Id="681728305"/>
+								<File Id="791345700"/>
+								<File Id="1051618347"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="2175711460" Name="Play_Player_Dash" ObjectPath="\Events\Default Work Unit\Play_Player_Dash" DurationType="OneShot" DurationMin="0.659252" DurationMax="0.659252">
 					<IncludedMemoryFiles>
 						<File Id="474469954" Language="SFX">
@@ -37,11 +169,11 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="421515808" Name="Play_Player_InitialJump" ObjectPath="\Events\Default Work Unit\Play_Player_InitialJump" DurationType="OneShot" DurationMin="0.220045" DurationMax="0.220045">
+				<Event Id="421515808" Name="Play_Player_InitialJump" ObjectPath="\Events\Default Work Unit\Play_Player_InitialJump" DurationType="OneShot" DurationMin="0.235297" DurationMax="0.235297">
 					<IncludedMemoryFiles>
 						<File Id="475550480" Language="SFX">
 							<ShortName>Cloth20.wav</ShortName>
-							<Path>SFX\Cloth20_3E17A857.wem</Path>
+							<Path>SFX\Cloth20_90BEF047.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -54,6 +186,16 @@
 					</IncludedMemoryFiles>
 				</Event>
 			</IncludedEvents>
+			<SwitchGroups>
+				<SwitchGroup Id="2794931643" Name="GunSetting" ObjectPath="\Switches\Default Work Unit\GunSetting" GUID="{82042CBF-6F53-4AD7-B828-FF37E9F6D27D}">
+					<Switches>
+						<Switch Id="3913713129" Name="Constant" ObjectPath="\Switches\Default Work Unit\GunSetting\Constant" GUID="{4CBCB4B6-F80F-49C6-A1AB-CACE6DC9A79F}"/>
+						<Switch Id="51683977" Name="Shotgun" ObjectPath="\Switches\Default Work Unit\GunSetting\Shotgun" GUID="{B3C5D712-D686-415A-9E54-3903FACF3541}"/>
+						<Switch Id="1655133539" Name="ArcStream" ObjectPath="\Switches\Default Work Unit\GunSetting\ArcStream" GUID="{E86BE02A-E207-4E52-82A5-F04F5B87E344}"/>
+						<Switch Id="485519469" Name="BurstFire" ObjectPath="\Switches\Default Work Unit\GunSetting\BurstFire" GUID="{5BD5545D-2424-4F8A-9D65-76A64B713E80}"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

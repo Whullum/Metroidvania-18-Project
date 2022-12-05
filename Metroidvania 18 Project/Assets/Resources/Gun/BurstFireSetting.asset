@@ -26,3 +26,9 @@ MonoBehaviour:
   CameraShakeDuration: 0.1
   CameraShakeForce: 5
   ShotgunMode: 1
+  WwiseSwitch:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0d3e54bdc6cc6bb43b7c2d60729ca751, type: 2}

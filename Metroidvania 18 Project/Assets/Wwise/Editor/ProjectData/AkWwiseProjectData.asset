@@ -94,8 +94,42 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 57952b2a51235b4ba2db658472e829c7
     GuidInternal: 
-    m_lastTime: -8585318509505185592
+    m_lastTime: -8585313417186486998
     List:
+    - name: Play_Gun_Reload_Switch
+      guid: 74fc58b58b0d24478c259e332f0a44b4
+      id: 1921754267
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 57952b2a51235b4ba2db658472e829c7
+      - ElementName: Play_Gun_Reload_Switch
+        ObjectType: 3
+        guid: 74fc58b58b0d24478c259e332f0a44b4
+      Path: Events\Default Work Unit\Play_Gun_Reload_Switch
+      maxAttenuation: 0
+      maxDuration: 1.037691
+      minDuration: 0
+    - name: Play_Gun_Sound_Switch
+      guid: 76b3c42ae443ca4f897217a3f47a9bab
+      id: 14281227
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 57952b2a51235b4ba2db658472e829c7
+      - ElementName: Play_Gun_Sound_Switch
+        ObjectType: 3
+        guid: 76b3c42ae443ca4f897217a3f47a9bab
+      Path: Events\Default Work Unit\Play_Gun_Sound_Switch
+      maxAttenuation: 0
+      maxDuration: 1.69284
+      minDuration: 0
     - name: Play_Player_Dash
       guid: 71e42bd47e8741448453dc6f2d4436c4
       id: 2175711460
@@ -145,8 +179,8 @@ MonoBehaviour:
         guid: 0d5decee602aa54cac2667d3071873f9
       Path: Events\Default Work Unit\Play_Player_InitialJump
       maxAttenuation: 0
-      maxDuration: 0.220045
-      minDuration: 0.220045
+      maxDuration: 0.235297
+      minDuration: 0.235297
     - name: Play_SFX_TestSound
       guid: d71fb43559bf3b439c4a9871b6ec3b00
       id: 3056398787
@@ -204,8 +238,90 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: fb418b64656ec34e9ca1eeafba0dcc52
     GuidInternal: 
-    m_lastTime: -8585318509501069603
-    List: []
+    m_lastTime: -8585313403221571761
+    List:
+    - name: GunSetting
+      guid: bf2c0482536fd74ab828ff37e9f6d27d
+      id: 2794931643
+      PathAndIcons:
+      - ElementName: Switches
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb418b64656ec34e9ca1eeafba0dcc52
+      - ElementName: GunSetting
+        ObjectType: 11
+        guid: bf2c0482536fd74ab828ff37e9f6d27d
+      Path: Switches\Default Work Unit\GunSetting
+      values:
+      - name: ArcStream
+        guid: 2ae06be807e2524e82a5f04f5b87e344
+        id: 1655133539
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: fb418b64656ec34e9ca1eeafba0dcc52
+        - ElementName: GunSetting
+          ObjectType: 11
+          guid: bf2c0482536fd74ab828ff37e9f6d27d
+        - ElementName: ArcStream
+          ObjectType: 10
+          guid: 2ae06be807e2524e82a5f04f5b87e344
+      - name: BurstFire
+        guid: 5d54d55b24248a4f9d6576a64b713e80
+        id: 485519469
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: fb418b64656ec34e9ca1eeafba0dcc52
+        - ElementName: GunSetting
+          ObjectType: 11
+          guid: bf2c0482536fd74ab828ff37e9f6d27d
+        - ElementName: BurstFire
+          ObjectType: 10
+          guid: 5d54d55b24248a4f9d6576a64b713e80
+      - name: Constant
+        guid: b6b4bc4c0ff8c649a1abcace6dc9a79f
+        id: 3913713129
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: fb418b64656ec34e9ca1eeafba0dcc52
+        - ElementName: GunSetting
+          ObjectType: 11
+          guid: bf2c0482536fd74ab828ff37e9f6d27d
+        - ElementName: Constant
+          ObjectType: 10
+          guid: b6b4bc4c0ff8c649a1abcace6dc9a79f
+      - name: Shotgun
+        guid: 12d7c5b386d65a419e543903facf3541
+        id: 51683977
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: fb418b64656ec34e9ca1eeafba0dcc52
+        - ElementName: GunSetting
+          ObjectType: 11
+          guid: bf2c0482536fd74ab828ff37e9f6d27d
+        - ElementName: Shotgun
+          ObjectType: 10
+          guid: 12d7c5b386d65a419e543903facf3541
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     PathAndIcons:
@@ -221,7 +337,7 @@ MonoBehaviour:
     m_lastTime: -8585318509501059603
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 05000000060000000d0000000e000000
+  ExpandedWaapiItemIds: 05000000060000000d0000000e0000001200000013000000140000000e0100000f01000010010000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

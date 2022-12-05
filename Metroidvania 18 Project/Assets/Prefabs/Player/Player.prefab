@@ -186,6 +186,7 @@ MonoBehaviour:
   _gunSettings:
   - {fileID: 11400000, guid: ea6a6fd460ae59140acd205adae369fc, type: 2}
   _showDebugInfo: 0
+  _playerAudio: {fileID: 8947110643280155950}
 --- !u!1 &6570468089443506112
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,6 +393,32 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 44fd2bc45dc86d64fb19a7259cb0e337, type: 2}
+  _sfxPlayerGunShot:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0d17ce2b9efbbfc4ab8edf81c37b8eb4, type: 2}
+  _sfxPlayerReload:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 87c2640c60f8e0244b743c8d765cbe0a, type: 2}
+  _switchGunConstantBurst:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 152b2be1bf05ba44d98fe5cc36ff0961, type: 2}
+  _switchGunShotgun:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 774fe88ed87f79444aa0a64fb90dfb72, type: 2}
+  _switchGunArcStream:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b92566238f579af4899cc1b47bbed778, type: 2}
 --- !u!1 &6570468089948227158
 GameObject:
   m_ObjectHideFlags: 0

@@ -55,4 +55,7 @@ public class GunSetting : ScriptableObject
 
     [Tooltip("If the Shotgun Mode is enabled, all the bullets inside the magazine will be launched in one click. This needs to be set with a higher Fire Rate and a lower Magazine Size so it makes the illusion of pellets coming out.")]
     public bool ShotgunMode;
+
+    [Tooltip("Wwise Switch for correct sound effect playback.")]
+    public AK.Wwise.Switch WwiseSwitch;
 }

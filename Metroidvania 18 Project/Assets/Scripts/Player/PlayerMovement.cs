@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     /// <summary>
     /// The script for controlling player audio playback - Will
     /// </summary>
+    [Tooltip ("Player Audio script for sound effects playback")]
     [SerializeField]
     private PlayerAudio _playerAudio;
 

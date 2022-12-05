@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d9ab3bcb08f304f94982958c3b306a, type: 3}
+  m_Name: 5BD5545D-2424-4F8A-9D65-76A64B713E80
+  m_EditorClassIdentifier: 
+  objectName: BurstFire
+  id: 485519469
+  guid: 5BD5545D-2424-4F8A-9D65-76A64B713E80
+  WwiseSwitchGroupReference: {fileID: 11400000, guid: 5fd9d505910d09941a78801b7cf7fdcd, type: 2}
