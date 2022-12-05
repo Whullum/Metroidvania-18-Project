@@ -13,16 +13,31 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAY_ENTITY_DAMAGED = 65612959U;
+        static const AkUniqueID PLAY_ENTITY_DEATH = 3288250068U;
         static const AkUniqueID PLAY_GUN_RELOAD_SWITCH = 1921754267U;
         static const AkUniqueID PLAY_GUN_SOUND_SWITCH = 14281227U;
         static const AkUniqueID PLAY_PLAYER_DASH = 2175711460U;
         static const AkUniqueID PLAY_PLAYER_DOUBLEJUMP = 594945751U;
         static const AkUniqueID PLAY_PLAYER_INITIALJUMP = 421515808U;
+        static const AkUniqueID PLAY_SFX_TEST_PICKUP = 3823027101U;
         static const AkUniqueID PLAY_SFX_TESTSOUND = 3056398787U;
+        static const AkUniqueID STOP_GUN_SOUND_SWITCH = 2746280817U;
     } // namespace EVENTS
 
     namespace SWITCHES
     {
+        namespace DAMAGESOUND
+        {
+            static const AkUniqueID GROUP = 3254952287U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID ENEMYDAMAGE = 1879435608U;
+                static const AkUniqueID PLAYERDAMAGE = 337406793U;
+            } // namespace SWITCH
+        } // namespace DAMAGESOUND
+
         namespace GUNSETTING
         {
             static const AkUniqueID GROUP = 2794931643U;

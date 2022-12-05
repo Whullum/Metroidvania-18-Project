@@ -125,3 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gunSetting: {fileID: 11400000, guid: cb9a9cf9baee7b64f92aa200d20f5dbe, type: 2}
+  _pickupSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 667d7f1d7ddcabc4297fbd5eaf2a31eb, type: 2}

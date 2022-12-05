@@ -1,19 +1,25 @@
 Event	ID	Name			Wwise Object Path	Notes
 	14281227	Play_Gun_Sound_Switch			\Default Work Unit\Play_Gun_Sound_Switch	
+	65612959	Play_Entity_Damaged			\Default Work Unit\Play_Entity_Damaged	
 	421515808	Play_Player_InitialJump			\Default Work Unit\Play_Player_InitialJump	
 	594945751	Play_Player_DoubleJump			\Default Work Unit\Play_Player_DoubleJump	
 	1921754267	Play_Gun_Reload_Switch			\Default Work Unit\Play_Gun_Reload_Switch	
 	2175711460	Play_Player_Dash			\Default Work Unit\Play_Player_Dash	
 	3056398787	Play_SFX_TestSound			\Default Work Unit\Play_SFX_TestSound	
+	3288250068	Play_Entity_Death			\Default Work Unit\Play_Entity_Death	
+	3823027101	Play_SFX_Test_Pickup			\Default Work Unit\Play_SFX_Test_Pickup	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
 	2794931643	GunSetting			\Default Work Unit\GunSetting	
+	3254952287	DamageSound			\Default Work Unit\DamageSound	
 
 Switch	ID	Name	Switch Group			Notes
 	51683977	Shotgun	GunSetting			
 	485519469	BurstFire	GunSetting			
 	1655133539	ArcStream	GunSetting			
 	3913713129	Constant	GunSetting			
+	337406793	PlayerDamage	DamageSound			
+	1879435608	EnemyDamage	DamageSound			
 
 Effect plug-ins	ID	Name	Type				Notes
 	2653529179	Three_Voices	Wwise Harmonizer			
@@ -42,6 +48,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	791345700	Constant Fire Shot_03	D:\Unity\Projects\Metroidvania-18-Project\Metroidvania 18 Project_WwiseProject\.cache\Mac\SFX\Guns, Automatic, Assault Rifle, M4A1, Various Shots, Single, Bursts 02 SND35492_9845D70B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player Gun\Gun Sound Switch\Constant-Burst Fire\Constant Fire Shot_03		448824
 	845996659	Shotgun Reload_04	D:\Unity\Projects\Metroidvania-18-Project\Metroidvania 18 Project_WwiseProject\.cache\Mac\SFX\Guns, Mechanism, Shotgun, Cock, Reload, Lock 'n Load SND6290_5498E4BF.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player Gun\Gun Reload Switch\Shotgun Reload\Shotgun Reload_04		167296
 	1018213999	Shotgun Shot_02	D:\Unity\Projects\Metroidvania-18-Project\Metroidvania 18 Project_WwiseProject\.cache\Mac\SFX\Guns, Shotgun, Benelli M4, Various Shots 03 SND35510_E6F53EF1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player Gun\Gun Sound Switch\Shotgun\Shotgun Shot_02		433920
+	1046961903	SFX_Test_Pickup	D:\Unity\Projects\Metroidvania-18-Project\Metroidvania 18 Project_WwiseProject\.cache\Mac\SFX\Soundly Audio\Weapons, Armor, Handling Equipment, Metal Rattle 01 SND0886 3_27BE9091.wem		\Actor-Mixer Hierarchy\Soundly\SFX_Test_Pickup		79636
 	1051618347	Constant Fire Shot_06	D:\Unity\Projects\Metroidvania-18-Project\Metroidvania 18 Project_WwiseProject\.cache\Mac\SFX\Guns, Automatic, Assault Rifle, M4A1, Various Shots, Single, Bursts 02 SND35492_23FF6466.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player Gun\Gun Sound Switch\Constant-Burst Fire\Constant Fire Shot_06		429728
 	1065745365	Shotgun Shot_03	D:\Unity\Projects\Metroidvania-18-Project\Metroidvania 18 Project_WwiseProject\.cache\Mac\SFX\Guns, Shotgun, Benelli M4, Various Shots 03 SND35510_D9FB936F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player Gun\Gun Sound Switch\Shotgun\Shotgun Shot_03		373240
 

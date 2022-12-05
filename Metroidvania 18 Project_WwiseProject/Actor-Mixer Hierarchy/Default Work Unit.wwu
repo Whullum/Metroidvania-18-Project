@@ -7,7 +7,7 @@
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-3</Value>
+								<Value>-5</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -652,17 +652,6 @@
 									</ChildrenList>
 									<ObjectLists/>
 								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Arc Stream" ID="{70B60729-7C2C-4F4C-B91F-9F4818D52850}" ShortID="84085255">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DA457F85-0823-4B4C-9306-EF125B59CA35}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5F490328-FA49-4C17-B27D-36522041969D}"/>
-										</Reference>
-									</ReferenceList>
-									<ObjectLists/>
-								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="Shotgun" ID="{26996E3A-9A13-4085-B598-880703D2B494}" ShortID="85065428">
 									<PropertyList>
 										<Property Name="Highpass" Type="int16">
@@ -818,12 +807,350 @@
 									</ChildrenList>
 									<ObjectLists/>
 								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="ArcStream" ID="{B99BA42D-5326-4275-BC98-FC272562B217}" ShortID="776419437">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DA457F85-0823-4B4C-9306-EF125B59CA35}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5F490328-FA49-4C17-B27D-36522041969D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="SFX_Test_ArcStream_05" ID="{A8C4C3A1-11E8-4AC5-A905-6E819C80E200}" ShortID="593144462">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ValueList>
+														<Value>60</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>20</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>500</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Soundly:ActiveChannels" Type="string" Value="[]"/>
+												<Property Name="Soundly:FileID" Type="string" Value="SND31694"/>
+												<Property Name="Soundly:FileName" Type="string" Value="https://2-dot-soundly-server.appspot.com/?Type=GetFile&amp;SessionID=1670263376EpC2JwUzuOlryReUvHv&amp;File=soundlyeu/1426367345Ff4sxqvM_wkFwG/SND31694/sfy_prcoGNOJPHcWhCwhmLzqWLrjeZwMvP"/>
+												<Property Name="Soundly:HandleStartTime" Type="string" Value="0"/>
+												<Property Name="Soundly:HandleStopTime" Type="string" Value="45.71884375"/>
+												<Property Name="Soundly:LibraryID" Type="string" Value="1426367345Ff4sxqvM_wkFwG"/>
+												<Property Name="Soundly:LibraryLocation" Type="string" Value="Cloud"/>
+												<Property Name="Soundly:PlaybackSpeed" Type="string" Value="1.0"/>
+												<Property Name="Soundly:ProcessList" Type="string" Value="[]"/>
+												<Property Name="Soundly:RenderedFileBitRate" Type="string" Value="3"/>
+												<Property Name="Soundly:RenderedFilePath" Type="string" Value="C:\Users\Will\Soundly Audio\Ambience, Underground, Cave, Stream, Distant SND31694.wav"/>
+												<Property Name="Soundly:RenderedFileSampleRate" Type="string" Value="96000"/>
+												<Property Name="Soundly:SelectionStartTime" Type="string" Value="0.05333333333333334"/>
+												<Property Name="Soundly:SelectionStopTime" Type="string" Value="0.3725"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-20</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DA457F85-0823-4B4C-9306-EF125B59CA35}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5F490328-FA49-4C17-B27D-36522041969D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Ambience, Underground, Cave, Stream, Distant SND31694" ID="{62463903-C927-4D0F-9B5D-DAC6CEC78877}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="Soundly:FileIDForAudioSource" Type="string" Value="SND31694"/>
+														<Property Name="TrimBegin" Type="Real64" Value="2.57047371989403"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.22212140128251"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Soundly Audio\Ambience, Underground, Cave, Stream, Distant SND31694.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="812150472"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Ambience, Underground, Cave, Stream, Distant SND31694" ID="{62463903-C927-4D0F-9B5D-DAC6CEC78877}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_Test_ArcStream_01" ID="{C3856851-4A5A-4903-92BE-2C87315DDC7B}" ShortID="362155948">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ValueList>
+														<Value>60</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>20</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>500</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Soundly:ActiveChannels" Type="string" Value="[]"/>
+												<Property Name="Soundly:FileID" Type="string" Value="SND31694"/>
+												<Property Name="Soundly:FileName" Type="string" Value="https://2-dot-soundly-server.appspot.com/?Type=GetFile&amp;SessionID=1670263376EpC2JwUzuOlryReUvHv&amp;File=soundlyeu/1426367345Ff4sxqvM_wkFwG/SND31694/sfy_prcoGNOJPHcWhCwhmLzqWLrjeZwMvP"/>
+												<Property Name="Soundly:HandleStartTime" Type="string" Value="0"/>
+												<Property Name="Soundly:HandleStopTime" Type="string" Value="45.71884375"/>
+												<Property Name="Soundly:LibraryID" Type="string" Value="1426367345Ff4sxqvM_wkFwG"/>
+												<Property Name="Soundly:LibraryLocation" Type="string" Value="Cloud"/>
+												<Property Name="Soundly:PlaybackSpeed" Type="string" Value="1.0"/>
+												<Property Name="Soundly:ProcessList" Type="string" Value="[]"/>
+												<Property Name="Soundly:RenderedFileBitRate" Type="string" Value="3"/>
+												<Property Name="Soundly:RenderedFilePath" Type="string" Value="C:\Users\Will\Soundly Audio\Ambience, Underground, Cave, Stream, Distant SND31694.wav"/>
+												<Property Name="Soundly:RenderedFileSampleRate" Type="string" Value="96000"/>
+												<Property Name="Soundly:SelectionStartTime" Type="string" Value="0.05333333333333334"/>
+												<Property Name="Soundly:SelectionStopTime" Type="string" Value="0.3725"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-20</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DA457F85-0823-4B4C-9306-EF125B59CA35}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5F490328-FA49-4C17-B27D-36522041969D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Ambience, Underground, Cave, Stream, Distant SND31694" ID="{02FD4F79-06C9-43E0-A82C-D7125157F341}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="Soundly:FileIDForAudioSource" Type="string" Value="SND31694"/>
+														<Property Name="TrimBegin" Type="Real64" Value="3.56148911909923"/>
+														<Property Name="TrimEnd" Type="Real64" Value="4.090030665342"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Soundly Audio\Ambience, Underground, Cave, Stream, Distant SND31694.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="832298526"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Ambience, Underground, Cave, Stream, Distant SND31694" ID="{02FD4F79-06C9-43E0-A82C-D7125157F341}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_Test_ArcStream_02" ID="{62BEEE2C-78E7-4961-9EFA-53D04D1268DE}" ShortID="328213641">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ValueList>
+														<Value>60</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>20</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>500</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Soundly:ActiveChannels" Type="string" Value="[]"/>
+												<Property Name="Soundly:FileID" Type="string" Value="SND31694"/>
+												<Property Name="Soundly:FileName" Type="string" Value="https://2-dot-soundly-server.appspot.com/?Type=GetFile&amp;SessionID=1670263376EpC2JwUzuOlryReUvHv&amp;File=soundlyeu/1426367345Ff4sxqvM_wkFwG/SND31694/sfy_prcoGNOJPHcWhCwhmLzqWLrjeZwMvP"/>
+												<Property Name="Soundly:HandleStartTime" Type="string" Value="0"/>
+												<Property Name="Soundly:HandleStopTime" Type="string" Value="45.71884375"/>
+												<Property Name="Soundly:LibraryID" Type="string" Value="1426367345Ff4sxqvM_wkFwG"/>
+												<Property Name="Soundly:LibraryLocation" Type="string" Value="Cloud"/>
+												<Property Name="Soundly:PlaybackSpeed" Type="string" Value="1.0"/>
+												<Property Name="Soundly:ProcessList" Type="string" Value="[]"/>
+												<Property Name="Soundly:RenderedFileBitRate" Type="string" Value="3"/>
+												<Property Name="Soundly:RenderedFilePath" Type="string" Value="C:\Users\Will\Soundly Audio\Ambience, Underground, Cave, Stream, Distant SND31694.wav"/>
+												<Property Name="Soundly:RenderedFileSampleRate" Type="string" Value="96000"/>
+												<Property Name="Soundly:SelectionStartTime" Type="string" Value="0.05333333333333334"/>
+												<Property Name="Soundly:SelectionStopTime" Type="string" Value="0.3725"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-20</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DA457F85-0823-4B4C-9306-EF125B59CA35}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5F490328-FA49-4C17-B27D-36522041969D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Ambience, Underground, Cave, Stream, Distant SND31694" ID="{7C3CD454-4C2A-4749-AB0C-71864BEDD964}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="Soundly:FileIDForAudioSource" Type="string" Value="SND31694"/>
+														<Property Name="TrimBegin" Type="Real64" Value="5.47745222422929"/>
+														<Property Name="TrimEnd" Type="Real64" Value="6.00599377047206"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Soundly Audio\Ambience, Underground, Cave, Stream, Distant SND31694.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="273170408"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Ambience, Underground, Cave, Stream, Distant SND31694" ID="{7C3CD454-4C2A-4749-AB0C-71864BEDD964}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_Test_ArcStream_03" ID="{723CDBD6-7C5D-4B26-BF0A-420CD13111EB}" ShortID="221255778">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ValueList>
+														<Value>60</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>20</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>500</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Soundly:ActiveChannels" Type="string" Value="[]"/>
+												<Property Name="Soundly:FileID" Type="string" Value="SND31694"/>
+												<Property Name="Soundly:FileName" Type="string" Value="https://2-dot-soundly-server.appspot.com/?Type=GetFile&amp;SessionID=1670263376EpC2JwUzuOlryReUvHv&amp;File=soundlyeu/1426367345Ff4sxqvM_wkFwG/SND31694/sfy_prcoGNOJPHcWhCwhmLzqWLrjeZwMvP"/>
+												<Property Name="Soundly:HandleStartTime" Type="string" Value="0"/>
+												<Property Name="Soundly:HandleStopTime" Type="string" Value="45.71884375"/>
+												<Property Name="Soundly:LibraryID" Type="string" Value="1426367345Ff4sxqvM_wkFwG"/>
+												<Property Name="Soundly:LibraryLocation" Type="string" Value="Cloud"/>
+												<Property Name="Soundly:PlaybackSpeed" Type="string" Value="1.0"/>
+												<Property Name="Soundly:ProcessList" Type="string" Value="[]"/>
+												<Property Name="Soundly:RenderedFileBitRate" Type="string" Value="3"/>
+												<Property Name="Soundly:RenderedFilePath" Type="string" Value="C:\Users\Will\Soundly Audio\Ambience, Underground, Cave, Stream, Distant SND31694.wav"/>
+												<Property Name="Soundly:RenderedFileSampleRate" Type="string" Value="96000"/>
+												<Property Name="Soundly:SelectionStartTime" Type="string" Value="0.05333333333333334"/>
+												<Property Name="Soundly:SelectionStopTime" Type="string" Value="0.3725"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-20</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DA457F85-0823-4B4C-9306-EF125B59CA35}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5F490328-FA49-4C17-B27D-36522041969D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Ambience, Underground, Cave, Stream, Distant SND31694" ID="{159268B0-CE35-4BD9-8EAF-0BE52079F80A}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="Soundly:FileIDForAudioSource" Type="string" Value="SND31694"/>
+														<Property Name="TrimBegin" Type="Real64" Value="7.5916184092004"/>
+														<Property Name="TrimEnd" Type="Real64" Value="8.05409226216282"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Soundly Audio\Ambience, Underground, Cave, Stream, Distant SND31694.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="253862492"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Ambience, Underground, Cave, Stream, Distant SND31694" ID="{159268B0-CE35-4BD9-8EAF-0BE52079F80A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_Test_ArcStream_04" ID="{02A382AB-7EFC-4CE2-8441-109CDEDB640F}" ShortID="517346671">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ValueList>
+														<Value>60</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>20</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>500</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Soundly:ActiveChannels" Type="string" Value="[]"/>
+												<Property Name="Soundly:FileID" Type="string" Value="SND31694"/>
+												<Property Name="Soundly:FileName" Type="string" Value="https://2-dot-soundly-server.appspot.com/?Type=GetFile&amp;SessionID=1670263376EpC2JwUzuOlryReUvHv&amp;File=soundlyeu/1426367345Ff4sxqvM_wkFwG/SND31694/sfy_prcoGNOJPHcWhCwhmLzqWLrjeZwMvP"/>
+												<Property Name="Soundly:HandleStartTime" Type="string" Value="0"/>
+												<Property Name="Soundly:HandleStopTime" Type="string" Value="45.71884375"/>
+												<Property Name="Soundly:LibraryID" Type="string" Value="1426367345Ff4sxqvM_wkFwG"/>
+												<Property Name="Soundly:LibraryLocation" Type="string" Value="Cloud"/>
+												<Property Name="Soundly:PlaybackSpeed" Type="string" Value="1.0"/>
+												<Property Name="Soundly:ProcessList" Type="string" Value="[]"/>
+												<Property Name="Soundly:RenderedFileBitRate" Type="string" Value="3"/>
+												<Property Name="Soundly:RenderedFilePath" Type="string" Value="C:\Users\Will\Soundly Audio\Ambience, Underground, Cave, Stream, Distant SND31694.wav"/>
+												<Property Name="Soundly:RenderedFileSampleRate" Type="string" Value="96000"/>
+												<Property Name="Soundly:SelectionStartTime" Type="string" Value="0.05333333333333334"/>
+												<Property Name="Soundly:SelectionStopTime" Type="string" Value="0.3725"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-20</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DA457F85-0823-4B4C-9306-EF125B59CA35}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5F490328-FA49-4C17-B27D-36522041969D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Ambience, Underground, Cave, Stream, Distant SND31694" ID="{A5F57775-2405-43D5-A4EF-FD2ACFB8C60C}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="Soundly:FileIDForAudioSource" Type="string" Value="SND31694"/>
+														<Property Name="TrimBegin" Type="Real64" Value="8.7147691949663"/>
+														<Property Name="TrimEnd" Type="Real64" Value="9.04510766136803"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Soundly Audio\Ambience, Underground, Cave, Stream, Distant SND31694.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1068696238"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Ambience, Underground, Cave, Stream, Distant SND31694" ID="{A5F57775-2405-43D5-A4EF-FD2ACFB8C60C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
 							</ChildrenList>
 							<ObjectLists/>
 							<GroupingInfo>
 								<GroupingBehaviorList>
 									<GroupingBehavior>
-										<ItemRef Name="Arc Stream" ID="{70B60729-7C2C-4F4C-B91F-9F4818D52850}"/>
+										<ItemRef Name="ArcStream" ID="{B99BA42D-5326-4275-BC98-FC272562B217}"/>
 									</GroupingBehavior>
 									<GroupingBehavior>
 										<ItemRef Name="Shotgun" ID="{26996E3A-9A13-4085-B598-880703D2B494}"/>
@@ -842,7 +1169,7 @@
 									<Grouping>
 										<SwitchRef Name="ArcStream" ID="{E86BE02A-E207-4E52-82A5-F04F5B87E344}"/>
 										<ItemList>
-											<ItemRef Name="Arc Stream" ID="{70B60729-7C2C-4F4C-B91F-9F4818D52850}"/>
+											<ItemRef Name="ArcStream" ID="{B99BA42D-5326-4275-BC98-FC272562B217}"/>
 										</ItemList>
 									</Grouping>
 									<Grouping>
@@ -1198,6 +1525,186 @@
 						</SwitchContainer>
 					</ChildrenList>
 				</Folder>
+				<SwitchContainer Name="Entity Damaged" ID="{C0B7E0CF-B381-41DA-BC5F-453578635A95}" ShortID="373077911">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DA457F85-0823-4B4C-9306-EF125B59CA35}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="EnemyDamage" ID="{22B90E4B-1232-4B73-8D36-6CD4ED7D0F1D}" WorkUnitID="{648B41FB-6E65-4EC3-9CA1-EEAFBA0DCC52}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5F490328-FA49-4C17-B27D-36522041969D}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="DamageSound" ID="{18933B50-84ED-40B3-A1EC-C2D25A412780}" WorkUnitID="{648B41FB-6E65-4EC3-9CA1-EEAFBA0DCC52}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="SFX_Test_Damaged" ID="{251409BE-40B3-4886-9F39-6294208E1A97}" ShortID="15290797">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>10</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>40</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>1700</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DA457F85-0823-4B4C-9306-EF125B59CA35}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5F490328-FA49-4C17-B27D-36522041969D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Grenadier_TakeDamage" ID="{148E67F8-77F4-4452-8BE3-506DC2B24EFB}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.190560693641618"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.6457514450867"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Grenadier_TakeDamage.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="64498098"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Grenadier_TakeDamage" ID="{148E67F8-77F4-4452-8BE3-506DC2B24EFB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists/>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="SFX_Test_Damaged" ID="{251409BE-40B3-4886-9F39-6294208E1A97}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="EnemyDamage" ID="{22B90E4B-1232-4B73-8D36-6CD4ED7D0F1D}"/>
+								<ItemList>
+									<ItemRef Name="SFX_Test_Damaged" ID="{251409BE-40B3-4886-9F39-6294208E1A97}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="PlayerDamage" ID="{2D1D45FC-E7B8-4408-B0CD-CBEFAFE58CC4}"/>
+								<ItemList>
+									<ItemRef Name="SFX_Test_Damaged" ID="{251409BE-40B3-4886-9F39-6294208E1A97}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
+				<SwitchContainer Name="Entity Death" ID="{5D7F7B24-EB84-4A79-AE55-48FEB7DF19CD}" ShortID="820981456">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DA457F85-0823-4B4C-9306-EF125B59CA35}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="EnemyDamage" ID="{22B90E4B-1232-4B73-8D36-6CD4ED7D0F1D}" WorkUnitID="{648B41FB-6E65-4EC3-9CA1-EEAFBA0DCC52}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5F490328-FA49-4C17-B27D-36522041969D}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="DamageSound" ID="{18933B50-84ED-40B3-A1EC-C2D25A412780}" WorkUnitID="{648B41FB-6E65-4EC3-9CA1-EEAFBA0DCC52}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="SFX_Test_Death" ID="{AF004512-DE7A-4706-9F24-2F7B44D51521}" ShortID="626309860">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>10</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>20</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>2000</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DA457F85-0823-4B4C-9306-EF125B59CA35}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5F490328-FA49-4C17-B27D-36522041969D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Grenadier_TakeDamage" ID="{E2EBCD58-1BEC-46E0-89EB-E51A56C43164}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.190560693641618"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.6457514450867"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Grenadier_TakeDamage.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="64498098"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Grenadier_TakeDamage" ID="{E2EBCD58-1BEC-46E0-89EB-E51A56C43164}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists/>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="SFX_Test_Death" ID="{AF004512-DE7A-4706-9F24-2F7B44D51521}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="EnemyDamage" ID="{22B90E4B-1232-4B73-8D36-6CD4ED7D0F1D}"/>
+								<ItemList>
+									<ItemRef Name="SFX_Test_Death" ID="{AF004512-DE7A-4706-9F24-2F7B44D51521}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="PlayerDamage" ID="{2D1D45FC-E7B8-4408-B0CD-CBEFAFE58CC4}"/>
+								<ItemList>
+									<ItemRef Name="SFX_Test_Death" ID="{AF004512-DE7A-4706-9F24-2F7B44D51521}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

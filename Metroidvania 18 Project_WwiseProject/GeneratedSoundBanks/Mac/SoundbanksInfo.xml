@@ -16,11 +16,53 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3291379323" Language="SFX" Hash="2606357907">
+		<SoundBank Id="3291379323" Language="SFX" Hash="3397042446">
 			<ObjectPath>\SoundBanks\Default Work Unit\TestBank</ObjectPath>
 			<ShortName>TestBank</ShortName>
 			<Path>TestBank.bnk</Path>
 			<IncludedEvents>
+				<Event Id="65612959" Name="Play_Entity_Damaged" ObjectPath="\Events\Default Work Unit\Play_Entity_Damaged" DurationType="OneShot" DurationMin="0.545081" DurationMax="0.545081">
+					<IncludedMemoryFiles>
+						<File Id="64498098" Language="SFX">
+							<ShortName>Grenadier_TakeDamage.wav</ShortName>
+							<Path>SFX\Grenadier_TakeDamage_8739D9E6.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{22B90E4B-1232-4B73-8D36-6CD4ED7D0F1D}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{22B90E4B-1232-4B73-8D36-6CD4ED7D0F1D}">
+							<Media>
+								<File Id="64498098"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{2D1D45FC-E7B8-4408-B0CD-CBEFAFE58CC4}">
+							<Media>
+								<File Id="64498098"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="3288250068" Name="Play_Entity_Death" ObjectPath="\Events\Default Work Unit\Play_Entity_Death" DurationType="OneShot" DurationMin="0.458356" DurationMax="0.458356">
+					<IncludedMemoryFiles>
+						<File Id="64498098" Language="SFX">
+							<ShortName>Grenadier_TakeDamage.wav</ShortName>
+							<Path>SFX\Grenadier_TakeDamage_8739D9E6.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{22B90E4B-1232-4B73-8D36-6CD4ED7D0F1D}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{22B90E4B-1232-4B73-8D36-6CD4ED7D0F1D}">
+							<Media>
+								<File Id="64498098"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{2D1D45FC-E7B8-4408-B0CD-CBEFAFE58CC4}">
+							<Media>
+								<File Id="64498098"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="1921754267" Name="Play_Gun_Reload_Switch" ObjectPath="\Events\Default Work Unit\Play_Gun_Reload_Switch" DurationType="OneShot" DurationMin="0." DurationMax="1.037691">
 					<IncludedMemoryFiles>
 						<File Id="4096251" Language="SFX">
@@ -177,6 +219,14 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="3823027101" Name="Play_SFX_Test_Pickup" ObjectPath="\Events\Default Work Unit\Play_SFX_Test_Pickup" DurationType="OneShot" DurationMin="0.439084" DurationMax="0.439084">
+					<IncludedMemoryFiles>
+						<File Id="1046961903" Language="SFX">
+							<ShortName>Soundly Audio\Weapons, Armor, Handling Equipment, Metal Rattle 01 SND0886 3.wav</ShortName>
+							<Path>SFX\Soundly Audio\Weapons, Armor, Handling Equipment, Metal Rattle 01 SND0886 3_27BE9091.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="3056398787" Name="Play_SFX_TestSound" ObjectPath="\Events\Default Work Unit\Play_SFX_TestSound" DurationType="OneShot" DurationMin="1.455191" DurationMax="1.455191">
 					<IncludedMemoryFiles>
 						<File Id="64498098" Language="SFX">
@@ -193,6 +243,12 @@
 						<Switch Id="51683977" Name="Shotgun" ObjectPath="\Switches\Default Work Unit\GunSetting\Shotgun" GUID="{B3C5D712-D686-415A-9E54-3903FACF3541}"/>
 						<Switch Id="1655133539" Name="ArcStream" ObjectPath="\Switches\Default Work Unit\GunSetting\ArcStream" GUID="{E86BE02A-E207-4E52-82A5-F04F5B87E344}"/>
 						<Switch Id="485519469" Name="BurstFire" ObjectPath="\Switches\Default Work Unit\GunSetting\BurstFire" GUID="{5BD5545D-2424-4F8A-9D65-76A64B713E80}"/>
+					</Switches>
+				</SwitchGroup>
+				<SwitchGroup Id="3254952287" Name="DamageSound" ObjectPath="\Switches\Default Work Unit\DamageSound" GUID="{18933B50-84ED-40B3-A1EC-C2D25A412780}">
+					<Switches>
+						<Switch Id="337406793" Name="PlayerDamage" ObjectPath="\Switches\Default Work Unit\DamageSound\PlayerDamage" GUID="{2D1D45FC-E7B8-4408-B0CD-CBEFAFE58CC4}"/>
+						<Switch Id="1879435608" Name="EnemyDamage" ObjectPath="\Switches\Default Work Unit\DamageSound\EnemyDamage" GUID="{22B90E4B-1232-4B73-8D36-6CD4ED7D0F1D}"/>
 					</Switches>
 				</SwitchGroup>
 			</SwitchGroups>

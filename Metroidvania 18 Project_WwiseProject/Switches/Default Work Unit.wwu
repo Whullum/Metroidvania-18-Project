@@ -11,6 +11,12 @@
 						<Switch Name="BurstFire" ID="{5BD5545D-2424-4F8A-9D65-76A64B713E80}"/>
 					</ChildrenList>
 				</SwitchGroup>
+				<SwitchGroup Name="DamageSound" ID="{18933B50-84ED-40B3-A1EC-C2D25A412780}">
+					<ChildrenList>
+						<Switch Name="PlayerDamage" ID="{2D1D45FC-E7B8-4408-B0CD-CBEFAFE58CC4}"/>
+						<Switch Name="EnemyDamage" ID="{22B90E4B-1232-4B73-8D36-6CD4ED7D0F1D}"/>
+					</ChildrenList>
+				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>

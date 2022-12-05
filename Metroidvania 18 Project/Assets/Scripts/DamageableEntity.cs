@@ -19,6 +19,14 @@ public class DamageableEntity : MonoBehaviour
     [Tooltip("Particles spawned when this entity dies.")]
     [SerializeField] private GameObject _deathParticles;
 
+    [Header ("Audio for damage sound effects")]
+    [Tooltip("Wwise switch for correct sound playback")]
+    [SerializeField] private AK.Wwise.Switch _switchEntityDamage;
+    [Tooltip("Sound the entitty makes when it is damaged.")]
+    [SerializeField] private AK.Wwise.Event _sfxPlayEntityDamaged;
+    [Tooltip("Sound the entitty makes when it dies.")]
+    [SerializeField] private AK.Wwise.Event _sfxPlayEntityDeath;
+
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -28,6 +36,7 @@ public class DamageableEntity : MonoBehaviour
     private void Start()
     {
         _currentHealth = _maxHealth;
+        _switchEntityDamage.SetValue(gameObject);
     }
 
     /// <summary>
@@ -59,6 +68,9 @@ public class DamageableEntity : MonoBehaviour
 
         _currentHealth -= damageAmmount;
 
+        // Play the damaged sound effect for this entity
+        _sfxPlayEntityDamaged.Post(gameObject);
+
         if (_currentHealth <= 0)
             Death();
     }
@@ -68,6 +80,9 @@ public class DamageableEntity : MonoBehaviour
     /// </summary>
     public virtual void Death()
     {
+        // Play the death sound effect for this entity
+        _sfxPlayEntityDeath.Post(gameObject);
+
         Instantiate(_deathParticles, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

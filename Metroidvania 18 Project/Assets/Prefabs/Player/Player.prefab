@@ -355,6 +355,20 @@ MonoBehaviour:
   _maxHealth: 500
   _hitColor: {r: 1, g: 1, b: 1, a: 1}
   _deathParticles: {fileID: 0}
+  _switchEntityDamage:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6919a48e91d883047b8a43e5a393b6a6, type: 2}
+  _sfxPlayEntityDamaged:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 08a982d24a629d04391fea5fa3173ae1, type: 2}
+  _sfxPlayEntityDeath:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: fbdffcb4353d2394296aef9d663121b6, type: 2}
 --- !u!114 &1284051095
 MonoBehaviour:
   m_ObjectHideFlags: 0

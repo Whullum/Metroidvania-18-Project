@@ -5,6 +5,7 @@ public class GunUpgrade : MonoBehaviour
     private static Gun _gun;
 
     [SerializeField] private GunSetting _gunSetting;
+    [SerializeField] private AK.Wwise.Event _pickupSound;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,6 +21,7 @@ public class GunUpgrade : MonoBehaviour
         }
 
         _gun.UpgradeGun(_gunSetting);
+        _pickupSound.Post(gameObject);
 
         Destroy(gameObject);
     }

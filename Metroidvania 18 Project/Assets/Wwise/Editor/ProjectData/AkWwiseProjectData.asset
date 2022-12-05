@@ -94,8 +94,42 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 57952b2a51235b4ba2db658472e829c7
     GuidInternal: 
-    m_lastTime: -8585313417186486998
+    m_lastTime: -8585313351061165155
     List:
+    - name: Play_Entity_Damaged
+      guid: 30cda46d495f1b46aaaf21aaaf2203d0
+      id: 65612959
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 57952b2a51235b4ba2db658472e829c7
+      - ElementName: Play_Entity_Damaged
+        ObjectType: 3
+        guid: 30cda46d495f1b46aaaf21aaaf2203d0
+      Path: Events\Default Work Unit\Play_Entity_Damaged
+      maxAttenuation: 0
+      maxDuration: 0.545081
+      minDuration: 0.545081
+    - name: Play_Entity_Death
+      guid: bd4c0fd7bbc07c428ddcc042f4e55da8
+      id: 3288250068
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 57952b2a51235b4ba2db658472e829c7
+      - ElementName: Play_Entity_Death
+        ObjectType: 3
+        guid: bd4c0fd7bbc07c428ddcc042f4e55da8
+      Path: Events\Default Work Unit\Play_Entity_Death
+      maxAttenuation: 0
+      maxDuration: 0.458356
+      minDuration: 0.458356
     - name: Play_Gun_Reload_Switch
       guid: 74fc58b58b0d24478c259e332f0a44b4
       id: 1921754267
@@ -129,7 +163,7 @@ MonoBehaviour:
       Path: Events\Default Work Unit\Play_Gun_Sound_Switch
       maxAttenuation: 0
       maxDuration: 1.69284
-      minDuration: 0
+      minDuration: 0.247474
     - name: Play_Player_Dash
       guid: 71e42bd47e8741448453dc6f2d4436c4
       id: 2175711460
@@ -181,6 +215,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.235297
       minDuration: 0.235297
+    - name: Play_SFX_Test_Pickup
+      guid: 7a660e3d87fb844cae9466259651fe9b
+      id: 3823027101
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 57952b2a51235b4ba2db658472e829c7
+      - ElementName: Play_SFX_Test_Pickup
+        ObjectType: 3
+        guid: 7a660e3d87fb844cae9466259651fe9b
+      Path: Events\Default Work Unit\Play_SFX_Test_Pickup
+      maxAttenuation: 0
+      maxDuration: 0.439084
+      minDuration: 0.439084
     - name: Play_SFX_TestSound
       guid: d71fb43559bf3b439c4a9871b6ec3b00
       id: 3056398787
@@ -198,6 +249,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 1.455191
       minDuration: 1.455191
+    - name: Stop_Gun_Sound_Switch
+      guid: 0e5af105dfff674b899748a45f7d23b1
+      id: 2746280817
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 57952b2a51235b4ba2db658472e829c7
+      - ElementName: Stop_Gun_Sound_Switch
+        ObjectType: 3
+        guid: 0e5af105dfff674b899748a45f7d23b1
+      Path: Events\Default Work Unit\Stop_Gun_Sound_Switch
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -238,8 +306,58 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: fb418b64656ec34e9ca1eeafba0dcc52
     GuidInternal: 
-    m_lastTime: -8585313403221571761
+    m_lastTime: -8585313367399067887
     List:
+    - name: DamageSound
+      guid: 503b9318ed84b340a1ecc2d25a412780
+      id: 3254952287
+      PathAndIcons:
+      - ElementName: Switches
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb418b64656ec34e9ca1eeafba0dcc52
+      - ElementName: DamageSound
+        ObjectType: 11
+        guid: 503b9318ed84b340a1ecc2d25a412780
+      Path: Switches\Default Work Unit\DamageSound
+      values:
+      - name: EnemyDamage
+        guid: 4b0eb9223212734b8d366cd4ed7d0f1d
+        id: 1879435608
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: fb418b64656ec34e9ca1eeafba0dcc52
+        - ElementName: DamageSound
+          ObjectType: 11
+          guid: 503b9318ed84b340a1ecc2d25a412780
+        - ElementName: EnemyDamage
+          ObjectType: 10
+          guid: 4b0eb9223212734b8d366cd4ed7d0f1d
+      - name: PlayerDamage
+        guid: fc451d2db8e70844b0cdcbefafe58cc4
+        id: 337406793
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: fb418b64656ec34e9ca1eeafba0dcc52
+        - ElementName: DamageSound
+          ObjectType: 11
+          guid: 503b9318ed84b340a1ecc2d25a412780
+        - ElementName: PlayerDamage
+          ObjectType: 10
+          guid: fc451d2db8e70844b0cdcbefafe58cc4
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: GunSetting
       guid: bf2c0482536fd74ab828ff37e9f6d27d
       id: 2794931643
@@ -337,7 +455,7 @@ MonoBehaviour:
     m_lastTime: -8585318509501059603
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 05000000060000000d0000000e0000001200000013000000140000000e0100000f01000010010000
+  ExpandedWaapiItemIds: 0500000006000000070000000d0000000e0000001100000012000000130000001400000015000000160000000e0100000f01000010010000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

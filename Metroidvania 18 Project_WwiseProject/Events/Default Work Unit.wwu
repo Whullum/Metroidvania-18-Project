@@ -60,7 +60,65 @@
 				</Event>
 				<Event Name="Play_Gun_Sound_Switch" ID="{2AC4B376-43E4-4FCA-8972-17A3F47A9BAB}">
 					<ChildrenList>
+						<Action Name="" ID="{8663C041-B15F-48B3-B5EC-84E1F8EF3E52}" ShortID="402085401">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="36"/>
+								<Property Name="SeekPercent" Type="Real64" Value="100"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_Test_ArcStream_05" ID="{A8C4C3A1-11E8-4AC5-A905-6E819C80E200}" WorkUnitID="{547BBE61-732B-43B4-867F-66A2FBD84838}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 						<Action Name="" ID="{D3E84AC9-5D9B-407D-B6D3-45C9CDE69DB2}" ShortID="171484015">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Gun Sound Switch" ID="{D719DDCA-BF3D-45BA-8A1F-A2CDE72CD6DE}" WorkUnitID="{547BBE61-732B-43B4-867F-66A2FBD84838}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Entity_Damaged" ID="{6DA4CD30-5F49-461B-AAAF-21AAAF2203D0}">
+					<ChildrenList>
+						<Action Name="" ID="{26C2F02C-4283-4345-85D7-249D02BD60CE}" ShortID="1016748657">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Entity Damaged" ID="{C0B7E0CF-B381-41DA-BC5F-453578635A95}" WorkUnitID="{547BBE61-732B-43B4-867F-66A2FBD84838}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Entity_Death" ID="{D70F4CBD-C0BB-427C-8DDC-C042F4E55DA8}">
+					<ChildrenList>
+						<Action Name="" ID="{7903D476-6F21-4149-B952-4435D71242CD}" ShortID="187406204">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Entity Death" ID="{5D7F7B24-EB84-4A79-AE55-48FEB7DF19CD}" WorkUnitID="{547BBE61-732B-43B4-867F-66A2FBD84838}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_SFX_Test_Pickup" ID="{3D0E667A-FB87-4C84-AE94-66259651FE9B}">
+					<ChildrenList>
+						<Action Name="" ID="{36D9ED59-6EF0-41EC-B55D-9DBA3FF64A2D}" ShortID="616294448">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_Test_Pickup" ID="{BEACA4F2-9D5B-4F2E-984E-A34716A28050}" WorkUnitID="{D5946034-07F7-4C49-AD3A-5ADBD89DEF72}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Gun_Sound_Switch" ID="{05F15A0E-FFDF-4B67-8997-48A45F7D23B1}">
+					<ChildrenList>
+						<Action Name="" ID="{9FE79622-6121-4F36-86F1-88DA6359E554}" ShortID="795193132">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Gun Sound Switch" ID="{D719DDCA-BF3D-45BA-8A1F-A2CDE72CD6DE}" WorkUnitID="{547BBE61-732B-43B4-867F-66A2FBD84838}"/>
