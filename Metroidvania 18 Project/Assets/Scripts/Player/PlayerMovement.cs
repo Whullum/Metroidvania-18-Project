@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private PlayerAudio _playerAudio;
 
+    [Tooltip ("Animator for player sprite animations")]
     public Animator _playerAnimator;
 
     [Header("Movement values")]
