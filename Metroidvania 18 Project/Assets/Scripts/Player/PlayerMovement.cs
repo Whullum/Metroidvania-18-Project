@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private PlayerAudio _playerAudio;
 
+    public Animator _playerAnimator;
+
     [Header("Movement values")]
     [Range(1, 2000)]
     [Tooltip("The character movement speed.")]
@@ -121,6 +123,8 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         _rBody.velocity = new Vector2(_horizontalMovement * _movementSpeed * Time.deltaTime, _rBody.velocity.y);
+
+        _playerAnimator.SetFloat("Speed", Mathf.Abs(_rBody.velocity.x));
     }
 
     /// <summary>
@@ -128,9 +132,9 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void Flip()
     {
-        if (_spriteRenderer.flipY && _horizontalMovement < 0f || !_spriteRenderer.flipY && _horizontalMovement > 0f)
+        if (_spriteRenderer.flipX && _horizontalMovement > 0f || !_spriteRenderer.flipX && _horizontalMovement < 0f)
         {
-            _spriteRenderer.flipY = !_spriteRenderer.flipY;
+            _spriteRenderer.flipX = !_spriteRenderer.flipX;
         }
     }
 
@@ -152,6 +156,10 @@ public class PlayerMovement : MonoBehaviour
                 _rBody.velocity = new Vector2(_rBody.velocity.x, _jumpForce);
                 _doubleJump = true;
                 _hangTimeCounter = 0;
+
+                _playerAnimator.SetBool("IsJumping", true);
+
+                _playerAnimator.SetBool("IsGrounded", false);
             }
             else
             {
@@ -162,11 +170,19 @@ public class PlayerMovement : MonoBehaviour
 
                     // Plays the double jump sound - Will
                     _playerAudio.PostWwiseEvent(_playerAudio._sfxPlayerDoubleJump);
+                    _playerAnimator.SetBool("IsJumping", true);
+
+                    _playerAnimator.SetBool("IsGrounded", false);
                 }
             }
         }
-        if (_jumpButtonReleased && _rBody.velocity.y > 0f)
-            _rBody.velocity = new Vector2(_rBody.velocity.x, _rBody.velocity.y * _jumpReleaseRatio);
+
+        if ((_jumpButtonReleased) && (_rBody.velocity.y > 0f))
+        {
+            {
+                _rBody.velocity = new Vector2(_rBody.velocity.x, _rBody.velocity.y * _jumpReleaseRatio);
+            }
+        }
     }
 
     /// <summary>
@@ -177,7 +193,11 @@ public class PlayerMovement : MonoBehaviour
         bool isGrounded = Physics2D.OverlapCircle(_groundCheck.position, _groundCheckRadius, ~LayerMask.GetMask("Player"));
 
         if (isGrounded)
+        {
             _hangTimeCounter = _hangTime;
+            _playerAnimator.SetBool("IsJumping", false);
+            _playerAnimator.SetBool("IsGrounded", true);
+        }
         else
             _hangTimeCounter -= Time.deltaTime;
     }
@@ -188,13 +208,16 @@ public class PlayerMovement : MonoBehaviour
     /// <returns></returns>
     private IEnumerator Dash()
     {
-        var dashDirection = _spriteRenderer.flipY ? 1 : -1;
+        var dashDirection = _spriteRenderer.flipX ? -1 : 1;
 
         _canDash = false;
         _isDashing = true;
+        _playerAnimator.SetBool("IsDashing", _isDashing);
 
         _rBody.gravityScale = 0f;
         _rBody.velocity = new Vector2(dashDirection * _dashForce, 0);
+        _playerAnimator.SetFloat("Speed", Mathf.Abs(_rBody.velocity.x));
+
 
         // Plays the dashing sound - Will
         _playerAudio.PostWwiseEvent(_playerAudio._sfxPlayerDash);
@@ -202,6 +225,8 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(_dashTime);
 
         _isDashing = false;
+        _playerAnimator.SetBool("IsDashing", _isDashing);
+        _playerAnimator.SetFloat("Speed", Mathf.Abs(_rBody.velocity.x));
         _rBody.gravityScale = _gravityScale;
 
         yield return new WaitForSeconds(_dashCooldown);
