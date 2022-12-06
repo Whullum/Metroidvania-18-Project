@@ -1,9 +1,14 @@
 using UnityEngine;
 
 [RequireComponent(typeof(DamageableEntity))]
+[RequireComponent(typeof(PlayerMovement))]
 public class PlayerController : MonoBehaviour
 {
+    public DamageableEntity Health { get { return _damageable; } }
+    public PlayerMovement Movement { get { return _movement; } }
+
     private DamageableEntity _damageable;
+    private PlayerMovement _movement;
 
     [Tooltip("Ammount of time the camera will shake when the player gets hit.")]
     [SerializeField] private float _cameraShakeHitDuration;
@@ -12,8 +17,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        // Get the Damageable component.
         _damageable = GetComponent<DamageableEntity>();
+        _movement = GetComponent<PlayerMovement>();
 
         DontDestroyOnLoad(gameObject);
     }

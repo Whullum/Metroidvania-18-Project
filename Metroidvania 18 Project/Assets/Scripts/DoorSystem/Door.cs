@@ -44,7 +44,6 @@ public class Door : MonoBehaviour
             _isTraversable = true; // If this was an one way door, we set is Traversable property to true, because is now unlocked.
 
             DoorManager.UpdateDoor(_ID, _isTraversable); // Update the current door state.
-            DoorManager.SaveDoorData(); // Persist the changues saving it to disk.
         }
     }
 

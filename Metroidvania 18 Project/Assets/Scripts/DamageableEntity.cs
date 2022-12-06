@@ -49,18 +49,31 @@ public class DamageableEntity : MonoBehaviour
     /// <summary>
     /// Hits this entity with a specific damage.
     /// </summary>
-    /// <param name="damageAmmount">Ammount of damage that this entity will absorb.</param>
-    public void ReceiveDamage(int damageAmmount)
+    /// <param name="damageAmount">Amount of damage that this entity will absorb.</param>
+    public void ReceiveDamage(int damageAmount)
     {
         DamageReceived?.Invoke();
 
         Invoke("EnableHitFeedback", 0f);
         Invoke("DisableHitFeedback", 0.1f);
 
-        _currentHealth -= damageAmmount;
+        _currentHealth -= damageAmount;
 
         if (_currentHealth <= 0)
             Death();
+    }
+
+    public void RestoreHealth(int amount)
+    {
+        if (_currentHealth + amount > _maxHealth)
+            _currentHealth = _maxHealth;
+        else
+            _currentHealth += amount;
+    }
+
+    public void UpgradeHealth(int amount)
+    {
+        _maxHealth += amount;
     }
 
     /// <summary>

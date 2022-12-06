@@ -32,18 +32,16 @@ public class GameManager : Singleton<GameManager>
 
     private void NewGame()
     {
-        DoorManager.ClearDoorData();
+        SaveSystem.DeleteGameData();
     }
 
     private void LoadGame()
     {
-        DoorManager.LoadDoorData();
+        SaveSystem.LoadGameData();
     }
 
-    protected override void OnApplicationQuit()
+    private void OnDisable()
     {
-        DoorManager.SaveDoorData();
-
-        base.OnApplicationQuit();
+        SaveSystem.SaveGameData();
     }
 }
