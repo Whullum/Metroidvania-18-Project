@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _doubleJump = false;
     private bool _canDash = true;
     private bool _isDashing;
+    private bool _canMove = true;
     private Rigidbody2D _rBody;
     private SpriteRenderer _spriteRenderer;
 
@@ -69,7 +70,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        CheckInput();
+        if (_canMove)
+            CheckInput();
+
         Flip();
     }
 
@@ -208,9 +211,20 @@ public class PlayerMovement : MonoBehaviour
         _canDash = true;
     }
 
+    public void SetMovement(bool toggle)
+    {
+        _canMove = toggle;
+
+        _rBody.isKinematic = !toggle;
+
+        _horizontalMovement = 0;
+        _rBody.velocity = Vector3.zero;
+        _rBody.angularVelocity = 0;
+    }
+
     private void OnDrawGizmos()
     {
-        if(!_showDebugInfo) { return; }
+        if (!_showDebugInfo) { return; }
 
         Gizmos.DrawWireSphere(_groundCheck.position, _groundCheckRadius);
     }

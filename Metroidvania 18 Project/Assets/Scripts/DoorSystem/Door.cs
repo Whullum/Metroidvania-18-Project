@@ -5,6 +5,8 @@ public class Door : MonoBehaviour
 {
     // Unique identifier of this door, composed from the doorConnection name string and the level to load string.
     private string _ID;
+    // Tells if this door is being used by the player to travel to another door.
+    private bool _isOpen = false;
     // The SceneTransition component of this scene.
     private SceneTransition _sceneTransition; 
     // Active link used at this time by the player to move between scenes.
@@ -66,8 +68,8 @@ public class Door : MonoBehaviour
     private void SetPlayer()
     {
         GameManager.Instance.Player.transform.position = _playerSpawnPoint.position;
-
         GameManager.Instance.Player.GetComponent<SpriteRenderer>().flipY = _faceRight;
+        GameManager.Instance.Player.SetInput(true);
     }
 
     /// <summary>
@@ -94,15 +96,17 @@ public class Door : MonoBehaviour
     {
         if (!_isTraversable) return;
 
-        if (collision.collider.CompareTag("Player"))
+        if (collision.collider.CompareTag("Player") && !_isOpen)
         {
+            _isOpen = true; // We set it to true so we prevent the scene loading to occur more than one time.
             _activeConnection = _doorConnection; // Set the link between the two doors to be this.
-
             _sceneTransition.FadeIn(_activeConnection.TransitionTime, _activeConnection.TransitionColor); // Starts the fade in transition.
 
             LoadScene(); // Load the desired scene.
 
             Invoke("ActivateScene", _activeConnection.TransitionTime); // When the transition time ends, the loaded scene is activated.
+
+            GameManager.Instance.Player.SetInput(false);
         }
     }
 }

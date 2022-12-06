@@ -26,8 +26,6 @@ public class GameManager : Singleton<GameManager>
 
         if (_isNewGame)
             NewGame();
-        else
-            LoadGame();
     }
 
     private void NewGame()
@@ -35,13 +33,8 @@ public class GameManager : Singleton<GameManager>
         SaveSystem.DeleteGameData();
     }
 
-    private void LoadGame()
+    public void SetPlayerInput(bool toggle)
     {
-        SaveSystem.LoadGameData();
-    }
-
-    private void OnDisable()
-    {
-        SaveSystem.SaveGameData();
+        Player.SetInput(toggle);
     }
 }

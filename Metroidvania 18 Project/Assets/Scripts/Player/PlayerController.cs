@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public DamageableEntity Health { get { return _damageable; } }
-    public PlayerMovement Movement { get { return _movement; } }
 
     private DamageableEntity _damageable;
     private PlayerMovement _movement;
+    private Gun _gun;
 
     [Tooltip("Ammount of time the camera will shake when the player gets hit.")]
     [SerializeField] private float _cameraShakeHitDuration;
@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         _damageable = GetComponent<DamageableEntity>();
         _movement = GetComponent<PlayerMovement>();
+        _gun = GetComponentInChildren<Gun>();
 
         DontDestroyOnLoad(gameObject);
     }
@@ -41,5 +42,11 @@ public class PlayerController : MonoBehaviour
     private void GetHit()
     {
         CameraEvents.CameraShake(_cameraShakeHitDuration, _cameraShakeHitForce);
+    }
+
+    public void SetInput(bool toggle)
+    {
+        _movement.SetMovement(toggle);
+        _gun.EnableInput = toggle;
     }
 }

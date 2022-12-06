@@ -48,24 +48,15 @@ public class SaveSystem
 
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream file = File.Open(_fullPath, FileMode.Open);
+        GameData gameData = formatter.Deserialize(file) as GameData;
 
-        try
-        {
-            GameData gameData= formatter.Deserialize(file) as GameData;
-            file.Close();
+        file.Close();
 
-            GameData = new GameData(gameData.DoorData, gameData.CollectedResources, gameData.ResourceWallet, gameData.DrinkInventory);
+        GameData = new GameData(gameData.DoorData, gameData.CollectedResources, gameData.ResourceWallet, gameData.DrinkInventory);
 
-            DoorManager.LoadDoorData();
-            ResourceManager.LoadResourcesData();
-            DrinkInventory.Instance.LoadDrinkData();
-        }
-        catch
-        {
-            Debug.LogErrorFormat("Failed to load file at {0}", _fullPath);
-
-            file.Close();
-        }
+        DoorManager.LoadDoorData();
+        ResourceManager.LoadResourcesData();
+        DrinkInventory.Instance.LoadDrinkData();
     }
 
     /// <summary>

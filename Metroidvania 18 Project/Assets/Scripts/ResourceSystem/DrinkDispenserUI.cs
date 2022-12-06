@@ -66,11 +66,13 @@ public class DrinkDispenserUI : MonoBehaviour
             _dispenserUI.RemoveFromClassList("drink-dispenser-out");
             _dispenserUI.AddToClassList("drink-dispenser-in");
             UpdateUI();
+            GameManager.Instance.SetPlayerInput(false);
         }
         else
         {
             _dispenserUI.RemoveFromClassList("drink-dispenser-in");
             _dispenserUI.AddToClassList("drink-dispenser-out");
+            GameManager.Instance.SetPlayerInput(true);
         }
     }
 

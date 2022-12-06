@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DrinkInventory : Singleton<DrinkInventory>
@@ -22,6 +23,12 @@ public class DrinkInventory : Singleton<DrinkInventory>
         }
     }
     private Dictionary<Drink, int> _inventory = new Dictionary<Drink, int>();
+    private TextMeshProUGUI _healthRestoreDrinkText;
+
+    private void Start()
+    {
+        UpdateUI();
+    }
 
     private void Update()
     {
@@ -60,6 +67,8 @@ public class DrinkInventory : Singleton<DrinkInventory>
             _inventory[drink] += amount;
         else
             _inventory.Add(drink, amount);
+
+        UpdateUI();
     }
 
     private void UseDrink(Drink drink)
@@ -94,12 +103,24 @@ public class DrinkInventory : Singleton<DrinkInventory>
                 }
 
                 UseDrink(usedDrink);
+                UpdateUI();
 
                 break;
 
             default:
 
                 break;
+        }
+    }
+
+    private void UpdateUI()
+    {
+        if (_healthRestoreDrinkText == null) _healthRestoreDrinkText = GetComponentInChildren<TextMeshProUGUI>();
+
+        foreach (KeyValuePair<Drink, int> drink in _inventory)
+        {
+            if (drink.Key.DrinkType == DrinkType.Health_Restore)
+                _healthRestoreDrinkText.text = drink.Value.ToString();
         }
     }
 }
