@@ -26,24 +26,15 @@ public class GameManager : Singleton<GameManager>
 
         if (_isNewGame)
             NewGame();
-        else
-            LoadGame();
     }
 
     private void NewGame()
     {
-        DoorManager.ClearDoorData();
+        SaveSystem.DeleteGameData();
     }
 
-    private void LoadGame()
+    public void SetPlayerInput(bool toggle)
     {
-        DoorManager.LoadDoorData();
-    }
-
-    protected override void OnApplicationQuit()
-    {
-        DoorManager.SaveDoorData();
-
-        base.OnApplicationQuit();
+        Player.SetInput(toggle);
     }
 }

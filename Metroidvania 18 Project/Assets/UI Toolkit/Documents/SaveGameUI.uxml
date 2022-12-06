@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/USS/SaveGameUI.uss?fileID=7433441132597879392&amp;guid=a66b832762f620841b24f0f8e3116423&amp;type=3#SaveGameUI" />
+    <ui:VisualElement name="game-saved-popup" class="game-save-out">
+        <ui:Label text="Game saved successfully!" display-tooltip-when-elided="true" name="game-saved-text" style="font-size: 25px; color: rgba(0, 0, 0, 255); -unity-font-style: normal; -unity-text-align: middle-center;" />
+    </ui:VisualElement>
+</ui:UXML>

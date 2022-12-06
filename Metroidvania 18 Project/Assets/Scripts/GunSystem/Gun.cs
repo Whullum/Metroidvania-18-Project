@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+    public bool EnableInput { get; set; } = true;
+
     private int _gunSettingIndex = 0; // Index of the current active setting.
     private bool _isReloading;
     private float _nextFire; // Time until the creation of a new bullet.
@@ -18,6 +20,8 @@ public class Gun : MonoBehaviour
     [Tooltip("List containing all the unlocked Gun Settings. Is mandatory that minimum one Gun Setting is set.")]
     [SerializeField] private List<GunSetting> _gunSettings = new List<GunSetting>();
     [SerializeField] private bool _showDebugInfo;
+    [SerializeField] private Texture2D _crosshair;
+    [SerializeField] private Texture2D _shootingCrosshair;
 
     [Tooltip ("Player Audio script for sound effects playback")]
     [SerializeField]
@@ -47,6 +51,8 @@ public class Gun : MonoBehaviour
     private void Update()
     {
         _nextFire -= Time.deltaTime * _activeSetting.FireRate;
+
+        if (!EnableInput) return;
 
         AimAtCursor();
 

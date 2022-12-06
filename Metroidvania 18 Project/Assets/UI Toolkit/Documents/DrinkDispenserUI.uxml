@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/USS/DrinkDispenser.uss?fileID=7433441132597879392&amp;guid=8e3a088d602ae424eaec7fd889fa089c&amp;type=3#DrinkDispenser" />
+    <ui:VisualElement name="root" style="flex-grow: 1; align-items: center; justify-content: center; color: rgb(255, 255, 255); -unity-font-definition: url(&apos;project://database/Assets/Fonts/Area51%20SDF.asset?fileID=11400000&amp;guid=ebe941b1ff9e5ec42abb6b443f5ee6ea&amp;type=2#Area51 SDF&apos;); -unity-font: url(&apos;project://database/Assets/Fonts/Area51.ttf?fileID=12800000&amp;guid=2decbc499101349429a40fbfd576e732&amp;type=3#Area51&apos;);">
+        <ui:VisualElement name="dispenser-ui" class="drink-dispenser-in drink-dispenser-out">
+            <ui:Label text="Drink Dispenser" display-tooltip-when-elided="true" name="title" style="font-size: 30px; white-space: normal; -unity-text-align: middle-center;" />
+            <ui:Label text="Resource: 0" display-tooltip-when-elided="true" name="resource-amount" style="font-size: 25px; white-space: normal; -unity-text-align: middle-center; margin-top: 20px;" />
+            <ui:VisualElement name="drinks-container" style="flex-grow: 1; align-items: center; justify-content: center; color: rgb(255, 255, 255);">
+                <ui:VisualElement name="drink-element" class="drink-element" style="display: none;">
+                    <ui:VisualElement name="drink-image" class="drink-image" />
+                    <ui:Label text="Drink name" display-tooltip-when-elided="true" name="drink-name" class="drink-text" />
+                    <ui:Label text="100" display-tooltip-when-elided="true" name="drink-price" style="font-size: 20px;" />
+                    <ui:Button text="Buy" display-tooltip-when-elided="true" name="drink-buy-button" class="drink-buy-button" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Button text="X" display-tooltip-when-elided="true" name="close-dispenser" class="close-dispenser-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

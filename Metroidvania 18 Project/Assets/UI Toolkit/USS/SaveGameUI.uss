@@ -1,0 +1,41 @@
+.game-save-in {
+    background-color: rgba(146, 255, 0, 255);
+    -unity-font: url('project://database/Assets/Fonts/Area51.ttf?fileID=12800000&guid=2decbc499101349429a40fbfd576e732&type=3#Area51');
+    -unity-font-definition: url('project://database/Assets/Fonts/Area51%20SDF.asset?fileID=11400000&guid=ebe941b1ff9e5ec42abb6b443f5ee6ea&type=2#Area51 SDF');
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    top: 80%;
+    transition-duration: 0.5s;
+}
+
+.game-save-out {
+    background-color: rgb(146, 255, 0);
+    -unity-font: url('project://database/Assets/Fonts/Area51.ttf?fileID=12800000&guid=2decbc499101349429a40fbfd576e732&type=3#Area51');
+    -unity-font-definition: url('project://database/Assets/Fonts/Area51%20SDF.asset?fileID=11400000&guid=ebe941b1ff9e5ec42abb6b443f5ee6ea&type=2#Area51 SDF');
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    top: 110%;
+    transition-duration: 0.5s;
+}
