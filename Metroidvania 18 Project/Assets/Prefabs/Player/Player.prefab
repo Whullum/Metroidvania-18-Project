@@ -186,6 +186,8 @@ MonoBehaviour:
   _gunSettings:
   - {fileID: 11400000, guid: ea6a6fd460ae59140acd205adae369fc, type: 2}
   _showDebugInfo: 0
+  _crosshair: {fileID: 0}
+  _shootingCrosshair: {fileID: 0}
   _playerAudio: {fileID: 8947110643280155950}
 --- !u!1 &6570468089443506112
 GameObject:
@@ -269,7 +271,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1104535377, guid: 799aa1dbb515b064f885b0b014cea7a4, type: 3}
+  m_Sprite: {fileID: -2018632085, guid: e026f38dff9b0434f804091b3f34f897, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

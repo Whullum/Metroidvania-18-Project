@@ -68,7 +68,7 @@ public class Door : MonoBehaviour
     private void SetPlayer()
     {
         GameManager.Instance.Player.transform.position = _playerSpawnPoint.position;
-        GameManager.Instance.Player.GetComponent<SpriteRenderer>().flipY = _faceRight;
+        GameManager.Instance.Player.GetComponent<SpriteRenderer>().flipX = _faceRight;
         GameManager.Instance.Player.SetInput(true);
     }
 
