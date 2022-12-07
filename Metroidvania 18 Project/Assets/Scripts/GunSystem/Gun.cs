@@ -20,9 +20,6 @@ public class Gun : MonoBehaviour
     [Tooltip("List containing all the unlocked Gun Settings. Is mandatory that minimum one Gun Setting is set.")]
     [SerializeField] private List<GunSetting> _gunSettings = new List<GunSetting>();
     [SerializeField] private bool _showDebugInfo;
-    [SerializeField] private Texture2D _crosshair;
-    [SerializeField] private Texture2D _shootingCrosshair;
-
     [Tooltip ("Player Audio script for sound effects playback")]
     [SerializeField]
     private PlayerAudio _playerAudio;

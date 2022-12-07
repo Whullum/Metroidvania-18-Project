@@ -42,6 +42,9 @@ public class PlayerController : MonoBehaviour
     private void GetHit()
     {
         CameraEvents.CameraShake(_cameraShakeHitDuration, _cameraShakeHitForce);
+
+        if (_damageable.CurrentHealth <= 0)
+            GameManager.Instance.RespawnPlayer();
     }
 
     public void SetInput(bool toggle)

@@ -8,6 +8,8 @@ public class DamageableEntity : MonoBehaviour
     /// </summary>
     public Action DamageReceived { get; set; }
 
+    public int CurrentHealth { get { return _currentHealth; } }
+
     private int _currentHealth;
     private Color _baseColor;
     private SpriteRenderer _spriteRenderer;

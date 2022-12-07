@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -36,5 +37,14 @@ public class GameManager : Singleton<GameManager>
     public void SetPlayerInput(bool toggle)
     {
         Player.SetInput(toggle);
+    }
+
+    public void RespawnPlayer()
+    {
+        PlayerSpawner.PlayerSpawned = false;
+
+        Destroy(Player.gameObject);
+
+        SceneManager.LoadScene("4,11 - 4,12");
     }
 }
