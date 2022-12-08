@@ -141,6 +141,7 @@ MonoBehaviour:
   _playerSpawnPoint: {fileID: 1509965430458707180}
   _faceRight: 0
   _isTraversable: 1
+  _doorLock: {fileID: 4648687048895516508}
 --- !u!1 &4648687048895516508
 GameObject:
   m_ObjectHideFlags: 0

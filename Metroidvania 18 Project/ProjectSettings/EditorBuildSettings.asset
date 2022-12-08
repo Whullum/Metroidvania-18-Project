@@ -50,4 +50,67 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IndoorLevel/7,21 - 5,21.unity
     guid: b89797cc65a4e424eaf692cbbaef1300
+  - enabled: 1
+    path: Assets/Scenes/OutdoorLevel/1,3-1,5.unity
+    guid: 3b09acece206d5348b7f30d39a17b9fa
+  - enabled: 1
+    path: Assets/Scenes/OutdoorLevel/2,3-4,3.unity
+    guid: 0c5ddcaedeb7a734abaefa7ddefed3f1
+  - enabled: 1
+    path: Assets/Scenes/OutdoorLevel/2,5-5,5.unity
+    guid: 0f1fe91028da2e740b7c4c2ac41cf7d9
+  - enabled: 1
+    path: Assets/Scenes/OutdoorLevel/5,3-7,4.unity
+    guid: 6219adc3375c45a4fb97f06fb9f3382b
+  - enabled: 1
+    path: Assets/Scenes/OutdoorLevel/5,8.unity
+    guid: 933ab61979500244c8a1b3c5bec0667f
+  - enabled: 1
+    path: Assets/Scenes/OutdoorLevel/6,5-6,8.unity
+    guid: b9dc09daaa12b6446bf33cf71eef7b54
+  - enabled: 1
+    path: Assets/Scenes/OutdoorLevel/7,1.unity
+    guid: 5dc6dea141804b24cb1bab1e2ba4e674
+  - enabled: 1
+    path: Assets/Scenes/OutdoorLevel/7,8-8,8.unity
+    guid: 8296193900c3f7a4cb35a79962db23e9
+  - enabled: 1
+    path: Assets/Scenes/OutdoorLevel/8,1-8,3.unity
+    guid: 4de225b4cea8470458085c4542cf1ee7
+  - enabled: 1
+    path: Assets/Scenes/OutdoorLevel/8,4-8,7.unity
+    guid: 774298e59a8421b4dbaef8efddff1bf5
+  - enabled: 1
+    path: Assets/Scenes/OutdoorLevel/9,1-11,1.unity
+    guid: 20565187a824789418bcfa46763c599a
+  - enabled: 1
+    path: Assets/Scenes/OutdoorLevel/9,4-10,4.unity
+    guid: 9d4012fbdefa7b94c97dae60b50e2b8a
+  - enabled: 1
+    path: Assets/Scenes/OutdoorLevel/9,7-10,8.unity
+    guid: ac2c5078e90aa5648adfb5c5f13813dd
+  - enabled: 1
+    path: Assets/Scenes/OutdoorLevel/11,7-12,7.unity
+    guid: 6f1f33513260ce44794a16b42b32ffa4
+  - enabled: 1
+    path: Assets/Scenes/OutdoorLevel/11,8-13,8.unity
+    guid: 6dbde37bf8022a7439a70a6fe39b115f
+  - enabled: 1
+    path: Assets/Scenes/OutdoorLevel/14,7-15,8.unity
+    guid: 9db5623f5d8403946a48ad1e25e67293
+  - enabled: 1
+    path: Assets/Scenes/OutdoorLevel/16,6-16,7.unity
+    guid: d5183fb4a82485d4faf8d9b159e446a1
+  - enabled: 1
+    path: Assets/Scenes/OutdoorLevel/16,8-16,11.unity
+    guid: 0740904d605f33a40964c487e16ba432
+  - enabled: 1
+    path: Assets/Scenes/Bar.unity
+    guid: e652b3b6a2f48dd46a3db80a1d1c8d42
+  - enabled: 1
+    path: Assets/Scenes/Level00.unity
+    guid: 676921264841efb4f8379c5fba82ff98
+  - enabled: 1
+    path: Assets/Scenes/Level01.unity
+    guid: e4f5fcef5a915aa48abe4d0167590d2e
   m_configObjects: {}

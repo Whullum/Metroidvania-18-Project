@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 166fee0559029254e9c7dde8f89e3a42, type: 3}
   m_Name: 6,8-7,8
   m_EditorClassIdentifier: 
-  TransitionTime: 0
+  TransitionTime: 1
   TransitionColor: {r: 0, g: 0, b: 0, a: 0}
