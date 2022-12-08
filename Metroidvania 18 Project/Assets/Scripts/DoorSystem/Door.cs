@@ -25,8 +25,7 @@ public class Door : MonoBehaviour
     [Tooltip("Enables this door to be used to travel between scenes. Used for creating one way doors.")]
     [SerializeField] private bool _isTraversable = true;
 
-    [Tooltip("GameObject for the door lock.")]
-    [SerializeField] private GameObject _doorLock;
+    public bool IsTraversable { get => _isTraversable; set => _isTraversable = value; }
 
     private void Awake()
     {
@@ -49,13 +48,6 @@ public class Door : MonoBehaviour
             _isTraversable = true; // If this was an one way door, we set is Traversable property to true, because is now unlocked.
 
             DoorManager.UpdateDoor(_ID, _isTraversable); // Update the current door state.
-        }
-
-        // Changes the door color to red if the door is not traverseable
-        if (!_isTraversable)
-        {
-            _doorLock.GetComponent<SpriteRenderer>().color = Color.red;
-            _doorLock.GetComponent<DoorLock>().Key = GunSettingID.NONE;
         }
     }
 

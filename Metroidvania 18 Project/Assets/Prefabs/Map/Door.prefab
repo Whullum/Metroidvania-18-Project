@@ -141,7 +141,6 @@ MonoBehaviour:
   _playerSpawnPoint: {fileID: 1509965430458707180}
   _faceRight: 0
   _isTraversable: 1
-  _doorLock: {fileID: 4648687048895516508}
 --- !u!1 &4648687048895516508
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _key: 1
+  _door: {fileID: 561263555173237383}
 --- !u!50 &4841219295252739488
 Rigidbody2D:
   serializedVersion: 4

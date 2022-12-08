@@ -5,12 +5,13 @@ public class BulletController : MonoBehaviour
     /// <summary>
     /// Ammount of damage this bullet does.
     /// </summary>
-    public int BulletDamage { get; set; }
+    public int BulletDamage;
 
     /// <summary>
     /// The Gun Setting that shoot this bullet.
     /// </summary>
-    public GunSettingID GunSetting { get; set; }
+    [SerializeField]
+    public GunSettingID GunSetting;
 
     private Rigidbody2D _rBody;
 
