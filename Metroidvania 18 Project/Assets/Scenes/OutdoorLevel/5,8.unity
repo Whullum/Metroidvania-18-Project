@@ -3862,12 +3862,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 561263555173237383, guid: 0392a0bec6d44ff4f91ddb3a234803ce, type: 3}
       propertyPath: _levelToLoad
-      value: 
+      value: 6,5-6,8
       objectReference: {fileID: 0}
     - target: {fileID: 561263555173237383, guid: 0392a0bec6d44ff4f91ddb3a234803ce, type: 3}
       propertyPath: _doorConnection
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 92e81f7a959b8454f980f2b8090aa440, type: 2}
     - target: {fileID: 1509965430458707180, guid: 0392a0bec6d44ff4f91ddb3a234803ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.13
