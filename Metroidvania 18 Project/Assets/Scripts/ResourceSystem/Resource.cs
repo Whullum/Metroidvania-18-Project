@@ -28,6 +28,7 @@ public class Resource : UniqueGUID
         particle.transform.parent = null;
         particle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
 
+        PlayerUI.Instance.UpdateUIValues();
 
         Destroy(gameObject);
     }

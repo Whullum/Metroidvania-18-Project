@@ -144,5 +144,6 @@ public class DrinkDispenserUI : MonoBehaviour
     private void UpdateUI()
     {
         _resourceAmount.text = "Total Resource: " + ResourceManager.TotalResource.ToString();
+        PlayerUI.Instance.UpdateUIValues();
     }
 }

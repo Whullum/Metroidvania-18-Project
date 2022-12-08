@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public DamageableEntity Health { get { return _damageable; } }
+    public Gun Gun { get { return _gun; } }
 
     private DamageableEntity _damageable;
     private PlayerMovement _movement;
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
     private void GetHit()
     {
         CameraEvents.CameraShake(_cameraShakeHitDuration, _cameraShakeHitForce);
+        PlayerUI.Instance.UpdateUIValues();
 
         if (_damageable.CurrentHealth <= 0)
             GameManager.Instance.RespawnPlayer();

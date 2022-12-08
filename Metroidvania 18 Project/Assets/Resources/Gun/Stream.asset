@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2eea91c2ec168b542973157c9200973d, type: 3}
-  m_Name: ConstantFireSetting
+  m_Name: Stream
   m_EditorClassIdentifier: 
-  ID: 1
-  Damage: 10
-  MagazineSize: 50
-  FireRate: 8
-  Range: 43.9
-  ReloadTime: 2
-  BulletPrefab: {fileID: 1178255456181298219, guid: 4565cb4fd3aeeea4ba7be9d1231db8be, type: 3}
-  BulletSpread: 2
-  BulletSpeed: 100
-  BulletCost: 0.7
-  Recoil: 5
-  CameraShakeDuration: 0.05
+  ID: 4
+  Damage: 5
+  MagazineSize: 100
+  FireRate: 30
+  Range: 30
+  ReloadTime: 5
+  BulletPrefab: {fileID: 1178255456181298219, guid: 2c0d35ede45ae424991266ab5e742947, type: 3}
+  BulletSpread: 0
+  BulletSpeed: 10
+  BulletCost: 0.5
+  Recoil: 0
+  CameraShakeDuration: 0
   CameraShakeForce: 0
   ShotgunMode: 0
   WwiseSwitch:
@@ -31,4 +31,4 @@ MonoBehaviour:
     valueGuidInternal: 
     groupIdInternal: 0
     groupGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 152b2be1bf05ba44d98fe5cc36ff0961, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: b92566238f579af4899cc1b47bbed778, type: 2}

@@ -5,6 +5,8 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public bool EnableInput { get; set; } = true;
+    public float CurrentMagazine { get { return _currentMagazineSize; } }
+    public GunSetting ActiveGunSetting { get { return _activeSetting; } }
 
     private int _gunSettingIndex = 0; // Index of the current active setting.
     private bool _isReloading;
@@ -71,9 +73,9 @@ public class Gun : MonoBehaviour
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
 
         if (rotZ < 89 && rotZ > -89)
-            _spriteRenderer.flipY = true;
-        else
             _spriteRenderer.flipY = false;
+        else
+            _spriteRenderer.flipY = true;
 
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
     }
@@ -94,6 +96,8 @@ public class Gun : MonoBehaviour
         StartCoroutine(Reload());
 
         _playerAudio.SetWwiseSwitch(_activeSetting.WwiseSwitch);
+
+        PlayerUI.Instance.UpdateUIValues();
     }
 
     /// <summary>
@@ -140,6 +144,7 @@ public class Gun : MonoBehaviour
 
         _currentMagazineSize = _activeSetting.MagazineSize;
         _isReloading = false;
+        PlayerUI.Instance.UpdateUIValues();
 
         // Play reload sound effect
         //_playerAudio.PostWwiseEvent(_playerAudio._sfxPlayerReload);
@@ -165,6 +170,8 @@ public class Gun : MonoBehaviour
 
         _currentMagazineSize -= _activeSetting.BulletCost;
         _nextFire = 1;
+
+        PlayerUI.Instance.UpdateUIValues();
     }
 
     /// <summary>

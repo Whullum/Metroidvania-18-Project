@@ -2640,6 +2640,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DrinkInventory
       objectReference: {fileID: 0}
+    - target: {fileID: 4350369990781849301, guid: c9ead2003be1c9f4fb091cb08a9444ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4350369990781849303, guid: c9ead2003be1c9f4fb091cb08a9444ae, type: 3}
       propertyPath: m_RootOrder
       value: 13
