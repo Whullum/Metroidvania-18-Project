@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         LoadPlayerData();
+
+        PlayerUI.Instance.UpdateUIValues();
     }
 
     private void OnEnable()

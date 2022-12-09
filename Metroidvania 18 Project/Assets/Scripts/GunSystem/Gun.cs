@@ -31,21 +31,8 @@ public class Gun : MonoBehaviour
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _playerRBody = GetComponentInParent<Rigidbody2D>();
-    }
 
-    private void Start()
-    {
-        if(_gunSettings.Count <= 0)
-        {
-            Debug.LogError("Gun ERROR : at leats one Gun Setting must be assigned.");
-
-            return;
-        }
-
-        // Set the current active setting to the first one in the list.
-        _activeSetting = _gunSettings[0];
-        // Set the magazine to the current active setting capacity.
-        _currentMagazineSize = _activeSetting.MagazineSize;
+        InitializeGun();
     }
 
     private void Update()
@@ -249,6 +236,21 @@ public class Gun : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void InitializeGun()
+    {
+        if (_gunSettings.Count <= 0)
+        {
+            Debug.LogError("Gun ERROR : at leats one Gun Setting must be assigned.");
+
+            return;
+        }
+
+        // Set the current active setting to the first one in the list.
+        _activeSetting = _gunSettings[0];
+        // Set the magazine to the current active setting capacity.
+        _currentMagazineSize = _activeSetting.MagazineSize;
     }
 
     private void OnGUI()

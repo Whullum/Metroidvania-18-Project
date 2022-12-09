@@ -19,11 +19,6 @@ public class PlayerUI : Singleton<PlayerUI>
         InitializeDocument();
     }
 
-    private void Start()
-    {
-        UpdateUIValues();
-    }
-
     private void InitializeDocument()
     {
         _root = GetComponent<UIDocument>().rootVisualElement;
