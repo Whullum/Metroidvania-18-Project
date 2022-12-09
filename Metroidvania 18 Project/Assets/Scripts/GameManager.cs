@@ -17,22 +17,9 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    public bool IsNewGame { get; set; } = true;
+
     private PlayerController _player;
-
-    [SerializeField] private bool _isNewGame;
-
-    protected override void Awake()
-    {
-        base.Awake();
-
-        if (_isNewGame)
-            NewGame();
-    }
-
-    private void NewGame()
-    {
-        SaveSystem.DeleteGameData();
-    }
 
     public void SetPlayerInput(bool toggle)
     {

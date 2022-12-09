@@ -10,10 +10,11 @@ public class PlayerSpawner : MonoBehaviour
     {
         if (PlayerSpawned) return;
 
-        SaveSystem.LoadGameData();
-
         Instantiate(_playerPrefab, transform.position, Quaternion.identity);
 
         PlayerSpawned = true;
+
+        if (!GameManager.Instance.IsNewGame)
+            SaveSystem.LoadGameData();
     }
 }

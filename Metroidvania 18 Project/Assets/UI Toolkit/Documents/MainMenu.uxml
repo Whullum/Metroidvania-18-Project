@@ -1,0 +1,20 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/USS/MainMenu.uss?fileID=7433441132597879392&amp;guid=9c49fbc92ede7bb4c84b0ee9f2a7b45a&amp;type=3#MainMenu" />
+    <ui:VisualElement name="main-menu" style="flex-grow: 1; align-items: center; -unity-font: url(&apos;project://database/Assets/Fonts/Area51.ttf?fileID=12800000&amp;guid=2decbc499101349429a40fbfd576e732&amp;type=3#Area51&apos;); -unity-font-definition: url(&apos;project://database/Assets/Fonts/Area51%20SDF.asset?fileID=11400000&amp;guid=ebe941b1ff9e5ec42abb6b443f5ee6ea&amp;type=2#Area51 SDF&apos;); justify-content: center; display: flex;">
+        <ui:Label text="Metroidvania Month 18" display-tooltip-when-elided="true" name="game-title" style="font-size: 60px; color: rgb(255, 255, 255); margin-bottom: 10%;" />
+        <ui:VisualElement name="buttons" style="justify-content: space-around; flex-grow: 0.4;">
+            <ui:Button text="New Game" display-tooltip-when-elided="true" name="new-game" class="main-menu-button" />
+            <ui:Button text="Continue" display-tooltip-when-elided="true" name="load-game" class="main-menu-button" />
+            <ui:Button text="Credits" display-tooltip-when-elided="true" name="credits" class="main-menu-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="credits-container" style="flex-grow: 1; align-items: center; justify-content: space-around; color: rgb(255, 255, 255); -unity-font: url(&apos;project://database/Assets/Fonts/Area51.ttf?fileID=12800000&amp;guid=2decbc499101349429a40fbfd576e732&amp;type=3#Area51&apos;); -unity-font-definition: url(&apos;project://database/Assets/Fonts/Area51%20SDF.asset?fileID=11400000&amp;guid=ebe941b1ff9e5ec42abb6b443f5ee6ea&amp;type=2#Area51 SDF&apos;); display: none;">
+        <ui:Label text="Metroidvania Month 18" display-tooltip-when-elided="true" name="game-tittle" style="font-size: 50px;" />
+        <ui:Label text="Team" display-tooltip-when-elided="true" name="section" style="-unity-text-align: middle-center; -unity-font-style: normal; font-size: 40px;" />
+        <ui:Label text="Bryan&#10;Will&#10;Lorenzo&#10;Valentine" display-tooltip-when-elided="true" name="names" style="font-size: 30px; -unity-text-align: middle-center;" />
+        <ui:Label text="Game Design" display-tooltip-when-elided="true" name="section" style="-unity-text-align: middle-center; -unity-font-style: italic; font-size: 30px;" />
+        <ui:Label text="Music &amp; Sound" display-tooltip-when-elided="true" name="section" style="-unity-text-align: middle-center; -unity-font-style: italic; font-size: 30px;" />
+        <ui:Label text="Art" display-tooltip-when-elided="true" name="section" style="-unity-text-align: middle-center; -unity-font-style: italic; font-size: 30px;" />
+        <ui:Label text="Programming" display-tooltip-when-elided="true" name="section" style="-unity-text-align: middle-center; -unity-font-style: italic; font-size: 30px;" />
+    </ui:VisualElement>
+</ui:UXML>

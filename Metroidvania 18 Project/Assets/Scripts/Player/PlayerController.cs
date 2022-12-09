@@ -27,7 +27,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        LoadPlayerData();
+        if(!GameManager.Instance.IsNewGame)
+            LoadPlayerData();
 
         PlayerUI.Instance.UpdateUIValues();
     }

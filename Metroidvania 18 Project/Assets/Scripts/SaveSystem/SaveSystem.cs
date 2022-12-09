@@ -16,6 +16,8 @@ public class SaveSystem
         }
     }
 
+    public static string GameDataPath { get { return Application.persistentDataPath + Path.AltDirectorySeparatorChar + _dataFolderName + _saveName; } }
+
     private static GameData _gameData;
     private static string _fullPath;
     // The folder name that will store game data.
