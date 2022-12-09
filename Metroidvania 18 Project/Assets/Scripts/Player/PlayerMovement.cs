@@ -4,25 +4,29 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
+    public bool CanDoubleJump { get { return _canDoubleJump; } set { _canDoubleJump = value; } }
+
     private float _hangTimeCounter;
     private float _horizontalMovement;
     private bool _jumpButtonPressed;
     private bool _jumpButtonReleased;
     private bool _doubleJump = false;
     private bool _canDash = true;
-    private bool _isDashing;
+    private bool _canDoubleJump;
     private bool _canMove = true;
+    private bool _isDashing;
+    private bool _isLanding;
     private Rigidbody2D _rBody;
     private SpriteRenderer _spriteRenderer;
 
     /// <summary>
     /// The script for controlling player audio playback - Will
     /// </summary>
-    [Tooltip ("Player Audio script for sound effects playback")]
+    [Tooltip("Player Audio script for sound effects playback")]
     [SerializeField]
     private PlayerAudio _playerAudio;
 
-    [Tooltip ("Animator for player sprite animations")]
+    [Tooltip("Animator for player sprite animations")]
     public Animator _playerAnimator;
 
     [Header("Movement values")]
@@ -58,6 +62,10 @@ public class PlayerMovement : MonoBehaviour
     [Range(0.01f, 0.3f)]
     [Tooltip("Radius of the ground check.")]
     [SerializeField] private float _groundCheckRadius = 0.1f;
+    [SerializeField] private ParticleSystem _landingParticles;
+    [SerializeField] private ParticleSystem _jumpParticles;
+    [SerializeField] private ParticleSystem _walkParticles;
+    [SerializeField] private TrailRenderer _dashTrail;
     [Header("Debug")]
     [SerializeField] private bool _showDebugInfo;
 
@@ -70,6 +78,8 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         InitializeRigidbody();
+
+        _dashTrail.emitting = false;
     }
 
     private void Update()
@@ -152,20 +162,21 @@ public class PlayerMovement : MonoBehaviour
         {
             _jumpButtonPressed = false;
 
-            // Plays the initial jump sound - Will
-            _playerAudio.PostWwiseEvent(_playerAudio._sfxPlayerInitialJump);
-
             if (_hangTimeCounter > 0f)
             {
                 _rBody.velocity = new Vector2(_rBody.velocity.x, _jumpForce);
                 _doubleJump = true;
                 _hangTimeCounter = 0;
 
-                _playerAnimator.SetBool("IsJumping", true);
+                // Plays the initial jump sound - Will
+                _playerAudio.PostWwiseEvent(_playerAudio._sfxPlayerInitialJump);
 
+                _playerAnimator.SetBool("IsJumping", true);
                 _playerAnimator.SetBool("IsGrounded", false);
+
+                _jumpParticles.Play();
             }
-            else
+            else if(_canDoubleJump)
             {
                 if (_doubleJump)
                 {
@@ -174,9 +185,11 @@ public class PlayerMovement : MonoBehaviour
 
                     // Plays the double jump sound - Will
                     _playerAudio.PostWwiseEvent(_playerAudio._sfxPlayerDoubleJump);
-                    _playerAnimator.SetBool("IsJumping", true);
 
+                    _playerAnimator.SetBool("IsJumping", true);
                     _playerAnimator.SetBool("IsGrounded", false);
+
+                    _jumpParticles.Play();
                 }
             }
         }
@@ -203,7 +216,18 @@ public class PlayerMovement : MonoBehaviour
             _playerAnimator.SetBool("IsGrounded", true);
         }
         else
+        {
             _hangTimeCounter -= Time.deltaTime;
+            _isLanding = false;
+            _walkParticles.Stop();
+        }
+
+        if (isGrounded && !_isLanding)
+        {
+            _landingParticles.Play();
+            _walkParticles.Play();
+            _isLanding = true;
+        }
     }
 
     /// <summary>
@@ -222,9 +246,10 @@ public class PlayerMovement : MonoBehaviour
         _rBody.velocity = new Vector2(dashDirection * _dashForce, 0);
         _playerAnimator.SetFloat("Speed", Mathf.Abs(_rBody.velocity.x));
 
-
         // Plays the dashing sound - Will
         _playerAudio.PostWwiseEvent(_playerAudio._sfxPlayerDash);
+
+        _dashTrail.emitting = true;
 
         yield return new WaitForSeconds(_dashTime);
 
@@ -232,6 +257,8 @@ public class PlayerMovement : MonoBehaviour
         _playerAnimator.SetBool("IsDashing", _isDashing);
         _playerAnimator.SetFloat("Speed", Mathf.Abs(_rBody.velocity.x));
         _rBody.gravityScale = _gravityScale;
+
+        _dashTrail.emitting = false;
 
         yield return new WaitForSeconds(_dashCooldown);
 
@@ -247,6 +274,11 @@ public class PlayerMovement : MonoBehaviour
         _horizontalMovement = 0;
         _rBody.velocity = Vector3.zero;
         _rBody.angularVelocity = 0;
+
+        if(!toggle)
+            _walkParticles.Stop();
+        else
+            _walkParticles.Play();
     }
 
     private void OnDrawGizmos()

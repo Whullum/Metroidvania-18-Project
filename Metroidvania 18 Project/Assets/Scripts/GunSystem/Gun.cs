@@ -5,6 +5,9 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public bool EnableInput { get; set; } = true;
+    public float CurrentMagazine { get { return _currentMagazineSize; } }
+    public GunSetting ActiveGunSetting { get { return _activeSetting; } }
+    public GunSetting[] UnlockedGunSettings { get { return _gunSettings.ToArray(); } }
 
     private int _gunSettingIndex = 0; // Index of the current active setting.
     private bool _isReloading;
@@ -20,9 +23,6 @@ public class Gun : MonoBehaviour
     [Tooltip("List containing all the unlocked Gun Settings. Is mandatory that minimum one Gun Setting is set.")]
     [SerializeField] private List<GunSetting> _gunSettings = new List<GunSetting>();
     [SerializeField] private bool _showDebugInfo;
-    [SerializeField] private Texture2D _crosshair;
-    [SerializeField] private Texture2D _shootingCrosshair;
-
     [Tooltip ("Player Audio script for sound effects playback")]
     [SerializeField]
     private PlayerAudio _playerAudio;
@@ -74,9 +74,9 @@ public class Gun : MonoBehaviour
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
 
         if (rotZ < 89 && rotZ > -89)
-            _spriteRenderer.flipY = true;
-        else
             _spriteRenderer.flipY = false;
+        else
+            _spriteRenderer.flipY = true;
 
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
     }
@@ -97,6 +97,8 @@ public class Gun : MonoBehaviour
         StartCoroutine(Reload());
 
         _playerAudio.SetWwiseSwitch(_activeSetting.WwiseSwitch);
+
+        PlayerUI.Instance.UpdateUIValues();
     }
 
     /// <summary>
@@ -143,6 +145,7 @@ public class Gun : MonoBehaviour
 
         _currentMagazineSize = _activeSetting.MagazineSize;
         _isReloading = false;
+        PlayerUI.Instance.UpdateUIValues();
 
         // Play reload sound effect
         //_playerAudio.PostWwiseEvent(_playerAudio._sfxPlayerReload);
@@ -168,6 +171,8 @@ public class Gun : MonoBehaviour
 
         _currentMagazineSize -= _activeSetting.BulletCost;
         _nextFire = 1;
+
+        PlayerUI.Instance.UpdateUIValues();
     }
 
     /// <summary>
@@ -213,6 +218,37 @@ public class Gun : MonoBehaviour
         }
 
         _gunSettings.Add(upgrade);
+    }
+
+    public void LoadGunSettings(string[] unlockedGunSettingsIDs)
+    {
+        GunSetting[] gunSettings = Resources.LoadAll<GunSetting>("Gun");
+
+        if(gunSettings.Length <= 0) { Debug.LogError("GUN ERROR : There are not any Gun Settings to load."); return; }
+
+        for(int i = 0; i < unlockedGunSettingsIDs.Length; i++)
+        {
+            GunSettingID unlockedSetting = (GunSettingID)System.Enum.Parse(typeof(GunSettingID), unlockedGunSettingsIDs[i]);
+
+            for(int j = 0; j < gunSettings.Length; j++)
+            {
+                bool canUpgrade = true;
+
+                foreach(GunSetting upgrade in _gunSettings)
+                {
+                    if (upgrade.ID.Equals(unlockedSetting))
+                    {
+                        canUpgrade = false;
+                        continue;
+                    }
+                }
+
+                if (canUpgrade && gunSettings[j].ID.Equals(unlockedSetting))
+                {
+                    _gunSettings.Add(gunSettings[j]);
+                }
+            }
+        }
     }
 
     private void OnGUI()

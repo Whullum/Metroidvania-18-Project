@@ -29,7 +29,9 @@ public class SaveSystem
 
         CheckDataFolder();
 
-        GameData = new GameData(DoorManager.DoorData, ResourceManager.CollectedResources, ResourceManager.TotalResource, DrinkInventory.Instance.DrinkInventoryData);
+        PlayerData player = GameManager.Instance.Player.GetPlayerData();
+
+        GameData = new GameData(DoorManager.DoorData, ResourceManager.CollectedResources, ResourceManager.TotalResource, DrinkInventory.Instance.DrinkInventoryData, player);
 
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream file = File.Create(_fullPath);
@@ -52,7 +54,7 @@ public class SaveSystem
 
         file.Close();
 
-        GameData = new GameData(gameData.DoorData, gameData.CollectedResources, gameData.ResourceWallet, gameData.DrinkInventory);
+        GameData = new GameData(gameData.DoorData, gameData.CollectedPickUps, gameData.ResourceWallet, gameData.DrinkInventory, gameData.PlayerData);
 
         DoorManager.LoadDoorData();
         ResourceManager.LoadResourcesData();

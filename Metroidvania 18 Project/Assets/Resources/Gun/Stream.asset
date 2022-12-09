@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2eea91c2ec168b542973157c9200973d, type: 3}
-  m_Name: BurstFireSetting
+  m_Name: Stream
   m_EditorClassIdentifier: 
-  ID: 3
-  Damage: 20
-  MagazineSize: 5
-  FireRate: 10
+  ID: 5
+  Damage: 5
+  MagazineSize: 100
+  FireRate: 30
   Range: 30
-  ReloadTime: 0.5
-  BulletPrefab: {fileID: 1178255456181298219, guid: 4565cb4fd3aeeea4ba7be9d1231db8be, type: 3}
-  BulletSpread: 1
-  BulletSpeed: 40
-  BulletCost: 1
-  Recoil: 40
-  CameraShakeDuration: 0.1
-  CameraShakeForce: 5
-  ShotgunMode: 1
+  ReloadTime: 5
+  BulletPrefab: {fileID: 1178255456181298219, guid: 2c0d35ede45ae424991266ab5e742947, type: 3}
+  BulletSpread: 0
+  BulletSpeed: 10
+  BulletCost: 0.5
+  Recoil: 0
+  CameraShakeDuration: 0
+  CameraShakeForce: 0
+  ShotgunMode: 0
   WwiseSwitch:
     idInternal: 0
     valueGuidInternal: 
     groupIdInternal: 0
     groupGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 0d3e54bdc6cc6bb43b7c2d60729ca751, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: b92566238f579af4899cc1b47bbed778, type: 2}

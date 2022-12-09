@@ -1,28 +1,15 @@
 using UnityEngine;
 
-public class GunUpgrade : MonoBehaviour
+public class GunUpgrade : PickUp
 {
-    private static Gun _gun;
-
     [SerializeField] private GunSetting _gunSetting;
     [SerializeField] private AK.Wwise.Event _pickupSound;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void CollectPickUp()
     {
-        if (!collision.CompareTag("Player")) { return; }
+        base.CollectPickUp();
 
-        if (_gun == null)
-            _gun = collision.GetComponentInChildren<Gun>();
-
-        if(!_gun)
-        {
-            Debug.LogError("Gun Upgrade ERROR : Cannot find player Gun.");
-            return;
-        }
-
-        _gun.UpgradeGun(_gunSetting);
+        GameManager.Instance.Player.Gun.UpgradeGun(_gunSetting);
         _pickupSound.Post(gameObject);
-
-        Destroy(gameObject);
     }
 }

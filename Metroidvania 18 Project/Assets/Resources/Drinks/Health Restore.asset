@@ -16,3 +16,4 @@ MonoBehaviour:
   DrinkImage: {fileID: 21300000, guid: 0da47866d87b63242be715ebe9127e8f, type: 3}
   Cost: 200
   HealthRestore: 50
+  _healthRestoreEffect: {fileID: 674503246513011205, guid: 71ec5f281828ff543920d52d66aeb691, type: 3}

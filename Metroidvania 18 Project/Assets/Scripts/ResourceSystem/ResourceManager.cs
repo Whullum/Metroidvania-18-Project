@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
+using UnityEditor.PackageManager;
 
 public class ResourceManager
 {
     public static int TotalResource { get { return _totalResource; } }
-    public static ResourceData[] CollectedResources
+    public static PickUpData[] CollectedResources
     {
         get
         {
@@ -13,13 +15,11 @@ public class ResourceManager
     }
 
     private static int _totalResource;
-    private static List<ResourceData> _allResources = new List<ResourceData>();
+    private static List<PickUpData> _allResources = new List<PickUpData>();
 
-    public static void CollectResource(string guid, bool collected, int amount)
+    public static void CollectPickUp(string guid, bool collected)
     {
-        UpdateResource(guid, collected);
-
-        _totalResource += amount;
+        UpdatePickUp(guid, collected);
     }
 
     public static bool SpendResource(int amount)
@@ -36,16 +36,18 @@ public class ResourceManager
         return true;
     }
 
-    public static void AddResource(string guid, bool collected)
+    public static void AddPickUp(string guid, bool collected)
     {
-        ResourceData newResource = new ResourceData(guid, collected);
+        PickUpData newPickUp = new PickUpData(guid, collected);
 
-        _allResources.Add(newResource);
+        _allResources.Add(newPickUp);
     }
 
-    private static void UpdateResource(string guid, bool collected)
+    public static void CollecResource(int amount) => _totalResource += amount;
+
+    private static void UpdatePickUp(string guid, bool collected)
     {
-        foreach (ResourceData resource in _allResources)
+        foreach (PickUpData resource in _allResources)
         {
             if (resource.GUID == guid)
             {
@@ -55,12 +57,12 @@ public class ResourceManager
         }
     }
 
-    public static ResourceData GetResource(string guid)
+    public static PickUpData GetPickUp(string guid)
     {
-        foreach (ResourceData resource in _allResources)
+        foreach (PickUpData pickUp in _allResources)
         {
-            if (resource.GUID == guid)
-                return resource;
+            if (pickUp.GUID == guid)
+                return pickUp;
         }
         return null;
     }
@@ -68,7 +70,7 @@ public class ResourceManager
     public static void LoadResourcesData()
     {
         _allResources.Clear();
-        _allResources = SaveSystem.GameData.CollectedResources.ToList();
+        _allResources = SaveSystem.GameData.CollectedPickUps.ToList();
         _totalResource = SaveSystem.GameData.ResourceWallet;
     }
 }

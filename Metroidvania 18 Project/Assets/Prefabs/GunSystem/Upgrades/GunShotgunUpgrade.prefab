@@ -30,7 +30,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 183939033845289038}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
@@ -124,8 +125,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7efe7dff8ad32f74c9bc66f8a7a684ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _GUID:
+    Value: 
+  _promptText: Shotgun Upgrade Unlocked!
+  _ui: {fileID: 4656035736006224666, guid: d5944351243c6724bb6880bd6142ce70, type: 3}
+  _rotationSpeed: 30
   _gunSetting: {fileID: 11400000, guid: d67dac94198b0254a85b620c929190ec, type: 2}
   _pickupSound:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 667d7f1d7ddcabc4297fbd5eaf2a31eb, type: 2}
+--- !u!1001 &5632377281797249673
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 707579053032343768}
+    m_Modifications:
+    - target: {fileID: 5523456965456169671, guid: 72009c6ac3064ab478304e9674a5701c, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5523456965456169671, guid: 72009c6ac3064ab478304e9674a5701c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5523456965456169671, guid: 72009c6ac3064ab478304e9674a5701c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5523456965456169671, guid: 72009c6ac3064ab478304e9674a5701c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5523456965456169671, guid: 72009c6ac3064ab478304e9674a5701c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5523456965456169671, guid: 72009c6ac3064ab478304e9674a5701c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5523456965456169671, guid: 72009c6ac3064ab478304e9674a5701c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5523456965456169671, guid: 72009c6ac3064ab478304e9674a5701c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5523456965456169671, guid: 72009c6ac3064ab478304e9674a5701c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5523456965456169671, guid: 72009c6ac3064ab478304e9674a5701c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5523456965456169671, guid: 72009c6ac3064ab478304e9674a5701c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5523456965456169672, guid: 72009c6ac3064ab478304e9674a5701c, type: 3}
+      propertyPath: m_Name
+      value: PickUpParticles
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 72009c6ac3064ab478304e9674a5701c, type: 3}
+--- !u!4 &183939033845289038 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5523456965456169671, guid: 72009c6ac3064ab478304e9674a5701c, type: 3}
+  m_PrefabInstance: {fileID: 5632377281797249673}
+  m_PrefabAsset: {fileID: 0}

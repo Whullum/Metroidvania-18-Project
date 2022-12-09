@@ -4,10 +4,11 @@ using UnityEngine;
 public class HealthRestoreDrink : Drink
 {
     public int HealthRestore;
+    public ParticleSystem _healthRestoreEffect;
 
     public override void UseDrink()
     {
         GameManager.Instance.Player.Health.RestoreHealth(HealthRestore);
-        Debug.Log("Player health restore");
+        Instantiate(_healthRestoreEffect, GameManager.Instance.Player.transform.position, Quaternion.identity).transform.parent = GameManager.Instance.Player.transform;
     }
 }

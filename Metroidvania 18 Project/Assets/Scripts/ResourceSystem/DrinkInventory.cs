@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class DrinkInventory : Singleton<DrinkInventory>
@@ -23,12 +22,6 @@ public class DrinkInventory : Singleton<DrinkInventory>
         }
     }
     private Dictionary<Drink, int> _inventory = new Dictionary<Drink, int>();
-    private TextMeshProUGUI _healthRestoreDrinkText;
-
-    private void Start()
-    {
-        UpdateUI();
-    }
 
     private void Update()
     {
@@ -48,15 +41,15 @@ public class DrinkInventory : Singleton<DrinkInventory>
         {
             AddDrink(drinks[i], 0);
         }
-
+        
         for (int i = 0; i < SaveSystem.GameData.DrinkInventory.Length; i++)
         {
             DrinkType drinkType = (DrinkType)System.Enum.Parse(typeof(DrinkType), SaveSystem.GameData.DrinkInventory[i].DrinkType);
-
+            
             for (int j = 0; j < drinks.Length; j++)
             {
-                if (drinkType == drinks[j].DrinkType)
-                    AddDrink(drinks[j], SaveSystem.GameData.DrinkInventory[i].Amount);
+                if (drinkType == drinks[j].DrinkType)                   
+                    AddDrink(drinks[j], SaveSystem.GameData.DrinkInventory[i].Amount);     
             }
         }
     }
@@ -67,16 +60,16 @@ public class DrinkInventory : Singleton<DrinkInventory>
             _inventory[drink] += amount;
         else
             _inventory.Add(drink, amount);
-
-        UpdateUI();
     }
 
-    private void UseDrink(Drink drink)
+    private void SpendDrink(Drink drink)
     {
         if (drink == null) return;
 
         if (_inventory.ContainsKey(drink))
             _inventory[drink] -= 1;
+
+        PlayerUI.Instance.UpdateUIValues();
     }
 
     private void UseDrink(DrinkType type)
@@ -102,8 +95,7 @@ public class DrinkInventory : Singleton<DrinkInventory>
                     }
                 }
 
-                UseDrink(usedDrink);
-                UpdateUI();
+                SpendDrink(usedDrink);
 
                 break;
 
@@ -113,14 +105,18 @@ public class DrinkInventory : Singleton<DrinkInventory>
         }
     }
 
-    private void UpdateUI()
+    /// <summary>
+    /// Return the total amount of drinks of one type.
+    /// </summary>
+    /// <param name="type">Type of drink to search for.</param>
+    /// <returns>The total drink of selected type. Return -1 if drink does not exits.</returns>
+    public int GetTotalDrink(DrinkType type)
     {
-        if (_healthRestoreDrinkText == null) _healthRestoreDrinkText = GetComponentInChildren<TextMeshProUGUI>();
-
         foreach (KeyValuePair<Drink, int> drink in _inventory)
         {
-            if (drink.Key.DrinkType == DrinkType.Health_Restore)
-                _healthRestoreDrinkText.text = drink.Value.ToString();
+            if (drink.Key.DrinkType == type)
+                return drink.Value;
         }
+        return -1;
     }
 }
