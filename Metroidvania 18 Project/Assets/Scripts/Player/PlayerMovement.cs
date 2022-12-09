@@ -4,14 +4,17 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
+    public bool CanDoubleJump { get { return _canDoubleJump; } set { _canDoubleJump = value; } }
+
     private float _hangTimeCounter;
     private float _horizontalMovement;
     private bool _jumpButtonPressed;
     private bool _jumpButtonReleased;
     private bool _doubleJump = false;
     private bool _canDash = true;
-    private bool _isDashing;
+    private bool _canDoubleJump;
     private bool _canMove = true;
+    private bool _isDashing;
     private bool _isLanding;
     private Rigidbody2D _rBody;
     private SpriteRenderer _spriteRenderer;
@@ -173,7 +176,7 @@ public class PlayerMovement : MonoBehaviour
 
                 _jumpParticles.Play();
             }
-            else
+            else if(_canDoubleJump)
             {
                 if (_doubleJump)
                 {

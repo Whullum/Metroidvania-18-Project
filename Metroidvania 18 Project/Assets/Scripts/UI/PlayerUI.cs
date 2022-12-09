@@ -42,7 +42,6 @@ public class PlayerUI : Singleton<PlayerUI>
         SetHealth();
         SetResources();
         SetGun();
-        
     }
 
     private void SetHealth()

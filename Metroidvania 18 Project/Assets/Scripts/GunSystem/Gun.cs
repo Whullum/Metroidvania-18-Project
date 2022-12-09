@@ -7,6 +7,7 @@ public class Gun : MonoBehaviour
     public bool EnableInput { get; set; } = true;
     public float CurrentMagazine { get { return _currentMagazineSize; } }
     public GunSetting ActiveGunSetting { get { return _activeSetting; } }
+    public GunSetting[] UnlockedGunSettings { get { return _gunSettings.ToArray(); } }
 
     private int _gunSettingIndex = 0; // Index of the current active setting.
     private bool _isReloading;
@@ -217,6 +218,37 @@ public class Gun : MonoBehaviour
         }
 
         _gunSettings.Add(upgrade);
+    }
+
+    public void LoadGunSettings(string[] unlockedGunSettingsIDs)
+    {
+        GunSetting[] gunSettings = Resources.LoadAll<GunSetting>("Gun");
+
+        if(gunSettings.Length <= 0) { Debug.LogError("GUN ERROR : There are not any Gun Settings to load."); return; }
+
+        for(int i = 0; i < unlockedGunSettingsIDs.Length; i++)
+        {
+            GunSettingID unlockedSetting = (GunSettingID)System.Enum.Parse(typeof(GunSettingID), unlockedGunSettingsIDs[i]);
+
+            for(int j = 0; j < gunSettings.Length; j++)
+            {
+                bool canUpgrade = true;
+
+                foreach(GunSetting upgrade in _gunSettings)
+                {
+                    if (upgrade.ID.Equals(unlockedSetting))
+                    {
+                        canUpgrade = false;
+                        continue;
+                    }
+                }
+
+                if (canUpgrade && gunSettings[j].ID.Equals(unlockedSetting))
+                {
+                    _gunSettings.Add(gunSettings[j]);
+                }
+            }
+        }
     }
 
     private void OnGUI()

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ResourceGlow
+  m_Name: DoubleJumpPickup_Mat
   m_Shader: {fileID: -6465566751694194690, guid: eb88c01525176e24f96e4db1c0df24ee, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -45,5 +45,5 @@ Material:
     m_Colors:
     - _Color: {r: 4.5650954, g: 0, b: 7.129739, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
-    - _Emission_Color: {r: 0, g: 32, b: 0, a: 0}
+    - _Emission_Color: {r: 0, g: 2.9960785, b: 0.03137255, a: 0}
   m_BuildTextureStacks: []

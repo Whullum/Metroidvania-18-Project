@@ -26,11 +26,7 @@ public class DrinkInventory : Singleton<DrinkInventory>
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
             UseDrink(DrinkType.Health_Restore);
-            Debug.Log("sdsdsd");
-        }
-            
     }
 
     public void LoadDrinkData()
@@ -83,12 +79,11 @@ public class DrinkInventory : Singleton<DrinkInventory>
             case DrinkType.Health_Restore:
 
                 Drink usedDrink = null;
-                Debug.Log("dentro");
+
                 foreach (KeyValuePair<Drink, int> drink in _inventory)
                 {
                     if (drink.Key.DrinkType == type)
                     {
-                        Debug.Log("dentro2");
                         if (drink.Value > 0)
                         {
                             drink.Key.UseDrink();

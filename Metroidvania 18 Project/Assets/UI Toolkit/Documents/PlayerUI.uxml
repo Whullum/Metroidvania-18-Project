@@ -2,30 +2,30 @@
     <ui:VisualElement name="player-info" style="flex-direction: row; justify-content: space-between; -unity-font: url(&apos;project://database/Assets/Fonts/Area51.ttf?fileID=12800000&amp;guid=2decbc499101349429a40fbfd576e732&amp;type=3#Area51&apos;); -unity-font-definition: url(&apos;project://database/Assets/Fonts/Area51%20SDF.asset?fileID=11400000&amp;guid=ebe941b1ff9e5ec42abb6b443f5ee6ea&amp;type=2#Area51 SDF&apos;); margin-left: 1%; margin-top: 1%; margin-right: 1%; color: rgb(255, 255, 255); flex-grow: 0.1;">
         <ui:VisualElement name="health-and-resource" style="flex-grow: 0.4; width: 20%;">
             <ui:VisualElement name="health" style="flex-grow: 1;">
-                <ui:VisualElement name="health-bar-border" style="border-left-color: rgb(163, 0, 0); border-right-color: rgb(163, 0, 0); border-top-color: rgb(163, 0, 0); border-bottom-color: rgb(163, 0, 0); border-left-width: 7px; border-right-width: 7px; border-top-width: 7px; border-bottom-width: 7px; border-top-left-radius: 3px; border-bottom-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; flex-grow: 1; justify-content: center;">
-                    <ui:VisualElement name="health-progress" style="background-color: rgb(255, 0, 0); flex-grow: 1;" />
-                    <ui:Label text="500" display-tooltip-when-elided="true" name="health-text" style="position: absolute; left: 45%; font-size: 30px; color: rgb(255, 255, 255);" />
+                <ui:VisualElement name="health-bar-border" style="border-left-color: rgb(159, 0, 0); border-right-color: rgb(159, 0, 0); border-top-color: rgb(159, 0, 0); border-bottom-color: rgb(159, 0, 0); border-left-width: 5px; border-right-width: 5px; border-top-width: 5px; border-bottom-width: 5px; border-top-left-radius: 3px; border-bottom-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; flex-grow: 1; justify-content: center;">
+                    <ui:VisualElement name="health-progress" style="background-color: rgb(255, 0, 0); flex-grow: 1; width: 0;" />
+                    <ui:Label text="0" display-tooltip-when-elided="true" name="health-text" style="position: absolute; left: 45%; font-size: 30px; color: rgb(255, 255, 255);" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="resource-drinks" style="flex-direction: row; margin-top: 1%;">
                 <ui:VisualElement name="drink-container" style="flex-direction: row; align-items: center; margin-right: 50px;">
                     <ui:VisualElement name="drink-image" style="width: 56px; height: 56px; background-image: url(&apos;project://database/Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/character_Mode@3x.png?fileID=2800000&amp;guid=dcea51d6065d64246aeec467afeff684&amp;type=3#character_Mode@3x&apos;);" />
-                    <ui:Label text="20" display-tooltip-when-elided="true" name="drink-text" style="padding-left: 5px; font-size: 30px;" />
+                    <ui:Label text="0" display-tooltip-when-elided="true" name="drink-text" style="padding-left: 5px; font-size: 30px;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="resource-container" style="flex-direction: row; align-items: center;">
                     <ui:VisualElement name="resource-image" style="width: 56px; height: 56px; background-image: url(&apos;project://database/Packages/com.unity.collab-proxy/Editor/Collaborate/Assets/Icons/added-file-light@2x.png?fileID=2800000&amp;guid=ec2e3aa6d0ab8ce4eac29b56d65d61d5&amp;type=3#added-file-light@2x&apos;);" />
-                    <ui:Label text="20" display-tooltip-when-elided="true" name="resource-text" style="padding-left: 5px; font-size: 30px;" />
+                    <ui:Label text="0" display-tooltip-when-elided="true" name="resource-text" style="padding-left: 5px; font-size: 30px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="gun-setting" style="flex-direction: row; flex-grow: 0; width: 30%; align-items: center; justify-content: space-around;">
             <ui:VisualElement name="gunImage" style="background-image: url(&apos;project://database/Assets/Art/Player/Beer%20Tap%20Cannon+ARMs.png?fileID=2800000&amp;guid=874070ac476a8e1419d63bc88014c94d&amp;type=3#Beer Tap Cannon+ARMs&apos;); width: 64px; height: 64px; margin-right: 2%;" />
             <ui:VisualElement name="gun-info" style="flex-grow: 1; justify-content: space-around; align-items: stretch;">
-                <ui:VisualElement name="magazine-progress-bar-border" style="border-left-color: rgb(0, 173, 173); border-right-color: rgb(0, 173, 173); border-top-color: rgb(0, 173, 173); border-bottom-color: rgb(0, 173, 173); border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-top-left-radius: 3px; border-bottom-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; flex-grow: 0.3; justify-content: center; margin-bottom: 10px;">
-                    <ui:VisualElement name="magazine-progress" style="background-color: rgb(0, 255, 255); flex-grow: 1;" />
-                    <ui:Label text="50&#x9;" display-tooltip-when-elided="true" name="magazine-ammo-text" style="position: absolute; left: 45%; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; font-size: 20px;" />
+                <ui:VisualElement name="magazine-progress-bar-border" style="border-left-color: rgb(0, 142, 142); border-right-color: rgb(0, 142, 142); border-top-color: rgb(0, 142, 142); border-bottom-color: rgb(0, 142, 142); border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-top-left-radius: 3px; border-bottom-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; flex-grow: 0.3; justify-content: center; margin-bottom: 10px;">
+                    <ui:VisualElement name="magazine-progress" style="background-color: rgb(0, 255, 255); flex-grow: 1; width: 0;" />
+                    <ui:Label text="0" display-tooltip-when-elided="true" name="magazine-ammo-text" style="position: absolute; left: 45%; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; font-size: 20px;" />
                 </ui:VisualElement>
-                <ui:Label text="Constant Fire" display-tooltip-when-elided="true" name="gun-setting-text" style="flex-shrink: 1; -unity-text-align: middle-left; font-size: 25px;" />
+                <ui:Label text="Fire Mode" display-tooltip-when-elided="true" name="gun-setting-text" style="flex-shrink: 1; -unity-text-align: middle-left; font-size: 25px;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

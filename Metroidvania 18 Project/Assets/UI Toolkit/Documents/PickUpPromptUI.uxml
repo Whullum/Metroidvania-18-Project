@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/USS/PickUpPromptUI.uss?fileID=7433441132597879392&amp;guid=486a4cb360cd2c842bc7c3ff31e3fa7d&amp;type=3#PickUpPromptUI" />
+    <ui:VisualElement name="prompt-container" class="prompt-in" style="display: flex;">
+        <ui:Label text="Prompt Text!" display-tooltip-when-elided="true" name="prompt-text" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; font-size: 25px;" />
+    </ui:VisualElement>
+</ui:UXML>

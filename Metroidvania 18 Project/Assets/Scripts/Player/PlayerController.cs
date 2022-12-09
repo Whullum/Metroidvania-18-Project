@@ -25,6 +25,11 @@ public class PlayerController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void Start()
+    {
+        LoadPlayerData();
+    }
+
     private void OnEnable()
     {
         //Subscribe the GetHit method to the Damageable Hit Event.
@@ -53,5 +58,31 @@ public class PlayerController : MonoBehaviour
     {
         _movement.SetMovement(toggle);
         _gun.EnableInput = toggle;
+    }
+
+    public PlayerData GetPlayerData()
+    {
+        string[] unlockedGunSettings = new string[_gun.UnlockedGunSettings.Length];
+
+        for(int i = 0; i < _gun.UnlockedGunSettings.Length; i++)
+            unlockedGunSettings[i] = _gun.UnlockedGunSettings[i].ID.ToString();
+
+        return new PlayerData(_damageable.MaxHealth, _damageable.CurrentHealth, unlockedGunSettings, _movement.CanDoubleJump);
+    }
+
+    public void UnlockDoubleJump()
+    {
+        _movement.CanDoubleJump = true;
+    }
+
+    private void LoadPlayerData()
+    {
+        PlayerData player = SaveSystem.GameData.PlayerData;
+
+        _damageable.MaxHealth = player.MaxHealth;
+        _damageable.CurrentHealth = player.CurrentHealth;
+        _movement.CanDoubleJump = player.DoubleJump;
+
+        _gun.LoadGunSettings(player.UnlockedGunSettings);
     }
 }
