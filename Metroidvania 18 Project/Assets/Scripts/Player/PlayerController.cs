@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(DamageableEntity))]
@@ -7,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public DamageableEntity Health { get { return _damageable; } }
     public Gun Gun { get { return _gun; } }
 
+    private bool _isDeath;
     private DamageableEntity _damageable;
     private PlayerMovement _movement;
     private Gun _gun;
@@ -15,6 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _cameraShakeHitDuration;
     [Tooltip("Ammount of force applied to the camera shake when the player gets hit.")]
     [SerializeField] private float _cameraShakeHitForce;
+    [SerializeField] private GameObject _gameOverPrefab;
 
     private void Awake()
     {
@@ -27,10 +30,13 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        if(!GameManager.Instance.IsNewGame)
+        if (!GameManager.Instance.IsNewGame)
             LoadPlayerData();
 
         PlayerUI.Instance.UpdateUIValues();
+        PlayerUI.Instance.EnablePlayerUI();
+
+        _damageable.IsPlayer = true;
     }
 
     private void OnEnable()
@@ -50,11 +56,18 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void GetHit()
     {
-        CameraEvents.CameraShake(_cameraShakeHitDuration, _cameraShakeHitForce);
-        PlayerUI.Instance.UpdateUIValues();
-
-        if (_damageable.CurrentHealth <= 0)
-            GameManager.Instance.RespawnPlayer();
+        if (_damageable.CurrentHealth <= 0 && !_isDeath)
+        {
+            PlayerUI.Instance.DisablePlayerUI();
+            GameManager.Instance.SetPlayerInput(false);
+            _isDeath = true;
+            GameManager.Instance.StartCoroutine(RespawnPlayer());
+        }
+        if(!_isDeath || _damageable.CurrentHealth >= 0)
+        {
+            CameraEvents.CameraShake(_cameraShakeHitDuration, _cameraShakeHitForce);
+            PlayerUI.Instance.UpdateUIValues();
+        }
     }
 
     public void SetInput(bool toggle)
@@ -67,7 +80,7 @@ public class PlayerController : MonoBehaviour
     {
         string[] unlockedGunSettings = new string[_gun.UnlockedGunSettings.Length];
 
-        for(int i = 0; i < _gun.UnlockedGunSettings.Length; i++)
+        for (int i = 0; i < _gun.UnlockedGunSettings.Length; i++)
             unlockedGunSettings[i] = _gun.UnlockedGunSettings[i].ID.ToString();
 
         return new PlayerData(_damageable.MaxHealth, _damageable.CurrentHealth, unlockedGunSettings, _movement.CanDoubleJump);
@@ -87,5 +100,18 @@ public class PlayerController : MonoBehaviour
         _movement.CanDoubleJump = player.DoubleJump;
 
         _gun.LoadGunSettings(player.UnlockedGunSettings);
+    }
+
+    private IEnumerator RespawnPlayer()
+    {
+        Instantiate(_gameOverPrefab);
+
+        yield return new WaitForSeconds(1f);
+
+        FindObjectOfType<SceneTransition>().FadeIn(2, Color.black);
+
+        yield return new WaitForSeconds(3f);
+
+        GameManager.Instance.RespawnPlayer();
     }
 }

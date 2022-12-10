@@ -98,7 +98,7 @@ public class DrinkDispenserUI : MonoBehaviour
             newDrinkName.AddToClassList("drink-text");
 
             Label newDrinkCost = new Label(_drinks[i].Cost.ToString());
-            newDrinkName.AddToClassList("drink-text");
+            newDrinkCost.AddToClassList("buy-text");
 
             Button newDrinkBuyButton = new Button();
             newDrinkBuyButton.text = "Craft Drink";
@@ -141,8 +141,27 @@ public class DrinkDispenserUI : MonoBehaviour
         }
     }
 
+    private void UpdateBuyButtons()
+    {
+        _dispenserUI.Query(className: "drink-buy-button")
+            .ForEach((element) =>
+            {
+                for(int i = 0; i < _drinks.Length; i++)
+                {
+                    if(element.name == _drinks[i].DrinkType.ToString())
+                    {
+                        if (_drinks[i].Cost > ResourceManager.TotalResource)
+                            element.SetEnabled(false);
+                        else
+                            element.SetEnabled(true);
+                    }
+                }
+            });
+    }
+
     private void UpdateUI()
     {
+        UpdateBuyButtons();
         _resourceAmount.text = "Total Resource: " + ResourceManager.TotalResource.ToString();
         PlayerUI.Instance.UpdateUIValues();
     }

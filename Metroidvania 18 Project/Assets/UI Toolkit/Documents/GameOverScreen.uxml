@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/USS/DeathScreen.uss?fileID=7433441132597879392&amp;guid=e1c6d8b0bd0e7bd42853e8e9ac8d93f2&amp;type=3#DeathScreen" />
+    <ui:VisualElement name="root" style="flex-grow: 1; -unity-font: url(&apos;project://database/Assets/Fonts/Area51.ttf?fileID=12800000&amp;guid=2decbc499101349429a40fbfd576e732&amp;type=3#Area51&apos;); -unity-font-definition: url(&apos;project://database/Assets/Fonts/Area51%20SDF.asset?fileID=11400000&amp;guid=ebe941b1ff9e5ec42abb6b443f5ee6ea&amp;type=2#Area51 SDF&apos;); align-items: center; justify-content: center; color: rgb(255, 255, 255);">
+        <ui:VisualElement name="game-over" class="game-over-out">
+            <ui:Label text="Game Over" display-tooltip-when-elided="true" name="game-over-text" style="font-size: 60px; -unity-text-align: middle-center;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

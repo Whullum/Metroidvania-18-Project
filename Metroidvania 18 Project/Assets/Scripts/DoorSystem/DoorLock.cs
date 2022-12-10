@@ -2,11 +2,19 @@ using UnityEngine;
 
 public class DoorLock : MonoBehaviour
 {
+    private SpriteRenderer _spriteRenderer;
+
     [Tooltip("The Gun Setting that opens this lock.")]
     [SerializeField] private GunSettingID _key;
     [SerializeField] private Door _door;
+    [SerializeField] private ParticleSystem _doorOpenEffect;
 
     public GunSettingID Key { get => _key; set => _key = value; }
+
+    private void Awake()
+    {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     private void Start()
     {
@@ -49,11 +57,17 @@ public class DoorLock : MonoBehaviour
 
     private void ChangeDoorColor(Color selectColor)
     {
-        GetComponent<SpriteRenderer>().color = selectColor;
+        _spriteRenderer.color = selectColor;
     }
 
     private void OpenDoor()
     {
+        var particles = Instantiate(_doorOpenEffect, transform.position, Quaternion.identity);
+        var particleSystem = particles.main;
+
+        particleSystem.startColor = _spriteRenderer.color;
+        particles.transform.rotation = transform.rotation;
+
         Destroy(gameObject);
     }
 }

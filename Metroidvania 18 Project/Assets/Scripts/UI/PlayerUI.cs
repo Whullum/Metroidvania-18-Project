@@ -39,6 +39,9 @@ public class PlayerUI : Singleton<PlayerUI>
         SetGun();
     }
 
+    public void DisablePlayerUI() => _root.style.display = DisplayStyle.None;
+    public void EnablePlayerUI() => _root.style.display = DisplayStyle.Flex;
+
     private void SetHealth()
     {
         float healthProgress = (float)GameManager.Instance.Player.Health.CurrentHealth / (float)GameManager.Instance.Player.Health.MaxHealth * 100f;

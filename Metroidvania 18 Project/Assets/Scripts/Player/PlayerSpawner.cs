@@ -10,6 +10,8 @@ public class PlayerSpawner : MonoBehaviour
     {
         if (PlayerSpawned) return;
 
+        FindObjectOfType<SceneTransition>().FadeOut(2, Color.black);
+
         Instantiate(_playerPrefab, transform.position, Quaternion.identity);
 
         PlayerSpawned = true;

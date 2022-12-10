@@ -5,6 +5,7 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public bool EnableInput { get; set; } = true;
+    public bool IsFacingRight { get { return !_spriteRenderer.flipY; } }
     public float CurrentMagazine { get { return _currentMagazineSize; } }
     public GunSetting ActiveGunSetting { get { return _activeSetting; } }
     public GunSetting[] UnlockedGunSettings { get { return _gunSettings.ToArray(); } }
