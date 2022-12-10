@@ -16,7 +16,7 @@ public class MainMenuBehavior : MonoBehaviour
     private Button _creditsButton;
     private bool _creditsActive;
 
-    [SerializeField] private string _firstSceneToLoad = "4,11 - 4,12";
+    private string _firstSceneToLoad = "4,11 - 4,12";
 
     private void Awake()
     {
