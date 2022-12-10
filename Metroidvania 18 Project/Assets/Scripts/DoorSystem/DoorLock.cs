@@ -18,30 +18,7 @@ public class DoorLock : MonoBehaviour
 
     private void Start()
     {
-        if(!_door.IsTraversable)
-        {
-            ChangeDoorColor(Color.red);
-            _key = GunSettingID.NONE;
-        }
-        else
-        {
-            switch (_key)
-            {
-                case GunSettingID.ANY_FIRE:
-                    ChangeDoorColor(Color.blue);
-                    break;
-                case GunSettingID.SHOTGUN_FIRE:
-                    ChangeDoorColor(Color.green);
-                    break;
-                case GunSettingID.STREAM_FIRE:
-                    ChangeDoorColor(Color.cyan);
-                    break;
-                case GunSettingID.BURST_FIRE:
-                    ChangeDoorColor(Color.yellow);
-                    break;
-
-            }
-        }
+        LoadGunSettingsColor();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -52,6 +29,27 @@ public class DoorLock : MonoBehaviour
                 OpenDoor();
             else if (bullet.GunSetting == _key)
                 OpenDoor();
+        }
+    }
+
+    private void LoadGunSettingsColor()
+    {
+        GunSetting[] settings = Resources.LoadAll<GunSetting>("Gun");
+
+        if (settings.Length <= 0) { Debug.LogError("Door System ERROR: Cannot load Gun Settings color property."); return; }
+
+        for (int i = 0; i < settings.Length; i++)
+        {
+            if (!_door.IsTraversable)
+            {
+                ChangeDoorColor(Color.red);
+                _key = GunSettingID.NONE;
+            }
+            else if (settings[i].ID == _key)
+                ChangeDoorColor(settings[i].Color);
+
+            if (_key == GunSettingID.ANY_FIRE)
+                ChangeDoorColor(Color.white);
         }
     }
 

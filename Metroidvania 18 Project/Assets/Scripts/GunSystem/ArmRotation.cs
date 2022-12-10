@@ -29,12 +29,12 @@ public class ArmRotation : MonoBehaviour
         if (_gun.IsFacingRight && _side == ArmSide.Left)
         {
             side = _leftSideGrip.position;
-            _renderer.sortingOrder = 0;
+            _renderer.sortingOrder = -1;
         }
         if (!_gun.IsFacingRight && _side == ArmSide.Right)
         {
             side = _leftSideGrip.position;
-            _renderer.sortingOrder = 0;
+            _renderer.sortingOrder = -1;
         }
         if (!_gun.IsFacingRight && _side == ArmSide.Left)
         {
