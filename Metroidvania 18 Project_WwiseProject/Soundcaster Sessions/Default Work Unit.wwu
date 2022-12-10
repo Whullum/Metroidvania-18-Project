@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{578BCC30-59D2-42E4-BAFC-8D96F7DE1B5D}" SchemaVersion="103">
+	<SoundcasterSessions>
+		<WorkUnit Name="Default Work Unit" ID="{578BCC30-59D2-42E4-BAFC-8D96F7DE1B5D}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="New Soundcaster Session" ID="{023D16C1-37BB-43D8-A118-08070633A9D9}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_Gun_Sound_Switch" ID="{2AC4B376-43E4-4FCA-8972-17A3F47A9BAB}" WorkUnitID="{2A2B9557-2351-4B5B-A2DB-658472E829C7}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_Gun_Sound_Switch" ID="{05F15A0E-FFDF-4B67-8997-48A45F7D23B1}" WorkUnitID="{2A2B9557-2351-4B5B-A2DB-658472E829C7}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_GameMusic" ID="{3C58A4BE-4E0A-41B0-96F2-D3EF362539D4}" WorkUnitID="{2A2B9557-2351-4B5B-A2DB-658472E829C7}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="None" ID="{23ED5525-FCBB-40E7-855A-7D8E14E93D7A}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="EnemyDamage" ID="{22B90E4B-1232-4B73-8D36-6CD4ED7D0F1D}"/>
+						<CurrentSwitchRef Name="Shotgun" ID="{B3C5D712-D686-415A-9E54-3903FACF3541}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>

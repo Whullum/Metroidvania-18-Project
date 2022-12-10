@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 57952b2a51235b4ba2db658472e829c7
     GuidInternal: 
-    m_lastTime: -8585313351061165155
+    m_lastTime: -8585309080666376185
     List:
     - name: Play_Entity_Damaged
       guid: 30cda46d495f1b46aaaf21aaaf2203d0
@@ -130,6 +130,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.458356
       minDuration: 0.458356
+    - name: Play_GameMusic
+      guid: bea4583c0a4eb04196f2d3ef362539d4
+      id: 3586746077
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 57952b2a51235b4ba2db658472e829c7
+      - ElementName: Play_GameMusic
+        ObjectType: 3
+        guid: bea4583c0a4eb04196f2d3ef362539d4
+      Path: Events\Default Work Unit\Play_GameMusic
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Gun_Reload_Switch
       guid: 74fc58b58b0d24478c259e332f0a44b4
       id: 1921754267
@@ -292,8 +309,90 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 81a755c80d97a544a60f6189a9bd9783
     GuidInternal: 
-    m_lastTime: -8585318509501079608
-    List: []
+    m_lastTime: -8585309080970287880
+    List:
+    - name: LevelState
+      guid: 11416b37468bcc499f6ee6028b47977c
+      id: 3473087568
+      PathAndIcons:
+      - ElementName: States
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 81a755c80d97a544a60f6189a9bd9783
+      - ElementName: LevelState
+        ObjectType: 9
+        guid: 11416b37468bcc499f6ee6028b47977c
+      Path: States\Default Work Unit\LevelState
+      values:
+      - name: Bar_Title
+        guid: e8f5a6c87fa275449ac96cdbddc4096f
+        id: 36522779
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 81a755c80d97a544a60f6189a9bd9783
+        - ElementName: LevelState
+          ObjectType: 9
+          guid: 11416b37468bcc499f6ee6028b47977c
+        - ElementName: Bar_Title
+          ObjectType: 8
+          guid: e8f5a6c87fa275449ac96cdbddc4096f
+      - name: Indoor
+        guid: efaaeebac393c34a9317949c582e1cf4
+        id: 340398852
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 81a755c80d97a544a60f6189a9bd9783
+        - ElementName: LevelState
+          ObjectType: 9
+          guid: 11416b37468bcc499f6ee6028b47977c
+        - ElementName: Indoor
+          ObjectType: 8
+          guid: efaaeebac393c34a9317949c582e1cf4
+      - name: None
+        guid: 2555ed23bbfce740855a7d8e14e93d7a
+        id: 748895195
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 81a755c80d97a544a60f6189a9bd9783
+        - ElementName: LevelState
+          ObjectType: 9
+          guid: 11416b37468bcc499f6ee6028b47977c
+        - ElementName: None
+          ObjectType: 8
+          guid: 2555ed23bbfce740855a7d8e14e93d7a
+      - name: Outdoor
+        guid: d256c801b1390e4ba848cb2a312cc165
+        id: 144697359
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 81a755c80d97a544a60f6189a9bd9783
+        - ElementName: LevelState
+          ObjectType: 9
+          guid: 11416b37468bcc499f6ee6028b47977c
+        - ElementName: Outdoor
+          ObjectType: 8
+          guid: d256c801b1390e4ba848cb2a312cc165
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     PathAndIcons:
@@ -455,7 +554,7 @@ MonoBehaviour:
     m_lastTime: -8585318509501059603
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 010000000500000006000000120000001300000014000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
