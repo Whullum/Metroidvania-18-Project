@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{2A2B9557-2351-4B5B-A2DB-658472E829C7}" SchemaVersion="103">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{2A2B9557-2351-4B5B-A2DB-658472E829C7}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_SFX_TestSound" ID="{35B41FD7-BF59-433B-9C4A-9871B6EC3B00}">
+					<ChildrenList>
+						<Action Name="" ID="{C830A2E4-7873-4199-A76A-476674A10E57}" ShortID="849138053">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_TestSound" ID="{75025ADF-ECA3-439C-AED3-66CB39251477}" WorkUnitID="{547BBE61-732B-43B4-867F-66A2FBD84838}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Player_DoubleJump" ID="{EA834FC8-29A2-459C-B078-31DC0DE7D9DF}">
+					<ChildrenList>
+						<Action Name="" ID="{05FBDD8A-8D1D-4E20-8B6E-E342E1526A8A}" ShortID="629667996">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player_DoubleJump" ID="{A0AA5BA0-D32B-4F2D-95A2-3F5FBB44B5C9}" WorkUnitID="{547BBE61-732B-43B4-867F-66A2FBD84838}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Player_Dash" ID="{D42BE471-877E-4441-8453-DC6F2D4436C4}">
+					<ChildrenList>
+						<Action Name="" ID="{51AA60D0-24A0-4829-AEB9-BE7F01187B3B}" ShortID="958317238">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player_Dash" ID="{150781F2-EAB5-4E75-A222-087198F74748}" WorkUnitID="{547BBE61-732B-43B4-867F-66A2FBD84838}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Player_InitialJump" ID="{EEEC5D0D-2A60-4CA5-AC26-67D3071873F9}">
+					<ChildrenList>
+						<Action Name="" ID="{B0DF9A15-8484-4565-9DD2-704C9DCD4B4D}" ShortID="479407716">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player_InitialJump" ID="{631284C9-F412-4466-A08C-8E9D6D0747AA}" WorkUnitID="{547BBE61-732B-43B4-867F-66A2FBD84838}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Gun_Reload_Switch" ID="{B558FC74-0D8B-4724-8C25-9E332F0A44B4}">
+					<ChildrenList>
+						<Action Name="" ID="{E36F6FE2-467F-4764-9C55-744E89F1C4EE}" ShortID="251424406">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Gun Reload Switch" ID="{42497974-6E27-43D9-9E68-99978B054F75}" WorkUnitID="{547BBE61-732B-43B4-867F-66A2FBD84838}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Gun_Sound_Switch" ID="{2AC4B376-43E4-4FCA-8972-17A3F47A9BAB}">
+					<ChildrenList>
+						<Action Name="" ID="{8663C041-B15F-48B3-B5EC-84E1F8EF3E52}" ShortID="402085401">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="36"/>
+								<Property Name="SeekPercent" Type="Real64" Value="100"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_Test_ArcStream_05" ID="{A8C4C3A1-11E8-4AC5-A905-6E819C80E200}" WorkUnitID="{547BBE61-732B-43B4-867F-66A2FBD84838}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{D3E84AC9-5D9B-407D-B6D3-45C9CDE69DB2}" ShortID="171484015">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Gun Sound Switch" ID="{D719DDCA-BF3D-45BA-8A1F-A2CDE72CD6DE}" WorkUnitID="{547BBE61-732B-43B4-867F-66A2FBD84838}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Entity_Damaged" ID="{6DA4CD30-5F49-461B-AAAF-21AAAF2203D0}">
+					<ChildrenList>
+						<Action Name="" ID="{26C2F02C-4283-4345-85D7-249D02BD60CE}" ShortID="1016748657">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Entity Damaged" ID="{C0B7E0CF-B381-41DA-BC5F-453578635A95}" WorkUnitID="{547BBE61-732B-43B4-867F-66A2FBD84838}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Entity_Death" ID="{D70F4CBD-C0BB-427C-8DDC-C042F4E55DA8}">
+					<ChildrenList>
+						<Action Name="" ID="{7903D476-6F21-4149-B952-4435D71242CD}" ShortID="187406204">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Entity Death" ID="{5D7F7B24-EB84-4A79-AE55-48FEB7DF19CD}" WorkUnitID="{547BBE61-732B-43B4-867F-66A2FBD84838}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_SFX_Test_Pickup" ID="{3D0E667A-FB87-4C84-AE94-66259651FE9B}">
+					<ChildrenList>
+						<Action Name="" ID="{36D9ED59-6EF0-41EC-B55D-9DBA3FF64A2D}" ShortID="616294448">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_Test_Pickup" ID="{BEACA4F2-9D5B-4F2E-984E-A34716A28050}" WorkUnitID="{D5946034-07F7-4C49-AD3A-5ADBD89DEF72}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Gun_Sound_Switch" ID="{05F15A0E-FFDF-4B67-8997-48A45F7D23B1}">
+					<ChildrenList>
+						<Action Name="" ID="{9FE79622-6121-4F36-86F1-88DA6359E554}" ShortID="795193132">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Gun Sound Switch" ID="{D719DDCA-BF3D-45BA-8A1F-A2CDE72CD6DE}" WorkUnitID="{547BBE61-732B-43B4-867F-66A2FBD84838}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_GameMusic" ID="{3C58A4BE-4E0A-41B0-96F2-D3EF362539D4}">
+					<ChildrenList>
+						<Action Name="" ID="{414AD273-CCC2-44A5-8750-DB3905C42125}" ShortID="629318461">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="GameMusic" ID="{B75EF00E-1774-48A5-AF6F-2ED8505F78BF}" WorkUnitID="{3ED5C0E4-04B6-4A49-A10C-C61BF5670839}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{C855A781-970D-44A5-A60F-6189A9BD9783}" SchemaVersion="103">
+	<States>
+		<WorkUnit Name="Default Work Unit" ID="{C855A781-970D-44A5-A60F-6189A9BD9783}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="LevelState" ID="{376B4111-8B46-49CC-9F6E-E6028B47977C}">
+					<ChildrenList>
+						<State Name="None" ID="{23ED5525-FCBB-40E7-855A-7D8E14E93D7A}"/>
+						<State Name="Bar_Title" ID="{C8A6F5E8-A27F-4475-9AC9-6CDBDDC4096F}"/>
+						<State Name="Indoor" ID="{BAEEAAEF-93C3-4AC3-9317-949C582E1CF4}"/>
+						<State Name="Outdoor" ID="{01C856D2-39B1-4B0E-A848-CB2A312CC165}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</States>
+</WwiseDocument>
