@@ -145,9 +145,13 @@
 							<ObjectLists/>
 							<Playlist>
 								<MusicPlaylistItem Name="" ID="{4E087FCF-5079-401F-AB41-78BA2502C74F}" ShortID="652613283">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+									</PropertyList>
 									<ChildrenList>
 										<MusicPlaylistItem Name="" ID="{AD0B3875-DA5B-40B1-A147-239BD0CE58A9}" ShortID="954929532">
 											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
 												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
 											</PropertyList>
 											<SegmentRef Name="Title-Bar" ID="{A9F41B04-3C57-434A-9EAD-BD9437DD5792}"/>
@@ -280,9 +284,13 @@
 							<ObjectLists/>
 							<Playlist>
 								<MusicPlaylistItem Name="" ID="{606D4A4B-4804-4B3E-9D52-70CA92111024}" ShortID="372696766">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+									</PropertyList>
 									<ChildrenList>
 										<MusicPlaylistItem Name="" ID="{291E34D5-31C8-470B-868D-3ECFD279961F}" ShortID="994582988">
 											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
 												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
 											</PropertyList>
 											<SegmentRef Name="Indoor" ID="{9ED6C441-A6D8-4C72-AE2E-914F469CE240}"/>
@@ -411,9 +419,13 @@
 							<ObjectLists/>
 							<Playlist>
 								<MusicPlaylistItem Name="" ID="{C37664A1-A07C-49EB-8551-1A534C05307B}" ShortID="149814810">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+									</PropertyList>
 									<ChildrenList>
 										<MusicPlaylistItem Name="" ID="{53D3B8F6-1F88-4348-BEE0-BDEE585AB5B3}" ShortID="589773040">
 											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
 												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
 											</PropertyList>
 											<SegmentRef Name="Outdoor" ID="{3DB90158-4030-4565-910A-3E73B45B5CF1}"/>
