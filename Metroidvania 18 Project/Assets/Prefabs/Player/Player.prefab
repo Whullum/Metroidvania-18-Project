@@ -56,7 +56,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3895654988248389248}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.741, y: -0.11, z: 0}
+  m_LocalPosition: {x: 0.93, y: -0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -119,14 +119,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6056551440082983707}
-  m_LocalRotation: {x: -0, y: -0, z: 0.21514532, w: 0.97658205}
+  m_LocalRotation: {x: -0, y: -0, z: -0.99980664, w: 0.019665783}
   m_LocalPosition: {x: -0.129, y: -0.044, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6570468089443506114}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 24.848}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -177.746}
 --- !u!212 &6621930085120414775
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -168,7 +168,7 @@ SpriteRenderer:
   m_SortingLayerID: -133944877
   m_SortingLayer: 1
   m_SortingOrder: 2
-  m_Sprite: {fileID: -895267813, guid: 7d88be9c766a12245933f4a574e524c5, type: 3}
+  m_Sprite: {fileID: 948598412, guid: 7d88be9c766a12245933f4a574e524c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -194,7 +194,7 @@ MonoBehaviour:
   _side: 1
   _leftSideGrip: {fileID: 2210042896903820162}
   _rightSideGrip: {fileID: 8915963079596649146}
-  _offset: 120
+  _offset: -120
   _gun: {fileID: 7126365152645303107}
 --- !u!1 &6570468089291921185
 GameObject:
@@ -637,14 +637,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7605820066737864490}
-  m_LocalRotation: {x: -0, y: -0, z: 0.34931618, w: 0.9370049}
+  m_LocalRotation: {x: -0, y: -0, z: -0.99001867, w: 0.14093691}
   m_LocalPosition: {x: 0.336, y: -0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6570468089443506114}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 40.891}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -163.796}
 --- !u!212 &2545823053048050747
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -686,7 +686,7 @@ SpriteRenderer:
   m_SortingLayerID: -133944877
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 948598412, guid: 7d88be9c766a12245933f4a574e524c5, type: 3}
+  m_Sprite: {fileID: -895267813, guid: 7d88be9c766a12245933f4a574e524c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -712,7 +712,7 @@ MonoBehaviour:
   _side: 0
   _leftSideGrip: {fileID: 2210042896903820162}
   _rightSideGrip: {fileID: 8915963079596649146}
-  _offset: 60
+  _offset: -60
   _gun: {fileID: 7126365152645303107}
 --- !u!1001 &2854071160982241893
 PrefabInstance:

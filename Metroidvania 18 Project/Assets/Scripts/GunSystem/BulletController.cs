@@ -48,9 +48,6 @@ public class BulletController : MonoBehaviour
         float probability = ((float)_impactProbability / 100f) * 100;
         int rndImpact = Random.Range(0, 100);
 
-        Debug.Log("Probability: " + probability);
-        Debug.Log("Impact: " + rndImpact);
-
         if (rndImpact <= probability)
             Instantiate(_impactEffect, transform.position, Quaternion.identity);
     }
