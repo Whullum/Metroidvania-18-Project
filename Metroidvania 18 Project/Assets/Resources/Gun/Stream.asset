@@ -32,3 +32,4 @@ MonoBehaviour:
     groupIdInternal: 0
     groupGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: b92566238f579af4899cc1b47bbed778, type: 2}
+  Color: {r: 0, g: 1, b: 1, a: 1}

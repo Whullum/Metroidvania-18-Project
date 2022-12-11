@@ -1,0 +1,42 @@
+.game-over-in {
+    transition-duration: 1s;
+    background-color: rgba(255, 0, 0, 0.39);
+    border-left-color: rgba(164, 0, 0, 255);
+    border-right-color: rgba(164, 0, 0, 255);
+    border-top-color: rgba(164, 0, 0, 255);
+    border-bottom-color: rgba(164, 0, 0, 255);
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.game-over-out {
+    transition-duration: 1s;
+    background-color: rgba(255, 0, 0, 0.39);
+    border-left-color: rgb(164, 0, 0);
+    border-right-color: rgb(164, 0, 0);
+    border-top-color: rgb(164, 0, 0);
+    border-bottom-color: rgb(164, 0, 0);
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    translate: 0 800px;
+}

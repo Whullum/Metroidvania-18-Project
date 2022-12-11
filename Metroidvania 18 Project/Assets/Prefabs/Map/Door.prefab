@@ -268,6 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _key: 1
   _door: {fileID: 561263555173237383}
+  _doorOpenEffect: {fileID: 8365464143606095169, guid: 3e798980de831414481f0f6a55b19271, type: 3}
 --- !u!50 &4841219295252739488
 Rigidbody2D:
   serializedVersion: 4

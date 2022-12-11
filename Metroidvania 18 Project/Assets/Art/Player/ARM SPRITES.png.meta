@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 874070ac476a8e1419d63bc88014c94d
+guid: 7d88be9c766a12245933f4a574e524c5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,64 +105,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Beer Tap Cannon+ARMs_0
+      name: ARM SPRITES_0
       rect:
         serializedVersion: 2
         x: 10
-        y: 27
+        y: 75
         width: 4
         height: 19
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6be3a4fa5155fca4dbc0d157eb35af07
-      internalID: -1793278636
+      spriteID: beef93efae38d4541938cfec37f8c1cb
+      internalID: 609420771
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beer Tap Cannon+ARMs_1
+      name: ARM SPRITES_1
       rect:
         serializedVersion: 2
         x: 34
-        y: 27
+        y: 75
         width: 4
         height: 19
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 328911d3ebddb8a47af92b2a0ca7ff0e
-      internalID: -1523290790
+      spriteID: 6bc0dfadbf1a2c84a95839420ccb52ed
+      internalID: 1148883487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beer Tap Cannon+ARMs_2
+      name: ARM SPRITES_2
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1
-        width: 45
-        height: 21
-      alignment: 9
-      pivot: {x: 0.3, y: 0.6}
+        x: 10
+        y: 57
+        width: 10
+        height: 13
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85be4ca715b4e1b468860552ce6e068c
-      internalID: 1860240027
+      spriteID: adc6dd5017157214ab08c2ff95857e1e
+      internalID: 1372013248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARM SPRITES_3
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 57
+        width: 10
+        height: 13
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5545a7161e53d0a47bb67158b5afec37
+      internalID: -988455488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARM SPRITES_4
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 36
+        width: 10
+        height: 10
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca72fbccee870794c882fd788c4b1c7d
+      internalID: 1184990630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARM SPRITES_5
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 36
+        width: 10
+        height: 10
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66285bf440a66594eba4c290c8fc2dd6
+      internalID: -862269088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARM SPRITES_6
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 4
+        width: 10
+        height: 18
+      alignment: 9
+      pivot: {x: 0.9, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 445db67a219658a41a4769288d6c85bc
+      internalID: -895267813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARM SPRITES_7
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 4
+        width: 10
+        height: 18
+      alignment: 9
+      pivot: {x: 0.09, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2750a73964fb7241b5eec39a688c01f
+      internalID: 948598412
       vertices: []
       indices: 
       edges: []
@@ -178,9 +283,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Beer Tap Cannon+ARMs_2: 1860240027
-      Beer Tap Cannon+ARMs_1: -1523290790
-      Beer Tap Cannon+ARMs_0: -1793278636
+      ARM SPRITES_4: 1184990630
+      ARM SPRITES_6: -895267813
+      ARM SPRITES_7: 948598412
+      ARM SPRITES_5: -862269088
+      ARM SPRITES_3: -988455488
+      ARM SPRITES_1: 1148883487
+      ARM SPRITES_2: 1372013248
+      ARM SPRITES_0: 609420771
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

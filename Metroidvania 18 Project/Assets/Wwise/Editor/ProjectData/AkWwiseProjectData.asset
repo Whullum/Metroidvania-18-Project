@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: ebf31ca310f6a441a27856a0597ccc3a
     GuidInternal: 
-    m_lastTime: -8585318509501049586
+    m_lastTime: -8585309007678374853
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 2803495f49fa174cb27d36522041969d
     GuidInternal: 
-    m_lastTime: -8585318509505015443
+    m_lastTime: -8585309007715396217
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 824cc22d4fd4c54c8c1b2d85ee191b08
     GuidInternal: 
-    m_lastTime: -8585318509501099634
+    m_lastTime: -8585309007678424720
     List:
     - name: TestBank
       guid: 0ac945c13cf6dc4fba97e1955e00c864
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 57952b2a51235b4ba2db658472e829c7
     GuidInternal: 
-    m_lastTime: -8585309080666376185
+    m_lastTime: -8585309007732623008
     List:
     - name: Play_Entity_Damaged
       guid: 30cda46d495f1b46aaaf21aaaf2203d0
@@ -295,7 +295,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 3a5144099aac4548b1dc0925472dcbcf
     GuidInternal: 
-    m_lastTime: -8585318509505175579
+    m_lastTime: -8585309007732613034
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -309,7 +309,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 81a755c80d97a544a60f6189a9bd9783
     GuidInternal: 
-    m_lastTime: -8585309080970287880
+    m_lastTime: -8585309007678404772
     List:
     - name: LevelState
       guid: 11416b37468bcc499f6ee6028b47977c
@@ -405,7 +405,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: fb418b64656ec34e9ca1eeafba0dcc52
     GuidInternal: 
-    m_lastTime: -8585313367399067887
+    m_lastTime: -8585309007678394578
     List:
     - name: DamageSound
       guid: 503b9318ed84b340a1ecc2d25a412780
@@ -551,10 +551,10 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: da31cde6dbe06d459499506fcdd7828d
     GuidInternal: 
-    m_lastTime: -8585318509501059603
+    m_lastTime: -8585309007678384821
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 010000000500000006000000120000001300000014000000
+  ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

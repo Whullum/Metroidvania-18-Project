@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2
   Damage: 10
-  MagazineSize: 50
-  FireRate: 8
+  MagazineSize: 30
+  FireRate: 10
   Range: 43.9
   ReloadTime: 2
   BulletPrefab: {fileID: 1178255456181298219, guid: 4565cb4fd3aeeea4ba7be9d1231db8be, type: 3}
   BulletSpread: 2
   BulletSpeed: 100
-  BulletCost: 0.7
+  BulletCost: 1
   Recoil: 5
   CameraShakeDuration: 0.05
   CameraShakeForce: 0
@@ -32,3 +32,4 @@ MonoBehaviour:
     groupIdInternal: 0
     groupGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 152b2be1bf05ba44d98fe5cc36ff0961, type: 2}
+  Color: {r: 0, g: 0, b: 1, a: 1}

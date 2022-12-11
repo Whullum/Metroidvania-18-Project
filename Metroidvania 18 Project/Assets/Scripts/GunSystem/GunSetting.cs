@@ -58,4 +58,7 @@ public class GunSetting : ScriptableObject
 
     [Tooltip("Wwise Switch for correct sound effect playback.")]
     public AK.Wwise.Switch WwiseSwitch;
+
+    [Tooltip("This color represents wich doors can be opened by this Gun Setting. Also, the bullets will get this color.")]
+    public Color Color;
 }

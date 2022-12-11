@@ -1,4 +1,3 @@
-using UnityEngine;
 using UnityEngine.UIElements;
 
 public class PlayerUI : Singleton<PlayerUI>
@@ -22,7 +21,6 @@ public class PlayerUI : Singleton<PlayerUI>
     private void InitializeDocument()
     {
         _root = GetComponent<UIDocument>().rootVisualElement;
-
         _healthProgress = _root.Q<VisualElement>("health-progress");
         _gunMagazineProgress = _root.Q<VisualElement>("magazine-progress");
         _healthText = _root.Q<Label>("health-text");
@@ -38,6 +36,9 @@ public class PlayerUI : Singleton<PlayerUI>
         SetResources();
         SetGun();
     }
+
+    public void DisablePlayerUI() => _root.style.display = DisplayStyle.None;
+    public void EnablePlayerUI() => _root.style.display = DisplayStyle.Flex;
 
     private void SetHealth()
     {
@@ -64,5 +65,6 @@ public class PlayerUI : Singleton<PlayerUI>
         _gunMagazineProgress.style.width = Length.Percent(gunMagazine);
         _gunMagazineText.text = GameManager.Instance.Player.Gun.CurrentMagazine.ToString("F2");
         _gunSettingText.text = GameManager.Instance.Player.Gun.ActiveGunSetting.name;
+        _gunMagazineProgress.style.backgroundColor = GameManager.Instance.Player.Gun.ActiveGunSetting.Color;
     }
 }
