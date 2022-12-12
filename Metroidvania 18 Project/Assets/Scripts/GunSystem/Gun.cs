@@ -44,7 +44,7 @@ public class Gun : MonoBehaviour
 
         AimAtCursor();
 
-        if (Input.GetMouseButtonDown(2))
+        if (Input.GetMouseButtonDown(2) || Input.GetMouseButtonDown(1))
             SwitchSetting();
 
         if (Input.GetMouseButton(0))
