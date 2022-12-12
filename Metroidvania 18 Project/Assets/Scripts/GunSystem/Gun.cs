@@ -49,6 +49,12 @@ public class Gun : MonoBehaviour
 
         if (Input.GetMouseButton(0))
             Shoot();
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            StartCoroutine(Reload());
+            return;
+        }
     }
 
     /// <summary>
@@ -127,6 +133,8 @@ public class Gun : MonoBehaviour
     /// <returns>The reload time.</returns>
     private IEnumerator Reload()
     {
+        // Play reload sound effect
+        _playerAudio.PostWwiseEvent(_playerAudio._sfxPlayerReload);
         _isReloading = true;
 
         yield return new WaitForSeconds(_activeSetting.ReloadTime);
@@ -134,9 +142,6 @@ public class Gun : MonoBehaviour
         _currentMagazineSize = _activeSetting.MagazineSize;
         _isReloading = false;
         PlayerUI.Instance.UpdateUIValues();
-
-        // Play reload sound effect
-        //_playerAudio.PostWwiseEvent(_playerAudio._sfxPlayerReload);
     }
 
     /// <summary>
