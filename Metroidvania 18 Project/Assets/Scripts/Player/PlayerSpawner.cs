@@ -16,6 +16,8 @@ public class PlayerSpawner : MonoBehaviour
 
         PlayerSpawned = true;
 
+        PlayerUI.Instance.EnablePlayerUI();
+
         if (!GameManager.Instance.IsNewGame)
             SaveSystem.LoadGameData();
     }

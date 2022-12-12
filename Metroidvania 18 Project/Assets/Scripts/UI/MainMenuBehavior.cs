@@ -14,6 +14,7 @@ public class MainMenuBehavior : MonoBehaviour
     private Button _newGameButton;
     private Button _loadGameButton;
     private Button _creditsButton;
+    private Button _exitButton;
     private bool _creditsActive;
 
     private string _firstSceneToLoad = "4,11 - 4,12";
@@ -21,6 +22,11 @@ public class MainMenuBehavior : MonoBehaviour
     private void Awake()
     {
         InitializeDocument();
+    }
+
+    private void Start()
+    {
+        PlayerUI.Instance.DisablePlayerUI();
     }
 
     private void Update()
@@ -38,10 +44,12 @@ public class MainMenuBehavior : MonoBehaviour
         _newGameButton = _root.Q<Button>("new-game");
         _loadGameButton= _root.Q<Button>("load-game");
         _creditsButton= _root.Q<Button>("credits");
+        _exitButton = _root.Q<Button>("exit");
 
         _newGameButton.clicked += NewGame;
         _loadGameButton.clicked += LoadGame;
         _creditsButton.clicked += ShowCredits;
+        _exitButton.clicked += QuitGame;
 
         if (!File.Exists(SaveSystem.GameDataPath))
             _loadGameButton.SetEnabled(false);
@@ -76,4 +84,6 @@ public class MainMenuBehavior : MonoBehaviour
         _mainMenu.style.display = DisplayStyle.Flex;
         _creditsContainer.style.display = DisplayStyle.None;
     }
+
+    private void QuitGame() => Application.Quit();
 }

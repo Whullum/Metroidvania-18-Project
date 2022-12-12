@@ -11,6 +11,7 @@ public class DamageableEntity : MonoBehaviour
     public int CurrentHealth { get { return _currentHealth; } set { _currentHealth = value; } }
     public int MaxHealth { get { return _maxHealth; } set { _maxHealth = value; } }
     public bool IsPlayer { get; set; } = false;
+    public bool Invincibility { get; set; } = false;
 
     private int _currentHealth;
     private Color _baseColor;
@@ -65,6 +66,8 @@ public class DamageableEntity : MonoBehaviour
     /// <param name="damageAmount">Amount of damage that this entity will absorb.</param>
     public void ReceiveDamage(int damageAmount)
     {
+        if (Invincibility) return;
+
         DamageReceived?.Invoke();
 
         Invoke("EnableHitFeedback", 0f);

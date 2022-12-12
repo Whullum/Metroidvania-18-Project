@@ -42,11 +42,12 @@ public class Door : MonoBehaviour
         if (_activeConnection == _doorConnection)
         {
             _sceneTransition.FadeOut(_doorConnection.TransitionTime, _activeConnection.TransitionColor); // Starts the fade out transition.
-
+            _activeConnection = null;
             SetPlayer();
 
             _isTraversable = true; // If this was an one way door, we set is Traversable property to true, because is now unlocked.
 
+            PlayerUI.Instance.EnablePlayerUI();
             DoorManager.UpdateDoor(_ID, _isTraversable); // Update the current door state.
         }
     }
@@ -71,7 +72,7 @@ public class Door : MonoBehaviour
     {
         GameManager.Instance.Player.transform.position = _playerSpawnPoint.position;
         GameManager.Instance.Player.GetComponent<SpriteRenderer>().flipX = !_faceRight;
-        GameManager.Instance.Player.SetInput(true);
+        GameManager.Instance.SetPlayerInput(true);
     }
 
     /// <summary>
@@ -108,7 +109,8 @@ public class Door : MonoBehaviour
 
             Invoke("ActivateScene", _activeConnection.TransitionTime); // When the transition time ends, the loaded scene is activated.
 
-            GameManager.Instance.Player.SetInput(false);
+            PlayerUI.Instance.DisablePlayerUI();
+            GameManager.Instance.SetPlayerInput(false);
         }
     }
 }

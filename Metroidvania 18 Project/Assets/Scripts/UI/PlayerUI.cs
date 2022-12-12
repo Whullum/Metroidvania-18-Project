@@ -37,8 +37,21 @@ public class PlayerUI : Singleton<PlayerUI>
         SetGun();
     }
 
-    public void DisablePlayerUI() => _root.style.display = DisplayStyle.None;
-    public void EnablePlayerUI() => _root.style.display = DisplayStyle.Flex;
+    public void DisablePlayerUI()
+    {
+        _root.style.display = DisplayStyle.None;
+
+        _healthProgress.style.width = Length.Percent(0);
+        _gunMagazineProgress.style.width = Length.Percent(0);
+    }
+    
+    public void EnablePlayerUI()
+    {
+        _root.style.display = DisplayStyle.Flex;
+
+        UpdateUIValues();
+    }
+    
 
     private void SetHealth()
     {

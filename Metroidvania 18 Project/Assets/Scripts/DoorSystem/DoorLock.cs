@@ -25,6 +25,9 @@ public class DoorLock : MonoBehaviour
     {
         if (collision.TryGetComponent(out BulletController bullet))
         {
+            if (_key == GunSettingID.NONE)
+                return;
+
             if (_key == GunSettingID.ANY_FIRE)
                 OpenDoor();
             else if (bullet.GunSetting == _key)
