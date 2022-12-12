@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/USS/PauseMenu.uss?fileID=7433441132597879392&amp;guid=82bea65db6aa2a042870d4fc2e558857&amp;type=3#PauseMenu" />
+    <ui:VisualElement name="root" class="pause-in">
+        <ui:VisualElement name="pause-container" style="background-color: rgb(65, 77, 87); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 20px;">
+            <ui:Label text="Pause" display-tooltip-when-elided="true" name="name" style="font-size: 60px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="buttons" style="margin-left: 50px; margin-right: 50px; margin-top: 50px; margin-bottom: 50px; padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 20px; width: 30%; height: 50%; align-items: center; justify-content: space-around; background-color: rgba(64, 76, 87, 0.78); border-top-left-radius: 15px; border-bottom-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px;">
+            <ui:Button text="Resume" display-tooltip-when-elided="true" name="resume" class="button" />
+            <ui:Button text="Main Menu" display-tooltip-when-elided="true" name="main-menu" class="button" />
+            <ui:Button text="Quit" display-tooltip-when-elided="true" name="quit" class="button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

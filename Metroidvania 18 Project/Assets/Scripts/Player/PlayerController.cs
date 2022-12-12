@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private DamageableEntity _damageable;
     private PlayerMovement _movement;
     private Gun _gun;
+    private PauseMenu _pauseMenu;
 
     [Tooltip("Ammount of time the camera will shake when the player gets hit.")]
     [SerializeField] private float _cameraShakeHitDuration;
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
         _damageable = GetComponent<DamageableEntity>();
         _movement = GetComponent<PlayerMovement>();
         _gun = GetComponentInChildren<Gun>();
+        _pauseMenu = GetComponentInChildren<PauseMenu>();
 
         DontDestroyOnLoad(gameObject);
     }
@@ -37,6 +39,12 @@ public class PlayerController : MonoBehaviour
         PlayerUI.Instance.EnablePlayerUI();
 
         _damageable.IsPlayer = true;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            TogglePauseMenu();
     }
 
     private void OnEnable()
@@ -63,7 +71,7 @@ public class PlayerController : MonoBehaviour
             _isDeath = true;
             GameManager.Instance.StartCoroutine(RespawnPlayer());
         }
-        if(!_isDeath || _damageable.CurrentHealth >= 0)
+        if (!_isDeath || _damageable.CurrentHealth >= 0)
         {
             CameraEvents.CameraShake(_cameraShakeHitDuration, _cameraShakeHitForce);
             PlayerUI.Instance.UpdateUIValues();
@@ -91,6 +99,8 @@ public class PlayerController : MonoBehaviour
         _movement.CanDoubleJump = true;
     }
 
+    public void SetInvincibility(bool invincibility) => _damageable.Invincibility = invincibility;
+
     private void LoadPlayerData()
     {
         PlayerData player = SaveSystem.GameData.PlayerData;
@@ -113,5 +123,15 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         GameManager.Instance.RespawnPlayer();
+    }
+
+    private void TogglePauseMenu()
+    {
+        _pauseMenu.IsActive = !_pauseMenu.IsActive;
+
+        if (_pauseMenu.IsActive)
+            _pauseMenu.EnablePauseMenu();
+        else
+            _pauseMenu.ResumeGame();
     }
 }

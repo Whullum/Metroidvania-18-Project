@@ -1,3 +1,4 @@
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
@@ -20,17 +21,32 @@ public class GameManager : Singleton<GameManager>
 
     private PlayerController _player;
 
+    private void Start() => PlayerUI.Instance.DisablePlayerUI();
+
     public void SetPlayerInput(bool toggle)
     {
         Player.SetInput(toggle);
+        Player.SetInvincibility(!toggle);
     }
 
     public void RespawnPlayer()
     {
+        Time.timeScale = 1;
+
         PlayerSpawner.PlayerSpawned = false;
 
         Destroy(Player.gameObject);
 
         SceneManager.LoadScene("4,11 - 4,12");
+    }
+
+    /// <summary>
+    /// Used when entering Main Menu screen. Clears the player.
+    /// </summary>
+    public void ExitGame()
+    {
+        PlayerSpawner.PlayerSpawned = false;
+
+        Destroy(Player.gameObject);
     }
 }
