@@ -28,6 +28,19 @@ namespace AK
 
     namespace STATES
     {
+        namespace GAMESTATE
+        {
+            static const AkUniqueID GROUP = 4091656514U;
+
+            namespace STATE
+            {
+                static const AkUniqueID GAMEOVER = 4158285989U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID NORMAL = 1160234136U;
+                static const AkUniqueID PAUSED = 319258907U;
+            } // namespace STATE
+        } // namespace GAMESTATE
+
         namespace LEVELSTATE
         {
             static const AkUniqueID GROUP = 3473087568U;
@@ -80,6 +93,8 @@ namespace AK
     namespace BUSSES
     {
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID SOUNDEFFECTS = 3898083304U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES

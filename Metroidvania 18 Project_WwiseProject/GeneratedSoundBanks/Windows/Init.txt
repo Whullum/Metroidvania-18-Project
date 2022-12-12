@@ -1,14 +1,21 @@
 State Group	ID	Name			Wwise Object Path	Notes
 	3473087568	LevelState			\Default Work Unit\LevelState	
+	4091656514	GameState			\Default Work Unit\GameState	
 
 State	ID	Name	State Group			Notes
 	36522779	Bar_Title	LevelState			
 	144697359	Outdoor	LevelState			
 	340398852	Indoor	LevelState			
 	748895195	None	LevelState			
+	319258907	Paused	GameState			
+	748895195	None	GameState			
+	1160234136	Normal	GameState			
+	4158285989	GameOver	GameState			
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3898083304	SoundEffects			\Default Work Unit\Master Audio Bus\SoundEffects	
+	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

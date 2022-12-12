@@ -11,6 +11,14 @@
 						<State Name="Outdoor" ID="{01C856D2-39B1-4B0E-A848-CB2A312CC165}"/>
 					</ChildrenList>
 				</StateGroup>
+				<StateGroup Name="GameState" ID="{33A23447-F662-4DE8-B30A-7A49A1442510}">
+					<ChildrenList>
+						<State Name="None" ID="{8FE71AAA-C838-4AB4-BC1E-80C5434F2310}"/>
+						<State Name="Paused" ID="{FA3D4005-68F0-4F72-81B0-E7FC3D83CA78}"/>
+						<State Name="Normal" ID="{A646E88F-DBAF-4BCB-A5C8-E473C5E38019}"/>
+						<State Name="GameOver" ID="{937FEB8B-BDCF-4316-A51E-331DD06D4C0E}"/>
+					</ChildrenList>
+				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</States>
