@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 2803495f49fa174cb27d36522041969d
     GuidInternal: 
-    m_lastTime: -8585318509505015443
+    m_lastTime: -8585307298537326207
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -54,6 +54,40 @@ MonoBehaviour:
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+    - name: Music
+      guid: 749b33d296b3a54a8132d0abbdc8f883
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2803495f49fa174cb27d36522041969d
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Music
+        ObjectType: 2
+        guid: 749b33d296b3a54a8132d0abbdc8f883
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music
+    - name: SoundEffects
+      guid: b62b1eea93164e4f9cd447a92d4ceb68
+      id: 3898083304
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2803495f49fa174cb27d36522041969d
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: SoundEffects
+        ObjectType: 2
+        guid: b62b1eea93164e4f9cd447a92d4ceb68
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SoundEffects
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
@@ -309,8 +343,90 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 81a755c80d97a544a60f6189a9bd9783
     GuidInternal: 
-    m_lastTime: -8585309080970287880
+    m_lastTime: -8585307298537466431
     List:
+    - name: GameState
+      guid: 4734a23362f6e84db30a7a49a1442510
+      id: 4091656514
+      PathAndIcons:
+      - ElementName: States
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 81a755c80d97a544a60f6189a9bd9783
+      - ElementName: GameState
+        ObjectType: 9
+        guid: 4734a23362f6e84db30a7a49a1442510
+      Path: States\Default Work Unit\GameState
+      values:
+      - name: GameOver
+        guid: 8beb7f93cfbd1643a51e331dd06d4c0e
+        id: 4158285989
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 81a755c80d97a544a60f6189a9bd9783
+        - ElementName: GameState
+          ObjectType: 9
+          guid: 4734a23362f6e84db30a7a49a1442510
+        - ElementName: GameOver
+          ObjectType: 8
+          guid: 8beb7f93cfbd1643a51e331dd06d4c0e
+      - name: None
+        guid: aa1ae78f38c8b44abc1e80c5434f2310
+        id: 748895195
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 81a755c80d97a544a60f6189a9bd9783
+        - ElementName: GameState
+          ObjectType: 9
+          guid: 4734a23362f6e84db30a7a49a1442510
+        - ElementName: None
+          ObjectType: 8
+          guid: aa1ae78f38c8b44abc1e80c5434f2310
+      - name: Normal
+        guid: 8fe846a6afdbcb4ba5c8e473c5e38019
+        id: 1160234136
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 81a755c80d97a544a60f6189a9bd9783
+        - ElementName: GameState
+          ObjectType: 9
+          guid: 4734a23362f6e84db30a7a49a1442510
+        - ElementName: Normal
+          ObjectType: 8
+          guid: 8fe846a6afdbcb4ba5c8e473c5e38019
+      - name: Paused
+        guid: 05403dfaf068724f81b0e7fc3d83ca78
+        id: 319258907
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 81a755c80d97a544a60f6189a9bd9783
+        - ElementName: GameState
+          ObjectType: 9
+          guid: 4734a23362f6e84db30a7a49a1442510
+        - ElementName: Paused
+          ObjectType: 8
+          guid: 05403dfaf068724f81b0e7fc3d83ca78
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: LevelState
       guid: 11416b37468bcc499f6ee6028b47977c
       id: 3473087568
