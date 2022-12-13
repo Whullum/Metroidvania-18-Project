@@ -1,5 +1,6 @@
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.Tilemaps;
 
 public class CameraController : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         SetCameraFollow();
+        CreateConfinerCollider();
     }
 
     private void OnEnable()
@@ -36,7 +38,7 @@ public class CameraController : MonoBehaviour
     /// <param name="force">The force of the shake.</param>
     private void StartShake(float shakeTime, float force)
     {
-        if(_noisePerlin == null)
+        if (_noisePerlin == null)
         {
             Debug.LogError("Camera Controller ERROR : Cinemachine noise profile needs to be set.");
             return;
@@ -65,5 +67,30 @@ public class CameraController : MonoBehaviour
     {
         _vCam.Follow = GameManager.Instance.Player.transform;
         _vCam.LookAt = GameManager.Instance.Player.transform;
+    }
+
+    private void CreateConfinerCollider()
+    {
+        GameObject confiner = new GameObject("Confiner");
+        confiner.AddComponent<PolygonCollider2D>();
+        confiner.layer = LayerMask.NameToLayer("Confiner");
+
+        PolygonCollider2D boundary = confiner.GetComponent<PolygonCollider2D>();
+        Tilemap tileMap = FindObjectOfType<Tilemap>();
+        tileMap.CompressBounds();
+
+        Vector2[] path = new Vector2[4];
+
+        path[0] = new Vector2(tileMap.cellBounds.xMin, tileMap.cellBounds.yMax);
+        path[1] = new Vector2(tileMap.cellBounds.xMin, tileMap.cellBounds.yMin);
+        path[2] = new Vector2(tileMap.cellBounds.xMax, tileMap.cellBounds.yMin);
+        path[3] = new Vector2(tileMap.cellBounds.xMax, tileMap.cellBounds.yMax);
+        boundary.pathCount = 1;
+        boundary.SetPath(0, path);
+        boundary.isTrigger = true;
+
+        CinemachineConfiner2D cinemachineConfiner = _vCam.GetComponent<CinemachineConfiner2D>();
+
+        cinemachineConfiner.m_BoundingShape2D = boundary;
     }
 }

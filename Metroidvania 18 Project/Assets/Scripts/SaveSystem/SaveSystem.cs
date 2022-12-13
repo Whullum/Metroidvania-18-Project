@@ -68,9 +68,9 @@ public class SaveSystem
     /// </summary>
     public static void DeleteGameData()
     {
-        if (!File.Exists(_fullPath)) { Debug.LogError("Save System ERROR : Cannot delete file. File does not exists: " + _fullPath); return; }
-
         _fullPath = Application.persistentDataPath + Path.AltDirectorySeparatorChar + _dataFolderName + _saveName;
+
+        if (!File.Exists(_fullPath)) { Debug.LogError("Save System ERROR : Cannot delete file. File does not exists: " + _fullPath); return; }
 
         File.Delete(_fullPath);
 

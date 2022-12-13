@@ -18,6 +18,7 @@ public class Gun : MonoBehaviour
     private GunSetting _activeSetting;
     private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _playerRBody;
+    private static List<GunSetting> _unlockedSettingsCache = new List<GunSetting>();
 
     [Tooltip("The point where the bullets will be spawned.")]
     [SerializeField] private Transform _shootPoint;
@@ -34,6 +35,11 @@ public class Gun : MonoBehaviour
         _playerRBody = GetComponentInParent<Rigidbody2D>();
 
         InitializeGun();
+    }
+
+    private void Start()
+    {
+        LoadGunCacheData();
     }
 
     private void Update()
@@ -215,6 +221,9 @@ public class Gun : MonoBehaviour
         }
 
         _gunSettings.Add(upgrade);
+
+        if (!_unlockedSettingsCache.Contains(upgrade))
+            _unlockedSettingsCache.Add(upgrade);
     }
 
     public void LoadGunSettings(string[] unlockedGunSettingsIDs)
@@ -261,6 +270,15 @@ public class Gun : MonoBehaviour
         _activeSetting = _gunSettings[0];
         // Set the magazine to the current active setting capacity.
         _currentMagazineSize = _activeSetting.MagazineSize;
+    }
+
+    /// <summary>
+    /// Loads the GunSettings the player has collected trough this session.
+    /// </summary>
+    private void LoadGunCacheData()
+    {
+        if (_unlockedSettingsCache.Count > 0)
+            _gunSettings = _unlockedSettingsCache;
     }
 
     private void OnGUI()
