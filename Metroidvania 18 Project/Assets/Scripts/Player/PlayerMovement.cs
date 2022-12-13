@@ -122,13 +122,13 @@ public class PlayerMovement : MonoBehaviour
 
         _horizontalMovement = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W))
+        if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             _jumpButtonPressed = true;
             _jumpButtonReleased = false;
         }
 
-        if (Input.GetButtonUp("Jump") || Input.GetKeyUp(KeyCode.W))
+        if (Input.GetButtonUp("Jump") || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
             _jumpButtonReleased = true;
     }
 
