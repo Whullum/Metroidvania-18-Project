@@ -7,7 +7,6 @@ public class DrinkDispenserUI : MonoBehaviour
     private VisualElement _dispenserUI;
     private Label _resourceAmount;
     private Button _closeButton;
-
     private bool _isOpen;
     private bool _canOpen;
     private Drink[] _drinks;
@@ -41,7 +40,7 @@ public class DrinkDispenserUI : MonoBehaviour
 
     private void Update()
     {
-        if (_canOpen && Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && _canOpen)
             ToggleUI();
     }
 
@@ -67,12 +66,14 @@ public class DrinkDispenserUI : MonoBehaviour
             _dispenserUI.AddToClassList("drink-dispenser-in");
             UpdateUI();
             GameManager.Instance.SetPlayerInput(false);
+            _closeButton.SetEnabled(true);
         }
         else
         {
             _dispenserUI.RemoveFromClassList("drink-dispenser-in");
             _dispenserUI.AddToClassList("drink-dispenser-out");
             GameManager.Instance.SetPlayerInput(true);
+            _closeButton.SetEnabled(false);
         }
     }
 
@@ -146,9 +147,9 @@ public class DrinkDispenserUI : MonoBehaviour
         _dispenserUI.Query(className: "drink-buy-button")
             .ForEach((element) =>
             {
-                for(int i = 0; i < _drinks.Length; i++)
+                for (int i = 0; i < _drinks.Length; i++)
                 {
-                    if(element.name == _drinks[i].DrinkType.ToString())
+                    if (element.name == _drinks[i].DrinkType.ToString())
                     {
                         if (_drinks[i].Cost > ResourceManager.TotalResource)
                             element.SetEnabled(false);

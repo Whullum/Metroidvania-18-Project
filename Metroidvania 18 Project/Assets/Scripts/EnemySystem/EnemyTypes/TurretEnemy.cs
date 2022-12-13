@@ -77,7 +77,7 @@ public class TurretEnemy : Enemy
     private void EnableLaserSight()
     {
         // Raycast to get the collision point.
-        RaycastHit2D laserHit = Physics2D.Raycast(_gun.position, _gun.transform.right, _enemyGunSetting.Range * 10, ~LayerMask.GetMask("Enemy", "EnemyBullet"));
+        RaycastHit2D laserHit = Physics2D.Raycast(_gun.position, _gun.transform.right, _enemyGunSetting.Range * 10, ~LayerMask.GetMask("Enemy", "EnemyBullet", "Confiner"));
 
         // Set the second point to be the collision point.
         if (laserHit)
@@ -119,6 +119,8 @@ public class TurretEnemy : Enemy
     private void ShootPlayer()
     {
         if (_isReloading) return;
+
+        Debug.Log("shooting");
 
         if (_nextFire <= 0)
         {
