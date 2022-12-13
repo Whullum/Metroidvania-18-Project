@@ -80,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
         InitializeRigidbody();
 
         _dashTrail.emitting = false;
+        _walkParticles.Stop();
     }
 
     private void Update()
@@ -207,7 +208,7 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void CheckGrounded()
     {
-        bool isGrounded = Physics2D.OverlapCircle(_groundCheck.position, _groundCheckRadius, ~LayerMask.GetMask("Player"));
+        bool isGrounded = Physics2D.OverlapCircle(_groundCheck.position, _groundCheckRadius, ~LayerMask.GetMask("Player", "Confiner"));
 
         if (isGrounded)
         {
