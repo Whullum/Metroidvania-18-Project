@@ -17,7 +17,7 @@ MonoBehaviour:
   MagazineSize: 30
   FireRate: 10
   Range: 43.9
-  ReloadTime: 2
+  ReloadTime: 1
   BulletPrefab: {fileID: 1178255456181298219, guid: 4565cb4fd3aeeea4ba7be9d1231db8be, type: 3}
   BulletSpread: 2
   BulletSpeed: 55

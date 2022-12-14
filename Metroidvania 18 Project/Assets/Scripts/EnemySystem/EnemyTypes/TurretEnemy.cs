@@ -126,6 +126,11 @@ public class TurretEnemy : Enemy
             Vector3 lookAtPlayer = _player.position - transform.position;
             float angleToPlayer = Vector3.Angle(_gun.right, lookAtPlayer);
 
+            if (lookAtPlayer.x >= 0)
+                _gun.GetComponentInChildren<SpriteRenderer>().flipY = true;
+            else
+                _gun.GetComponentInChildren<SpriteRenderer>().flipY = false;
+
             if (angleToPlayer < _angleToShoot)
             {
                 if (_currentMagazineSize <= 0)

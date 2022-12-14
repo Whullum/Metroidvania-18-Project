@@ -15,11 +15,13 @@ public class Enemy : MonoBehaviour
     [Tooltip("Distance where the enemy stops.")]
     [SerializeField] private float _reachedDistance = 0.5f;
     [SerializeField] protected bool _showDebugInfo;
+    [SerializeField] protected SpriteRenderer _renderer;
 
     protected virtual void Start()
     {
         // We search for the player if the variable is not set.
         if (_player == null) _player = GameObject.FindGameObjectWithTag("Player").transform;
+        _renderer = GetComponent<SpriteRenderer>();
     }
 
     protected virtual void Update()
@@ -46,7 +48,12 @@ public class Enemy : MonoBehaviour
         if (!_canMove) return;
 
         // Calculate the movement direction.
-        Vector3 movementDirection = (_destinationPos - transform.position).normalized; 
+        Vector3 movementDirection = (_destinationPos - transform.position).normalized;
+
+        if (movementDirection.x >= 0)
+            _renderer.flipX = true;
+        else
+            _renderer.flipX = false;
 
         // Check if the enemy reached the destination.
         if (Vector2.Distance(transform.position, _destinationPos) <= _reachedDistance)

@@ -8,6 +8,9 @@ public class DroneEnemy : Enemy
     /// </summary>
     public SpawnerEnemy Spawner { get; set; }
 
+    [SerializeField]
+    private Animator _droneAnim;
+
     // Space between other EnemyDrone entities.
     private float _spaceBetween = 1.0f;
 
