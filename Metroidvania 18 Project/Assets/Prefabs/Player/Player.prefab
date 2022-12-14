@@ -124,6 +124,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7449d00acc31cd148bd0df38e1d43a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _normalAudioState:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 88e3cbe03c4a88b428be099497c2fb9e, type: 2}
+  _pausedAudioState:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1358bcd57544ab646a3fa61d263d6452, type: 2}
 --- !u!1 &6036926973773969882
 GameObject:
   m_ObjectHideFlags: 0

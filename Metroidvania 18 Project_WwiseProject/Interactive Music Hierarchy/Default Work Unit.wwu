@@ -27,7 +27,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DA457F85-0823-4B4C-9306-EF125B59CA35}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5F490328-FA49-4C17-B27D-36522041969D}"/>
+							<ObjectRef Name="Music" ID="{D2339B74-B396-4AA5-8132-D0ABBDC8F883}" WorkUnitID="{5F490328-FA49-4C17-B27D-36522041969D}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -446,6 +446,31 @@
 							</Playlist>
 						</MusicPlaylistContainer>
 					</ChildrenList>
+					<StateInfo>
+						<StateGroupList>
+							<StateGroupInfo>
+								<StateGroupRef Name="GameState" ID="{33A23447-F662-4DE8-B30A-7A49A1442510}"/>
+							</StateGroupInfo>
+						</StateGroupList>
+						<CustomStateList>
+							<CustomState>
+								<StateRef Name="GameOver" ID="{937FEB8B-BDCF-4316-A51E-331DD06D4C0E}"/>
+								<CustomState Name="" ID="{B3F4AF20-60A7-42F1-BD29-6CCA50734199}" ShortID="669903712"/>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="Normal" ID="{A646E88F-DBAF-4BCB-A5C8-E473C5E38019}"/>
+								<CustomState Name="" ID="{3ED8DE13-B1BE-417C-86BB-DBFB9966F0BE}" ShortID="636555864"/>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="Paused" ID="{FA3D4005-68F0-4F72-81B0-E7FC3D83CA78}"/>
+								<CustomState Name="" ID="{8A651235-057A-46AA-A431-239127E77721}" ShortID="817028398">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16" Value="50"/>
+									</PropertyList>
+								</CustomState>
+							</CustomState>
+						</CustomStateList>
+					</StateInfo>
 					<TransitionList>
 						<MusicTransition Name="Root" ID="{0706F738-4ED8-4CE0-AE2B-00CB8B8258AF}">
 							<PropertyList>

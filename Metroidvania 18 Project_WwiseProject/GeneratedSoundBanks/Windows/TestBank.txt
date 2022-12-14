@@ -25,12 +25,20 @@ Switch	ID	Name	Switch Group			Notes
 
 State Group	ID	Name			Wwise Object Path	Notes
 	3473087568	LevelState			\Default Work Unit\LevelState	
+	4091656514	GameState			\Default Work Unit\GameState	
 
 State	ID	Name	State Group			Notes
 	36522779	Bar_Title	LevelState			
 	144697359	Outdoor	LevelState			
 	340398852	Indoor	LevelState			
 	748895195	None	LevelState			
+	319258907	Paused	GameState			
+	748895195	None	GameState			
+	1160234136	Normal	GameState			
+	4158285989	GameOver	GameState			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	817028398	Paused	GameState	\Interactive Music Hierarchy\Default Work Unit\GameMusic		
 
 Effect plug-ins	ID	Name	Type				Notes
 	2653529179	Three_Voices	Wwise Harmonizer			

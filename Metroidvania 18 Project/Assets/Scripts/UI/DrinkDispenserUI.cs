@@ -72,6 +72,8 @@ public class DrinkDispenserUI : MonoBehaviour
         {
             _dispenserUI.RemoveFromClassList("drink-dispenser-in");
             _dispenserUI.AddToClassList("drink-dispenser-out");
+            _canOpen = false;
+            PlayerUI.Instance.UpdateUIValues();
             GameManager.Instance.SetPlayerInput(true);
             _closeButton.SetEnabled(false);
         }

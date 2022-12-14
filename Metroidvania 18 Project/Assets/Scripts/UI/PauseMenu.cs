@@ -11,6 +11,10 @@ public class PauseMenu : MonoBehaviour
     private Button _toMainMenu;
     private Button _quitGame;
 
+    [Header("States for changing audio on pause")]
+    [SerializeField] private AK.Wwise.State _normalAudioState;
+    [SerializeField] private AK.Wwise.State _pausedAudioState;
+
     private void Awake()
     {
         InitializeDocument();
@@ -37,6 +41,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         _root.style.display = DisplayStyle.None;
         IsActive = false;
+        _normalAudioState.SetValue();
+
     }
 
     private void MainMenu()
@@ -46,6 +52,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
         IsActive = false;
+        _normalAudioState.SetValue();
     }
 
     private void QuitGame() => Application.Quit();
@@ -56,5 +63,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0;
         _root.style.display = DisplayStyle.Flex;
         IsActive = true;
+        _pausedAudioState.SetValue();
     }
 }

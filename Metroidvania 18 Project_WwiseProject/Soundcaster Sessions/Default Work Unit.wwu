@@ -21,6 +21,7 @@
 					<RTPCValueList ShowAll="true"/>
 					<CurrentStateList ShowAll="true">
 						<CurrentStateRef Name="None" ID="{23ED5525-FCBB-40E7-855A-7D8E14E93D7A}"/>
+						<CurrentStateRef Name="Paused" ID="{FA3D4005-68F0-4F72-81B0-E7FC3D83CA78}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="EnemyDamage" ID="{22B90E4B-1232-4B73-8D36-6CD4ED7D0F1D}"/>
