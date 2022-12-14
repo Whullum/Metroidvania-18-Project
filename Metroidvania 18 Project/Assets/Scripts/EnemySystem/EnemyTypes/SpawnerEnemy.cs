@@ -102,7 +102,13 @@ public class SpawnerEnemy : Enemy
 
             _startSpawn = true;
 
+            _animator.SetBool("playerSpotted", true);
+
             CancelInvoke("TriggerSpawner");
+        }
+        else
+        {
+            _animator.SetBool("playerSpotted", false);
         }
     }
 
