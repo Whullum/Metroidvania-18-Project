@@ -70,7 +70,7 @@ public class TurretEnemy : Enemy
     private void EnableLaserSight()
     {
         // Raycast to get the collision point.
-        RaycastHit2D laserHit = Physics2D.Raycast(_gun.position, _gun.transform.right, _enemyGunSetting.Range * 10, ~LayerMask.GetMask("Enemy", "EnemyBullet", "Confiner"));
+        RaycastHit2D laserHit = Physics2D.Raycast(_gun.position, _gun.transform.right, _enemyGunSetting.Range * 10, ~LayerMask.GetMask("Enemy", "EnemyBullet", "Confiner", "Bullet"));
 
         // Set the second point to be the collision point.
         if (laserHit)
@@ -96,7 +96,7 @@ public class TurretEnemy : Enemy
     private void RotateTowardsPlayer()
     {
         Vector3 playerDirection = _player.position - transform.position;
-        RaycastHit2D playerOnSight = Physics2D.Raycast(transform.position, playerDirection, _enemyGunSetting.Range * 10, ~LayerMask.GetMask("Enemy", "EnemyBullet", "Confiner"));
+        RaycastHit2D playerOnSight = Physics2D.Raycast(transform.position, playerDirection, _enemyGunSetting.Range * 10, ~LayerMask.GetMask("Enemy", "EnemyBullet", "Confiner", "Bullet"));
 
         if (playerOnSight.collider.CompareTag("Player"))
         {
