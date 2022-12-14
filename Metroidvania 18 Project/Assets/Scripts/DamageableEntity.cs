@@ -68,8 +68,6 @@ public class DamageableEntity : MonoBehaviour
     {
         if (Invincibility) return;
 
-        DamageReceived?.Invoke();
-
         Invoke("EnableHitFeedback", 0f);
         Invoke("DisableHitFeedback", 0.1f);
 
@@ -77,6 +75,8 @@ public class DamageableEntity : MonoBehaviour
 
         // Play the damaged sound effect for this entity
         _sfxPlayEntityDamaged.Post(gameObject);
+
+        DamageReceived?.Invoke();
 
         if (_currentHealth <= 0)
             Death();

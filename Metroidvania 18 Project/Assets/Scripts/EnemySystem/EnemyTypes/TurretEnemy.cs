@@ -9,7 +9,7 @@ public class TurretEnemy : Enemy
     protected float _distanceToPlayer;
     private bool _isReloading;
     private bool _isAttacking;
-    private bool _playerOnSight;
+    private bool _playerNear;
     private LineRenderer _laserSight; // The Line Renderer component.
 
     [Header("Turret enemy properties")]
@@ -17,7 +17,7 @@ public class TurretEnemy : Enemy
     [Range(0.01f, 10)]
     [SerializeField] private float _playerCheckTime = 0.5f;
     [Tooltip("The angle needed towards the player for the Gun to shoot.")]
-    [SerializeField] private float _angleToShoot = 5.0f;
+    [SerializeField] private float _angleToShoot = 20.0f;
     [Tooltip("The Enemy Gun Setting that this Turret Enemy will use to shoot at the player.")]
     [SerializeField] private EnemyGunSetting _enemyGunSetting;
     [Tooltip("The gun GameObject. Used for rotation.")]
@@ -42,9 +42,8 @@ public class TurretEnemy : Enemy
 
         _nextFire -= Time.deltaTime * _enemyGunSetting.FireRate;
 
-        if (!_playerOnSight) return;
+        if (!_playerNear) return;
 
-        EnableLaserSight();
         RotateTowardsPlayer();
 
         if (!_isAttacking) return;
@@ -60,15 +59,9 @@ public class TurretEnemy : Enemy
         _distanceToPlayer = Vector2.Distance(transform.position, _player.position);
 
         if (_distanceToPlayer <= _enemyGunSetting.Range)
-        {
-            _playerOnSight = true;
-            _laserSight.enabled = true;
-        }
+            _playerNear = true;
         else
-        {
-            _playerOnSight = false;
-            _laserSight.enabled = false;
-        }
+            _playerNear = false;
     }
 
     /// <summary>
@@ -85,13 +78,9 @@ public class TurretEnemy : Enemy
             _laserSight.SetPosition(1, laserHit.point);
 
             if (laserHit.collider.CompareTag("Player"))
-            {
                 _isAttacking = true;
-            }
             else
-            {
                 _isAttacking = false;
-            }
         }
         // If theres no collision, we create our own point far away from the gun shoot direction.
         else
@@ -106,11 +95,23 @@ public class TurretEnemy : Enemy
     /// </summary>
     private void RotateTowardsPlayer()
     {
-        Vector3 rotation = _player.position - transform.position;
-        float angle = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        Vector3 playerDirection = _player.position - transform.position;
+        RaycastHit2D playerOnSight = Physics2D.Raycast(transform.position, playerDirection, _enemyGunSetting.Range * 10, ~LayerMask.GetMask("Enemy", "EnemyBullet", "Confiner"));
 
-        _gun.rotation = Quaternion.Lerp(_gun.rotation, lookRotation, Time.deltaTime * _enemyGunSetting.RotationSpeed);
+        if (playerOnSight.collider.CompareTag("Player"))
+        {
+            _laserSight.enabled = true;
+
+            EnableLaserSight();
+
+            Vector3 rotation = _player.position - transform.position;
+            float angle = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+            Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+            _gun.rotation = Quaternion.Lerp(_gun.rotation, lookRotation, Time.deltaTime * _enemyGunSetting.RotationSpeed);
+        }
+        else
+            _laserSight.enabled = false;
     }
 
     /// <summary>
@@ -119,8 +120,6 @@ public class TurretEnemy : Enemy
     private void ShootPlayer()
     {
         if (_isReloading) return;
-
-        Debug.Log("shooting");
 
         if (_nextFire <= 0)
         {
