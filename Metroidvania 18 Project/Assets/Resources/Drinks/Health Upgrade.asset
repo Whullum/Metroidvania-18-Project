@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Health Upgrade
   m_EditorClassIdentifier: 
   DrinkType: 0
-  DrinkImage: {fileID: 21300000, guid: 3999034958d54364da380a8839a11050, type: 3}
+  DrinkImage: {fileID: -563677620, guid: eab780b34ce068a48931d402a054ca60, type: 3}
   Cost: 250
   HealthUpgrade: 25
