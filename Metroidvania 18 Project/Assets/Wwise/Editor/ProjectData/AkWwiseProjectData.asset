@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: ebf31ca310f6a441a27856a0597ccc3a
     GuidInternal: 
-    m_lastTime: -8585309007678374853
+    m_lastTime: -8585318509501049586
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 2803495f49fa174cb27d36522041969d
     GuidInternal: 
-    m_lastTime: -8585306846489985275
+    m_lastTime: -8585307298537326207
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -100,7 +100,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 824cc22d4fd4c54c8c1b2d85ee191b08
     GuidInternal: 
-    m_lastTime: -8585309007678424720
+    m_lastTime: -8585318509501099634
     List:
     - name: TestBank
       guid: 0ac945c13cf6dc4fba97e1955e00c864
@@ -128,7 +128,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 57952b2a51235b4ba2db658472e829c7
     GuidInternal: 
-    m_lastTime: -8585309007732623008
+    m_lastTime: -8585305688848704490
     List:
     - name: Play_Entity_Damaged
       guid: 30cda46d495f1b46aaaf21aaaf2203d0
@@ -300,6 +300,40 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 1.455191
       minDuration: 1.455191
+    - name: Play_UI_Click
+      guid: 3fa8b668e3a32741bfa04f305ffd4dac
+      id: 1749424733
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 57952b2a51235b4ba2db658472e829c7
+      - ElementName: Play_UI_Click
+        ObjectType: 3
+        guid: 3fa8b668e3a32741bfa04f305ffd4dac
+      Path: Events\Default Work Unit\Play_UI_Click
+      maxAttenuation: 0
+      maxDuration: 0.939132
+      minDuration: 0.939132
+    - name: Play_UI_Hover
+      guid: c1af149b08b8cb469183f0481b29fb62
+      id: 1339559671
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 57952b2a51235b4ba2db658472e829c7
+      - ElementName: Play_UI_Hover
+        ObjectType: 3
+        guid: c1af149b08b8cb469183f0481b29fb62
+      Path: Events\Default Work Unit\Play_UI_Hover
+      maxAttenuation: 0
+      maxDuration: 0.116408
+      minDuration: 0.116408
     - name: Stop_Gun_Sound_Switch
       guid: 0e5af105dfff674b899748a45f7d23b1
       id: 2746280817
@@ -329,7 +363,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 3a5144099aac4548b1dc0925472dcbcf
     GuidInternal: 
-    m_lastTime: -8585309007732613034
+    m_lastTime: -8585318509505175579
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -343,7 +377,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 81a755c80d97a544a60f6189a9bd9783
     GuidInternal: 
-    m_lastTime: -8585306846489945658
+    m_lastTime: -8585307298537466431
     List:
     - name: GameState
       guid: 4734a23362f6e84db30a7a49a1442510
@@ -521,7 +555,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: fb418b64656ec34e9ca1eeafba0dcc52
     GuidInternal: 
-    m_lastTime: -8585309007678394578
+    m_lastTime: -8585313367399067887
     List:
     - name: DamageSound
       guid: 503b9318ed84b340a1ecc2d25a412780
@@ -667,10 +701,10 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: da31cde6dbe06d459499506fcdd7828d
     GuidInternal: 
-    m_lastTime: -8585309007678384821
+    m_lastTime: -8585318509501059603
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 0500000006000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

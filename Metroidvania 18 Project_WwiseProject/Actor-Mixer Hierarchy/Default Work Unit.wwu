@@ -1705,6 +1705,83 @@
 						</GroupingList>
 					</GroupingInfo>
 				</SwitchContainer>
+				<Sound Name="UI_Hover" ID="{01C4E6F8-A785-4C96-A02B-12ACC7D33870}" ShortID="369523383">
+					<PropertyList>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>40</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-200</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DA457F85-0823-4B4C-9306-EF125B59CA35}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5F490328-FA49-4C17-B27D-36522041969D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="User Interface, Alert, Alert Tone, Reverb, Three Variatons SND37228 2" ID="{C4EB8AFB-E166-4EFC-AF45-88AF5253EFED}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.103707821531791"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="2.94414982237476"/>
+								<Property Name="TrimEnd" Type="Real64" Value="3.04785764390655"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>User Interface, Alert, Alert Tone, Reverb, Three Variatons SND37228 2.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="406484411"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="User Interface, Alert, Alert Tone, Reverb, Three Variatons SND37228 2" ID="{C4EB8AFB-E166-4EFC-AF45-88AF5253EFED}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="UI_Click" ID="{E9D57244-D92D-4688-BBD6-9A8C57136649}" ShortID="537138097">
+					<PropertyList>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>30</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DA457F85-0823-4B4C-9306-EF125B59CA35}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5F490328-FA49-4C17-B27D-36522041969D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="User Interface, Alert, Alert Tone, Reverb, Three Variatons SND37228 2" ID="{D48AD6CF-1090-4D37-AB32-43CF851A02B8}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.743239387644509"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="2.80011118135838"/>
+								<Property Name="TrimEnd" Type="Real64" Value="3.73924312078516"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>User Interface, Alert, Alert Tone, Reverb, Three Variatons SND37228 2.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="890438897"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="User Interface, Alert, Alert Tone, Reverb, Three Variatons SND37228 2" ID="{D48AD6CF-1090-4D37-AB32-43CF851A02B8}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

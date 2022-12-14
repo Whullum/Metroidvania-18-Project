@@ -138,6 +138,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_UI_Hover" ID="{9B14AFC1-B808-46CB-9183-F0481B29FB62}">
+					<ChildrenList>
+						<Action Name="" ID="{8AC92113-32CA-48D8-A9CD-89D0D8878CA0}" ShortID="762383687">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_Hover" ID="{01C4E6F8-A785-4C96-A02B-12ACC7D33870}" WorkUnitID="{547BBE61-732B-43B4-867F-66A2FBD84838}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UI_Click" ID="{68B6A83F-A3E3-4127-BFA0-4F305FFD4DAC}">
+					<ChildrenList>
+						<Action Name="" ID="{76B8DD08-B663-4B27-9620-F520D422A93D}" ShortID="608792342">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_Click" ID="{E9D57244-D92D-4688-BBD6-9A8C57136649}" WorkUnitID="{547BBE61-732B-43B4-867F-66A2FBD84838}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -136,6 +136,14 @@ MonoBehaviour:
     groupIdInternal: 0
     groupGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 1358bcd57544ab646a3fa61d263d6452, type: 2}
+  _buttonHoverSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e72388d66b6f0b64abf11de6a71f7e5b, type: 2}
+  _buttonClickSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e06115068bd231142a066fae7cedc412, type: 2}
 --- !u!1 &6036926973773969882
 GameObject:
   m_ObjectHideFlags: 0
