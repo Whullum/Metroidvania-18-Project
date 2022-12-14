@@ -4,7 +4,10 @@
         <ui:VisualElement name="dispenser-ui" class="drink-dispenser-out">
             <ui:VisualElement name="title-container" style="top: 2%; background-color: rgb(42, 98, 125); padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;">
                 <ui:Label text="Drink Dispenser" display-tooltip-when-elided="true" name="title" style="font-size: 27px; white-space: normal; -unity-text-align: middle-center; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
-                <ui:Label text="Resource: 0" display-tooltip-when-elided="true" name="resource-amount" style="font-size: 20px; white-space: normal; -unity-text-align: middle-center; margin-top: 20px;" />
+                <ui:VisualElement name="resource-container" style="flex-direction: row; align-items: center; justify-content: center;">
+                    <ui:VisualElement name="resource-image" style="background-image: url(&apos;project://database/Assets/Art/Sprites/Misc/credit.png?fileID=21300000&amp;guid=6fd9df25175f3824895d044c76826702&amp;type=3#credit&apos;); -unity-background-scale-mode: scale-to-fit; flex-grow: 0; width: 50px; height: 50px;" />
+                    <ui:Label text="0" display-tooltip-when-elided="true" name="resource-amount" style="font-size: 20px; white-space: normal; -unity-text-align: middle-center; margin-top: 0; align-items: center; justify-content: center; margin-left: 0; margin-right: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="drinks-container" style="flex-grow: 1; align-items: center; justify-content: center; color: rgb(255, 255, 255); width: 100%;">
                 <ui:VisualElement name="drink-element" class="drink-element" style="display: none;">

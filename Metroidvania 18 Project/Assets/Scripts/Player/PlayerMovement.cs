@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    public bool CanDoubleJump { get { return _canDoubleJump; } set { _canDoubleJump = value; } }
+    public bool CanDoubleJump { get { return _canDoubleJump; } set { _canDoubleJump = value; _canDoubleJumpCache = value; } }
 
     private float _hangTimeCounter;
     private float _horizontalMovement;
@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _doubleJump = false;
     private bool _canDash = true;
     private bool _canDoubleJump;
+    private static bool _canDoubleJumpCache;
     private bool _canMove = true;
     private bool _isDashing;
     private bool _isLanding;
@@ -81,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
 
         _dashTrail.emitting = false;
         _walkParticles.Stop();
+        _canDoubleJump = _canDoubleJumpCache;
     }
 
     private void Update()

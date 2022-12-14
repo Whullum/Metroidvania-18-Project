@@ -91,7 +91,7 @@ public class DrinkDispenserUI : MonoBehaviour
 
         if (_drinks.Length <= 0) { Debug.LogError("Drink Dispenser UI ERROR : No ScriptableObjects to load inside Drinks folder."); return; }
 
-        _resourceAmount.text = "Total Resource: " + ResourceManager.TotalResource.ToString();
+        _resourceAmount.text = ResourceManager.TotalResource.ToString();
         VisualElement drinksContainer = _dispenserUI.Q<VisualElement>("drinks-container");
 
         for (int i = 0; i < _drinks.Length; i++)
@@ -176,7 +176,7 @@ public class DrinkDispenserUI : MonoBehaviour
     private void UpdateUI()
     {
         UpdateBuyButtons();
-        _resourceAmount.text = "Total Resource: " + ResourceManager.TotalResource.ToString();
+        _resourceAmount.text = ResourceManager.TotalResource.ToString();
         PlayerUI.Instance.UpdateUIValues();
     }
 }
