@@ -1,7 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/USS/MainMenu.uss?fileID=7433441132597879392&amp;guid=9c49fbc92ede7bb4c84b0ee9f2a7b45a&amp;type=3#MainMenu" />
+    <ui:VisualElement style="position: absolute; flex-grow: 1; background-image: url(&apos;project://database/Assets/Art/Sprites/Backgrounds/Outdoor/BACKGROUND-OUTDOOR-BACK.png?fileID=21300000&amp;guid=340ad4d0eec57cf4da7bef439a79a205&amp;type=3#BACKGROUND-OUTDOOR-BACK&apos;); width: 100%; height: 100%;" />
     <ui:VisualElement name="main-menu" style="flex-grow: 1; align-items: center; -unity-font: url(&apos;project://database/Assets/Fonts/Area51.ttf?fileID=12800000&amp;guid=2decbc499101349429a40fbfd576e732&amp;type=3#Area51&apos;); -unity-font-definition: url(&apos;project://database/Assets/Fonts/Area51%20SDF.asset?fileID=11400000&amp;guid=ebe941b1ff9e5ec42abb6b443f5ee6ea&amp;type=2#Area51 SDF&apos;); justify-content: center; display: flex;">
-        <ui:Label text="Metroidvania Month 18" display-tooltip-when-elided="true" name="game-title" style="font-size: 60px; color: rgb(255, 255, 255); margin-bottom: 10%;" />
+        <ui:Label text="Drink Run" display-tooltip-when-elided="true" name="game-title" style="font-size: 60px; color: rgb(255, 255, 255); margin-bottom: 10%;" />
         <ui:VisualElement name="buttons" style="justify-content: space-around; flex-grow: 0.6;">
             <ui:Button text="New Game" display-tooltip-when-elided="true" name="new-game" class="main-menu-button" />
             <ui:Button text="Continue" display-tooltip-when-elided="true" name="load-game" class="main-menu-button" />
