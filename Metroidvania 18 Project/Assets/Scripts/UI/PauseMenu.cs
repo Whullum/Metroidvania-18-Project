@@ -14,6 +14,8 @@ public class PauseMenu : MonoBehaviour
     [Header("States for changing audio on pause")]
     [SerializeField] private AK.Wwise.State _normalAudioState;
     [SerializeField] private AK.Wwise.State _pausedAudioState;
+    [SerializeField] private AK.Wwise.Event _buttonHoverSound;
+    [SerializeField] private AK.Wwise.Event _buttonClickSound;
 
     private void Awake()
     {
@@ -29,8 +31,15 @@ public class PauseMenu : MonoBehaviour
         _quitGame = _root.Q<Button>("quit");
 
         _resumeGame.clicked += ResumeGame;
+        _resumeGame.clicked += PlayClickSound;
         _toMainMenu.clicked += MainMenu;
+        _toMainMenu.clicked += PlayClickSound;
         _quitGame.clicked += QuitGame;
+        _quitGame.clicked += PlayClickSound;
+
+        _resumeGame.RegisterCallback<MouseOverEvent>(PlayHoverSound);
+        _toMainMenu.RegisterCallback<MouseOverEvent>(PlayHoverSound);
+        _quitGame.RegisterCallback<MouseOverEvent>(PlayHoverSound);
 
         _root.style.display = DisplayStyle.None;
     }
@@ -56,6 +65,8 @@ public class PauseMenu : MonoBehaviour
     }
 
     private void QuitGame() => Application.Quit();
+    private void PlayHoverSound(MouseOverEvent evt) => _buttonHoverSound.Post(gameObject);
+    private void PlayClickSound() => _buttonClickSound.Post(gameObject);
 
     public void EnablePauseMenu()
     {
