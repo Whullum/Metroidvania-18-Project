@@ -25,6 +25,8 @@ public class Door : MonoBehaviour
     [Tooltip("Enables this door to be used to travel between scenes. Used for creating one way doors.")]
     [SerializeField] private bool _isTraversable = true;
 
+    [SerializeField] private SpriteRenderer _doorSprite;
+
     public bool IsTraversable { get => _isTraversable; set => _isTraversable = value; }
 
     private void Awake()
@@ -50,6 +52,9 @@ public class Door : MonoBehaviour
             PlayerUI.Instance.EnablePlayerUI();
             DoorManager.UpdateDoor(_ID, _isTraversable); // Update the current door state.
         }
+
+        if (_faceRight)
+            _doorSprite.flipX = true;
     }
 
     /// <summary>
