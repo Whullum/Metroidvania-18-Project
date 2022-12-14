@@ -17,8 +17,9 @@ public class MainMenuBehavior : MonoBehaviour
     private Button _exitButton;
     private bool _creditsActive;
 
-    [SerializeField]
-    private string _firstSceneToLoad = "4,11 - 4,12";
+    [SerializeField] private string _firstSceneToLoad = "4,11 - 4,12";
+    [SerializeField] private AK.Wwise.Event _buttonHoverSound;
+    [SerializeField] private AK.Wwise.Event _buttonClickSound;
 
     private void Awake()
     {
@@ -48,9 +49,18 @@ public class MainMenuBehavior : MonoBehaviour
         _exitButton = _root.Q<Button>("exit");
 
         _newGameButton.clicked += NewGame;
+        _newGameButton.clicked += PlayClickSound;
         _loadGameButton.clicked += LoadGame;
+        _loadGameButton.clicked += PlayClickSound;
         _creditsButton.clicked += ShowCredits;
+        _creditsButton.clicked += PlayClickSound;
         _exitButton.clicked += QuitGame;
+        _exitButton.clicked += PlayClickSound;
+
+        _newGameButton.RegisterCallback<MouseOverEvent>(PlayHoverSound);
+        _loadGameButton.RegisterCallback<MouseOverEvent>(PlayHoverSound);
+        _creditsButton.RegisterCallback<MouseOverEvent>(PlayHoverSound);
+        _exitButton.RegisterCallback<MouseOverEvent>(PlayHoverSound);
 
         if (!File.Exists(SaveSystem.GameDataPath))
             _loadGameButton.SetEnabled(false);
@@ -85,6 +95,9 @@ public class MainMenuBehavior : MonoBehaviour
         _mainMenu.style.display = DisplayStyle.Flex;
         _creditsContainer.style.display = DisplayStyle.None;
     }
+
+    private void PlayHoverSound(MouseOverEvent evt) => _buttonHoverSound.Post(gameObject);
+    private void PlayClickSound() => _buttonClickSound.Post(gameObject);
 
     private void QuitGame() => Application.Quit();
 }

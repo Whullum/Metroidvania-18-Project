@@ -12,6 +12,9 @@ public class DrinkDispenserUI : MonoBehaviour
     private Drink[] _drinks;
     private Canvas _interactionCanvas;
 
+    [SerializeField] private AK.Wwise.Event _buttonHoverSound;
+    [SerializeField] private AK.Wwise.Event _buttonClickSound;
+
     private void Start()
     {
         InitializeDocument();
@@ -52,6 +55,7 @@ public class DrinkDispenserUI : MonoBehaviour
         _closeButton = _root.Q<Button>("close-dispenser");
 
         _closeButton.clicked += ToggleUI;
+        _closeButton.RegisterCallback<MouseOverEvent>(PlayHoverSound);
 
         CreateDrinkUI();
     }
@@ -70,6 +74,8 @@ public class DrinkDispenserUI : MonoBehaviour
         }
         else
         {
+            _buttonClickSound.Post(gameObject);
+
             _dispenserUI.RemoveFromClassList("drink-dispenser-in");
             _dispenserUI.AddToClassList("drink-dispenser-out");
             _canOpen = false;
@@ -108,6 +114,7 @@ public class DrinkDispenserUI : MonoBehaviour
             newDrinkBuyButton.AddToClassList("drink-buy-button");
             newDrinkBuyButton.name = _drinks[i].DrinkType.ToString();
             newDrinkBuyButton.RegisterCallback<ClickEvent>(BuyDrink);
+            newDrinkBuyButton.RegisterCallback<MouseOverEvent>(PlayHoverSound);
 
             drinksContainer.Add(newDrinkElement);
 
@@ -122,6 +129,8 @@ public class DrinkDispenserUI : MonoBehaviour
     {
         Button clickedButton = evt.currentTarget as Button;
         DrinkType selectedDrink = (DrinkType)System.Enum.Parse(typeof(DrinkType), clickedButton.name);
+
+        _buttonClickSound.Post(gameObject);
 
         for (int i = 0; i < _drinks.Length; i++)
         {
@@ -161,6 +170,8 @@ public class DrinkDispenserUI : MonoBehaviour
                 }
             });
     }
+
+    private void PlayHoverSound(MouseOverEvent evt) => _buttonHoverSound.Post(gameObject);
 
     private void UpdateUI()
     {
