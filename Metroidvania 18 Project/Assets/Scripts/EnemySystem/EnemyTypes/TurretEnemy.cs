@@ -59,9 +59,15 @@ public class TurretEnemy : Enemy
         _distanceToPlayer = Vector2.Distance(transform.position, _player.position);
 
         if (_distanceToPlayer <= _enemyGunSetting.Range)
+        {
             _playerNear = true;
+            _animator.SetBool("playerSpotted", _playerNear);
+        }
         else
+        {
             _playerNear = false;
+            _animator.SetBool("playerSpotted", _playerNear);
+        }
     }
 
     /// <summary>

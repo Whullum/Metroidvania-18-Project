@@ -15,13 +15,16 @@ public class Enemy : MonoBehaviour
     [Tooltip("Distance where the enemy stops.")]
     [SerializeField] private float _reachedDistance = 0.5f;
     [SerializeField] protected bool _showDebugInfo;
+
     [SerializeField] protected SpriteRenderer _renderer;
+    [SerializeField] protected Animator _animator;
 
     protected virtual void Start()
     {
         // We search for the player if the variable is not set.
         if (_player == null) _player = GameObject.FindGameObjectWithTag("Player").transform;
         _renderer = GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
     }
 
     protected virtual void Update()
