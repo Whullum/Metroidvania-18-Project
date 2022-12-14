@@ -270,6 +270,8 @@ public class Gun : MonoBehaviour
         _activeSetting = _gunSettings[0];
         // Set the magazine to the current active setting capacity.
         _currentMagazineSize = _activeSetting.MagazineSize;
+
+        _unlockedSettingsCache.Add(_activeSetting);
     }
 
     /// <summary>
