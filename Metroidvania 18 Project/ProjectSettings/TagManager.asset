@@ -48,6 +48,6 @@ TagManager:
   - name: Player
     uniqueID: 4161022419
     locked: 0
-  - name: PlayerGun
+  - name: Door
     uniqueID: 1996082833
     locked: 0
